@@ -1,12 +1,2 @@
 # Get Rich
-A boilerplate design sytem for marketing websites
-
-Pretty much every open source design system is tied to React in some way, shape, or form.
-
-Similarly, most of the systems are geared toward product design.
-
-For largely static marketing websites, both aren't a great fit.
-
-Get Rich is designed for modestly elegant SaaS marketing websites.
-
-It's simple and usable. The Figma file matches the code 1:1.
+TLDR; A boilerplate design sytem for marketing websites. Pretty much every open source design system is tied to React in some way, shape, or form. Similarly, most of the systems are geared toward product design. For largely static marketing websites, both aren't a great fit. Get Rich is designed for modestly elegant SaaS marketing websites. It's simple and usable. The Figma file matches the code 1:1.
