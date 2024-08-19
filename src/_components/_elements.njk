@@ -1,0 +1,17 @@
+{% macro button(href, variant, size, target, attrs, track, styles, iconLeft, label, iconRight) %}
+    <a href="{{ href }}" class="button button-{{variant}} button-size-{{ size }}" {% if target %}target="{{ target }}"{% endif %} {{ attrs }} {% if analytics %}data-click="{{ track }}"{% endif %} {% if style %}style="{{ styles }}"{% endif %}>
+        {% if iconLeft %}
+            <div>
+                {{ iconLeft }}
+            </div>
+        {% endif %}
+        <span>
+            {{ label }}
+        </span>
+        {% if iconRight %}
+            <div>
+                {{ iconRight }}
+            </div>
+        {% endif %}
+    </a>
+{% endmacro %}

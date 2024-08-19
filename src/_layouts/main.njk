@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="canonical" href="{{ base.url }}{{ page.url }}" />
     
-        {% # Search + Tab %}
+        {# Search + Tab #}
         <title>{{ seoTitle }}</title>
         <meta name="description" content="{{ seoDesc }}">
 
-        {% # OpenGraph %}
+        {# OpenGraph #}
         <meta property="og:site_name" content="{{ base.name }}" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ ogTitle }}" />
@@ -20,15 +20,15 @@
         <meta property="og:image" content="{{ base.url }}{{ ogImage }}" />
         <meta property="og:image:alt" content="{{ ogImageAlt }}" />
 
-        {% # Twitter %}
+        {# Twitter #}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="{{ base.twitterHandle }}" />
         <meta name="twitter:creator" content="{{ base.twitterHandle }}" />
 
-        {% # No index %}
+        {# No index #}
         {% if noindex == true %}<meta name="robots" content="noindex, nofollow">{% endif %}
     
-        {% # Styling %}
+        {# Styling #}
         <link rel="preload" href="{{ '/assets/fonts/InterVariable.woff2' | url }}" as="font" type="font/woff2" crossorigin>
         <style>
             @font-face {
@@ -43,7 +43,7 @@
         </style>
         <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
     
-        {% # Website Icon %}
+        {# Website Icon #}
         <link href="/assets/images/favicon/favicon.svg" rel="icon" media="(prefers-color-scheme: light)">
         <link href="/assets/images/favicon/favicon-dark.svg" rel="icon" media="(prefers-color-scheme: dark)">
         <link rel="apple-touch-icon" href='/assets/images/favicon/apple-touch-icon.png'>
@@ -51,19 +51,15 @@
         
     </head>
 
-    {% # Body %}
-    <body>
-
+    {# Body #}
+    <body class="bg-background">
         <div class="relative w:100p">
             <div>
                 <main>
-
-                    {{ content }}
-
+                    {{ content | safe }}
                 </main>
             </div>
         </div>
-
     </body>
 
 </html>

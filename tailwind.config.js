@@ -1,5 +1,5 @@
 module.exports = {
-  content: [ 'src/**/*.{md,html,webc,liquid}' ],
+  content: [ 'src/**/*.{md,html,njk}' ],
   theme: {
     borderRadius: {
       '0': '0',
@@ -14,6 +14,22 @@ module.exports = {
       '20': '1.25rem',
       '24': '1.5rem',
       'full': '9999px',
+    },
+    colors: {
+      primary: 'rgba(var(--color-primary), <alpha-value>)',
+      black: 'rgba(var(--color-black), <alpha-value>)',
+      white: 'rgba(var(--color-white), <alpha-value>)',
+      theme: 'rgba(var(--color-theme), <alpha-value>)',
+      shadow: 'rgba(var(--color-shadow), <alpha-value>)',
+      background: 'rgba(var(--color-background), <alpha-value>)',
+      middleground: 'rgba(var(--color-middleground), <alpha-value>)',
+      foreground: 'rgba(var(--color-foreground), <alpha-value>)',
+      highlight: 'rgba(var(--color-highlight), <alpha-value>)',
+      detail: 'rgba(var(--color-detail), <alpha-value>)',
+      content: 'rgba(var(--color-content), <alpha-value>)',
+      headline: 'rgba(var(--color-headline), <alpha-value>)',
+      link: 'rgba(var(--color-link), <alpha-value>)',
+      linkhover: 'rgba(var(--color-linkhover), <alpha-value>)',
     },
     fontFamily: {
       'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
