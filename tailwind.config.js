@@ -1,5 +1,5 @@
 module.exports = {
-  content: [ 'src/**/*.{md,html,njk,liquid}' ],
+  content: [ 'src/**/*.{md,html,webc,liquid}' ],
   theme: {
     borderRadius: {
       '0': '0',
@@ -14,6 +14,10 @@ module.exports = {
       '20': '1.25rem',
       '24': '1.5rem',
       'full': '9999px',
+    },
+    fontFamily: {
+      'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+      'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
     },
     fontSize: {
       '10': '0.625rem',
