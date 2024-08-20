@@ -20,18 +20,21 @@ changefreq: daily
             </p>
             <div class="flex items-center justify-start gap-12">
                 <gr-button
-                    href="https://google.com"
-                    label="Click me"
-                    webc:nokeep
+                    display="pill"
+                    variant="primary"
+                    classes="min-w-192"
+                    link="https://google.com"
+                    label="Primary button"
                 >
                 </gr-button>
                 <gr-button
-                    href="https://google.com"
-                    variant="secondary"
-                    size="md"
-                    label="Click me"
-                    webc:nokeep
-                ></gr-button>
+                    display="pill"
+                    variant="outline"
+                    classes="min-w-192"
+                    link="https://google.com"
+                    label="Secondary button"
+                >
+                </gr-button>
             </div>
             
     </div>
