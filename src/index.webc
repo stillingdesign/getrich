@@ -1,0 +1,40 @@
+---
+layout: "main.webc"
+seoTitle: "GetRich: A framework-free design system for marketing websites"
+seoDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
+ogTitle: "GetRich: A framework-free design system for marketing websites"
+ogDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
+ogImage: "/assets/images/og/default.jpg"
+ogImageAlt: "Person with 90s style apparrel sitting on office chair with large old computer on lap with their thumbs up."
+changefreq: daily
+---
+
+<section class="relative flex flex-col items-center justify-center pt-48">
+    <div class="relative flex w-full max-w-screen-lg">
+        <div class="flex flex-col gap-y-8 py-192 w-full">
+            <h1 class="text-48/100 tracking-tight">
+                Here’s a headline
+            </h1>
+            <p class="text-16/170 text-detail text-balance">
+                Sed ut perspiciatis unde primary link natus error sit voluptatem accusantium doloremque laudantium, totam rem.
+            </p>
+            <div class="flex items-center justify-start gap-12">
+                <gr-button
+                    href="https://google.com"
+                    label="Click me"
+                    webc:nokeep
+                >
+                </gr-button>
+                <gr-button
+                    href="https://google.com"
+                    variant="secondary"
+                    size="md"
+                    label="Click me"
+                    webc:nokeep
+                ></gr-button>
+            </div>
+            
+    </div>
+</section>
+
+<section></section>
