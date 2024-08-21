@@ -1,4 +1,6 @@
-@import url("elements/button.css");
+@import url("elements/_button.css");
+@import url("elements/_layout.css");
+@import url("elements/_link.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

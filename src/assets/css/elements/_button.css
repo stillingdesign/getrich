@@ -84,7 +84,7 @@
     position: absolute;
     bottom: -25%;
     width: calc(100% - 0.125rem);
-    height: 0.0625rem;
+    height: 0.09em;
     background-color: rgba(var(--color-link), 1);
     transform: scale3d(0,1,1);
     transform-origin: left center;
