@@ -22,13 +22,8 @@ changefreq: daily
             </p>
             <div class="flex items-center gap-x-12 mt-8">
                 {{ element.button(
-                    variant=buttonStyle,
                     size="sm",
                     href="#",
-                    target="",
-                    attrs="data-button-crazy",
-                    track="cta-primary-hero",
-                    styles="",
                     label="Get started",
                     iconRight=icon.chevronRight()
                 )}}
@@ -40,6 +35,15 @@ changefreq: daily
                     track="cta-secondary-hero",
                     label="Contact sales"
                 )}}
+                {{ element.button(
+                    variant="text",
+                    size="sm",
+                    href="#",
+                    attrs="data-button-crazy",
+                    track="cta-secondary-hero",
+                    label="Contact sales",
+                    class="-ml-10"
+                )}}
             </div>
         </div>
         <div class="w-full bg-foreground"></div>
@@ -50,104 +54,38 @@ changefreq: daily
     <h1 class="px-48 py-48 border border-black rounded-8 text-48/100">
         Hello world
     </h1>
-    <div class="flex items-center gap-x-12">
+    {% macro buttonPreview(buttonSize, gap) %}
+    <div class="flex items-center w-full max-w-320 {{ gap }}">
         {{ element.button(
-            variant=buttonStyle,
-            size="md",
+            variant="primary",
+            size=buttonSize,
             href="#",
-            target="",
-            attrs="data-button-crazy",
-            track="cta-primary-hero",
-            styles="",
             label="Get started",
             iconRight=icon.chevronRight()
         )}}
         {{ element.button(
             variant="secondary",
+            size=buttonSize,
             href="#",
-            attrs="data-button-crazy",
-            track="cta-secondary-hero",
-            label="Contact sales"
+            label="Get started",
+            iconRight=icon.chevronRight()
+        )}}
+        {{ element.button(
+            variant="text",
+            size=buttonSize,
+            href="#",
+            label="Get started",
+            iconRight=icon.chevronRight()
         )}}
     </div>
-    {% set buttonStyle = "" %}
-    {{ element.button(
-        variant=buttonStyle,
-        size="3xs",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
-    {{ element.button(
-        variant=buttonStyle,
-        size="2xs",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
-    {{ element.button(
-        variant=buttonStyle,
-        size="xs",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
-    {{ element.button(
-        variant=buttonStyle,
-        size="sm",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
-    {{ element.button(
-        variant=buttonStyle,
-        size="md",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
-    {{ element.button(
-        variant=buttonStyle,
-        size="lg",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
-    {{ element.button(
-        variant=buttonStyle,
-        size="xl",
-        href="#",
-        target="",
-        attrs="data-button-crazy",
-        track="cta-primary-hero",
-        styles="",
-        label="Hello world",
-        iconRight=icon.chevronRight()
-    )}}
+    {% endmacro %}
+    {{ buttonPreview("3xs", "gap-x-10") }}
+    {{ buttonPreview("2xs", "gap-x-12") }}
+    {{ buttonPreview("xs", "gap-x-14") }}
+    {{ buttonPreview("sm", "gap-x-16") }}
+    {{ buttonPreview("md", "gap-x-18") }}
+    {{ buttonPreview("lg", "gap-x-20") }}
+    {{ buttonPreview("xl", "gap-x-24") }}
 </div>
 
 <section></section>
