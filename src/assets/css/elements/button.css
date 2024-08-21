@@ -86,6 +86,9 @@
     width: calc(100% - 0.125rem);
     height: 0.0625rem;
     background-color: rgba(var(--color-link), 1);
+    transform: scale3d(0,1,1);
+    transform-origin: left center;
+    transition: transform 200ms cubic-bezier(0.3,0,0.3,1) 50ms;
 }
 
 .button.variant-text.size-3xs { margin-left: -0.5rem;   }
@@ -100,6 +103,24 @@
 
 @media (hover: hover) {
 
+    /* Icons */
+    .button > div > .hover-left,
+    .button > div > .hover-right { transition: transform 100ms linear 50ms }
+    .button.size-3xs:hover > div > .hover-left  { transform: translate3d(0.125rem,0,0);   }
+    .button.size-2xs:hover > div > .hover-left  { transform: translate3d(0.125rem,0,0);   }
+    .button.size-xs:hover  > div > .hover-left  { transform: translate3d(0.125rem,0,0);   }
+    .button.size-sm:hover  > div > .hover-left  { transform: translate3d(0.1875rem,0,0);  }
+    .button.size-md:hover  > div > .hover-left  { transform: translate3d(0.1875rem,0,0);  }
+    .button.size-lg:hover  > div > .hover-left  { transform: translate3d(0.1875rem,0,0);  }
+    .button.size-xl:hover  > div > .hover-left  { transform: translate3d(0.25rem,0,0);    }
+    .button.size-3xs:hover > div > .hover-right { transform: translate3d(-0.125rem,0,0);  }
+    .button.size-2xs:hover > div > .hover-right { transform: translate3d(-0.125rem,0,0);  }
+    .button.size-xs:hover  > div > .hover-right { transform: translate3d(-0.125rem,0,0);  }
+    .button.size-sm:hover  > div > .hover-right { transform: translate3d(-0.1875rem,0,0); }
+    .button.size-md:hover  > div > .hover-right { transform: translate3d(-0.1875rem,0,0); }
+    .button.size-lg:hover  > div > .hover-right { transform: translate3d(-0.1875rem,0,0); }
+    .button.size-xl:hover  > div > .hover-right { transform: translate3d(-0.25rem,0,0);   }
+
     .button.variant-primary:hover {
         background-color: rgba(var(--color-headline), 0.8);
         box-shadow: 0 0.25rem 0.5rem 0 rgba(var(--black), 0.2), 0 0.125rem 0.25rem 0 rgba(var(--black),0.2);
@@ -111,8 +132,8 @@
         box-shadow: 0 0.25rem 0.5rem 0 rgba(var(--black), 0.1), 0 0.125rem 0.25rem 0 rgba(var(--black),0.1);
     }
 
-    .button.variant-text:hover {
-        color: rgba(var(--color-link), 0.8);
+    .button.variant-text:hover > span:before {
+        transform: scale3d(1,1,1);
     }
 
 }
