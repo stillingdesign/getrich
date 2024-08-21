@@ -19,22 +19,13 @@ changefreq: daily
                 Sed ut perspiciatis unde primary link natus error sit voluptatem accusantium doloremque laudantium, totam rem.
             </p>
             <div class="flex items-center justify-start gap-12">
-                <gr-button
-                    display="pill"
-                    variant="primary"
-                    classes="min-w-192"
-                    link="https://google.com"
-                    label="Primary button"
-                >
-                </gr-button>
-                <gr-button
-                    display="pill"
-                    variant="outline"
-                    classes="min-w-192"
-                    link="https://google.com"
-                    label="Secondary button"
-                >
-                </gr-button>
+                <gr-a class="button style-primary size-sm min-w-192" iconL="chevLeft" href="https://google.com">
+                    Override text
+                </gr-a>
+                <gr-a class="button style-outline size-sm min-w-192" iconL="chevLeft" href="https://google.com">
+                    Override text
+                </gr-a>
+                <i-arrow-down></i-arrow-down>
             </div>
             
     </div>

@@ -1,0 +1,7 @@
+<a webc:root="override">
+    <span>
+        <slot>
+            Placeholder
+        </slot>
+    </span>
+</a>
