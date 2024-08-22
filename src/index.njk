@@ -6,7 +6,6 @@ ogTitle: "GetRich: A framework-free design system for marketing websites"
 ogDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
 ogImage: "/assets/images/og/default.jpg"
 ogImageAlt: "Person with 90s style apparrel sitting on office chair with large old computer on lap with their thumbs up."
-showGrid: true
 changefreq: daily
 ---
 {% import "_icons.njk" as icon %}
@@ -14,11 +13,16 @@ changefreq: daily
 {% import "_modules.njk" as module %}
 
 <section class="section">
+    {{ element.designGrid() }}
     <div class="contain flex flex-col items-center text-center gap-72 pt-160">
-        <div class="relative flex flex-col gap-y-12 max-w-896">
-            <h1 class="text-48/100 sm:text-72/100 md:text-80/100 tracking-tight text-balance">
-                Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
-            </h1>
+        <div class="relative flex flex-col items-center gap-y-12 max-w-896">
+            <div class="relative border border-headline/30 max-w-688 relative">
+                <div class="w-8 h-8 absolute -top-4 -left-4 bg-inverse"></div>
+                <div class="w-8 h-8 absolute -top-4 -right-4 bg-inverse"></div>
+                <h1 class="text-48/100 sm:text-72/100 md:text-80/100 text-balance" style="letter-spacing: -0.04em;" contenteditable="true">
+                    Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
+                </h1>
+            </div>
             <p class="text-20/170 text-detail text-balance">
                 GetRich is opinionated boilerplate for <a href="#" class="link">your SaaS</a> brand. Bypass the bullshit and start growing your business.
             </p>

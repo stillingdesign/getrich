@@ -26,6 +26,7 @@
         --white: 255, 255, 255;
         /* Light */
         --color-theme: 255, 255, 255;
+        --color-inverse: 0, 0, 0;
         --color-shadow: 230, 230, 230;
         --color-background: 237, 237, 237;
         --color-middleground: 245, 245, 245;
