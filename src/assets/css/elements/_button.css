@@ -72,6 +72,8 @@
     background-color: rgba(var(--color-headline), 0.02);
     color: rgba(var(--color-headline), 1);
     border-color: rgba(var(--color-headline), 0.2);
+    backdrop-filter: blur(4px);
+    transform: translate3d(0,0,0);
 }
 
 .button.variant-text {
