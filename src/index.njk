@@ -6,49 +6,81 @@ ogTitle: "GetRich: A framework-free design system for marketing websites"
 ogDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
 ogImage: "/assets/images/og/default.jpg"
 ogImageAlt: "Person with 90s style apparrel sitting on office chair with large old computer on lap with their thumbs up."
+showGrid: true
 changefreq: daily
 ---
 {% import "_icons.njk" as icon %}
 {% import "_elements.njk" as element %}
 {% import "_modules.njk" as module %}
 
-<section class="section pt-48">
-    <div class="contain flex flex-col items-center text-center border border:black">
-        <div class="relative flex flex-col gap-y-8 sm:py-192 max-w-896">
-            <h1 class="text-40/100 sm:text-80/100 tracking-tight text-balance">
-                Build custom marketing sites with craft and speed.
+<section class="section">
+    <div class="contain flex flex-col items-center text-center gap-72 pt-160">
+        <div class="relative flex flex-col gap-y-12 max-w-896">
+            <h1 class="text-48/100 sm:text-72/100 md:text-80/100 tracking-tight text-balance">
+                Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
             </h1>
             <p class="text-20/170 text-detail text-balance">
-                Sed ut perspiciatis unde <a href="#" class="link">primary link</a> natus error sit voluptatem accusantium doloremque laudantium, totam rem.
+                GetRich is opinionated boilerplate for <a href="#" class="link">your SaaS</a> brand. Bypass the bullshit and start growing your business.
             </p>
-            <div class="flex items-center justify-center gap-x-12 mt-8">
+            <div class="flex items-center justify-center gap-x-16 mt-12">
                 {{ element.button(
-                    size="sm",
+                    size="md",
                     href="#",
-                    label="Get started",
-                    iconRight=icon.chevronRight()
+                    label="Use the template",
+                    iconRight=icon.chevronRight(),
+                    class="w-160"
                 )}}
                 {{ element.button(
                     variant="secondary",
-                    size="sm",
+                    size="md",
                     href="#",
                     attrs="data-button-crazy",
                     track="cta-secondary-hero",
-                    label="Contact sales"
-                )}}
-                {{ element.button(
-                    variant="text",
-                    size="sm",
-                    href="#",
-                    attrs="data-button-crazy",
-                    track="cta-secondary-hero",
-                    label="View docs",
-                    class="-ml-10"
+                    label="Read the docs",
+                    class="w-160"
                 )}}
             </div>
         </div>
-        <div class="w-full min-h-320 mt-48 sm:mt-0 bg-foreground"></div>
+        <div class="w-full min-h-640 mt-48 sm:mt-0 bg-middleground shadow-2xl rounded-card"></div>
     </div>
+</section>
+
+<section class="section py-160">
+    <ul class="contain grid grid-cols-3 gap-16">
+        <li class="flex flex-col justify-between w-full min-h-320 rounded-card bg-middleground shadow-lg p-32">
+            <div>
+                <h3 class="text-20/120 font-semibold mb-2">
+                    This is a headline
+                </h3>
+                <p class="text-14/160 text-detail">
+                    Some description that helps explain the topic can go in the slot.
+                </p>
+            </div>
+            <div class="w-full h-40 bg-foreground shadow-sm"></div>
+        </li>
+       <li class="flex flex-col justify-between w-full min-h-320 rounded-card bg-middleground shadow-lg p-32">
+            <div>
+                <h3 class="text-20/120 font-semibold mb-2">
+                    This is a headline
+                </h3>
+                <p class="text-14/160 text-detail">
+                    Some description that helps explain the topic can go in the slot.
+                </p>
+            </div>
+            <div class="w-full h-40 bg-foreground shadow-sm"></div>
+        </li>
+        <li class="flex flex-col justify-between w-full min-h-320 rounded-card bg-middleground shadow-lg p-32">
+            <div>
+                <h3 class="text-20/120 font-semibold mb-2">
+                    This is a headline
+                </h3>
+                <p class="text-14/160 text-detail">
+                    Some description that helps explain the topic can go in the slot.
+                </p>
+            </div>
+            <div class="w-full h-40 bg-foreground shadow-sm"></div>
+        </li>
+    </ul>
 </section>
 
 <div class="flex flex-col items-center justify-center gap-y-24 p-24 bg-red-100">

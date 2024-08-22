@@ -14,6 +14,7 @@ module.exports = {
       '20': '1.25rem',
       '24': '1.5rem',
       'full': '9999px',
+      'card': '1rem',
     },
     colors: {
       primary: 'rgba(var(--color-primary), <alpha-value>)',
@@ -71,8 +72,8 @@ module.exports = {
     },
     screens: {
       'sm': '768px',
-      'md': '1196px',
-      'lg': '1376px',
+      'md': '1168px',
+      'lg': '1536px',
     },
     spacing: {
       '0': '0px',
@@ -96,6 +97,7 @@ module.exports = {
       '48': '3rem',
       '56': '3.5rem',
       '64': '4rem',
+      '72': '4.5rem',
       '80': '5rem',
       '96': '6rem',
       '112': '7rem',
@@ -130,7 +132,13 @@ module.exports = {
     },
     extend: {
       maxWidth: {
-        'screen-lg': '1080px',
+        'screen-lg': '1040px',
+      },
+      opacity: {
+        '2': '.02',
+        '4': '.04',
+        '6': '.06',
+        '8': '.08',
       }
     },
   },
