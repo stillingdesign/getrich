@@ -1,0 +1,44 @@
+[
+    {
+        "label": "Approach",
+        "href": "/approach/",
+        "header": true,
+        "footer": true,
+        "mobile": true
+    },
+    {
+        "label": "Theme",
+        "href": "/theme/",
+        "header": true,
+        "footer": true,
+        "mobile": true
+    },
+    {
+        "label": "Build",
+        "href": "/build/",
+        "header": true,
+        "footer": true,
+        "mobile": true
+    },
+    {
+        "label": "Analyze",
+        "href": "/analyze/",
+        "header": true,
+        "footer": true,
+        "mobile": true
+    },
+    {
+        "label": "Legal",
+        "header": false,
+        "footer": false,
+        "subFooter": true,
+        "menuItems": [
+            {
+                "label": "Blame's Analytics",
+                "header": false,
+                "footer": true,
+                "href": "#"
+            }
+        ]
+    }
+]
