@@ -20,6 +20,33 @@
                                 )}}
                             </li>
                         {% endfor %}
+                        <li>
+                            <details>
+                                {{ element.button(
+                                    element="summary",
+                                    variant="text theme",
+                                    size="sm",
+                                    label="Summary"
+                                )}}
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            Test
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Test
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Test
+                                        </a>
+                                    </li>
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </nav>
             {% endif %}

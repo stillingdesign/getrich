@@ -1,4 +1,5 @@
 @import url("elements/_button.css");
+@import url("elements/_dropdown.css");
 @import url("elements/_layout.css");
 @import url("elements/_link.css");
 @tailwind base;
