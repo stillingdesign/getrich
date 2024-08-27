@@ -1,0 +1,53 @@
+---
+layout: "main.webc"
+seoTitle: "GetRich: A framework-free design system for marketing websites"
+seoDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
+ogTitle: "GetRich: A framework-free design system for marketing websites"
+ogDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
+ogImage: "/assets/images/og/default.jpg"
+ogImageAlt: "Person with 90s style apparrel sitting on office chair with large old computer on lap with their thumbs up."
+changefreq: daily
+---
+
+<main class="flex flex-col items-center">
+    <grid></grid>
+
+    <!--- Hero --->
+    <section>
+        <container class="flex flex-col items-center gap-72 pt-160">
+            <div class="relative flex flex-col items-center gap-y-12 max-w-896 text-center">
+                <h1 class="text-48/100 sm:text-72/100 md:text-80/100 text-balance" style="letter-spacing: -0.04em;">
+                    Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
+                </h1>
+                <p class="text-20/170 text-detail text-balance">
+                    GetRich is opinionated boilerplate for <link-txt href="#" class="">your SaaS</link-txt> brand. Bypass the bullshit and start growing your business.
+                </p>
+                <div class="flex gap-16 mt-12">
+                    <link-btn href="https://github.com/stillingdesign/getrich" class="size-sm variant-primary min-w-160">
+                        Use the template
+                        <chevronright slot="right"></chevronright>
+                    </link-btn>
+                    <link-btn href="/docs/" class="size-sm variant-secondary min-w-160">
+                        Read the docs
+                    </link-btn>
+                </div>
+            </div>
+            <dd>
+                <dd-label slot="label" class="button variant-primary size-sm">
+                    Content replaced
+                </dd-label>
+                <dd-content slot="content">
+                    <dd-item href="/test/">
+                        Testing this out
+                    </dd-item>
+                    <dd-item href="/huh/">
+                        Testing this out again
+                    </dd-item>
+                </dd-content>
+            </dd>
+            <link-btn href="/test/">
+                This is with contents
+            </link-btn>
+        </container>
+    </section>
+</main>

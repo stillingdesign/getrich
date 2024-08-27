@@ -1,0 +1,9 @@
+.container {
+    position: relative;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 65rem;
+}
+.container.absolute { position: absolute; }
+@media (min-width: 768px) { .container { padding-left: 0; padding-right: 0; } }

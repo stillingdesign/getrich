@@ -1,0 +1,11 @@
+<!--- Unified module markup --->
+
+<section webc:root="override">
+    <slot></slot>
+</section>
+
+<!--- 
+
+    CSS: Lives in assets/css/components/_section.css
+
+--->

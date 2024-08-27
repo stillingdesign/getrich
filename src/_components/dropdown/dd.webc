@@ -1,0 +1,23 @@
+<details data-dropdown webc:root="override">
+    <slot name="label"></slot>
+    <slot name="content"></slot>
+</details>
+
+<!--- CSS --->
+
+<style webc:scoped>
+    :host {
+        color:red;
+    }
+</style>
+
+<!--- Javascript --->
+
+<script>
+    const summaries = document.querySelectorAll('summary');
+    summaries.forEach(summary => {
+        summary.addEventListener('click', () => {
+            console.log('open');
+        });
+    });
+</script>

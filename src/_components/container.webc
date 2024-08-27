@@ -1,0 +1,12 @@
+<!--- Unified max-width for content --->
+
+<div class="container" webc:root="override">
+    <slot>
+    </slot>
+</div>
+
+<!--- 
+
+    CSS: Lives in assets/css/components/_container.css
+
+--->

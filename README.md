@@ -1,5 +1,5 @@
 # Get Rich
-TLDR; A boilerplate design sytem for nice SaaS marketing websites using [11ty](https://www.11ty.dev/), [Tailwind](https://tailwindcss.com/), and [Nunjucks](https://tailwindcss.com/).
+TLDR; A boilerplate design sytem for nice SaaS marketing websites using [11ty](https://www.11ty.dev/), [Tailwind](https://tailwindcss.com/), and [WebC](https://www.11ty.dev/docs/languages/webc/).
 
 It may not be the flashiest stack, but it's fast, simple, iteratable, and, _dare I say,_ scalable. Most folks on the team, _even marketers and designers,_ should be able to work directly in this. I've used a very similar setup at a few startups—design and dev velocity has never been a hangup. Miss me with that _ish_ on utility classes limiting creativity, too. Chances are, your SaaS site is mostly the same as every other, plus/minus a few colors or gradients.
 
