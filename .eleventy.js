@@ -1,11 +1,12 @@
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
 module.exports = (eleventyConfig) => {
+    eleventyConfig.addPlugin(pluginWebc, { components: "src/_components/**/*.webc", });
     eleventyConfig.addPassthroughCopy({"src/assets/images": "assets/images"});
     eleventyConfig.addPassthroughCopy({"src/assets/fonts": "assets/fonts"});
-    eleventyConfig.setServerOptions({
-        domDiff: false,
-        watch: ["src/assets/css/main.css"],
-    })
+    eleventyConfig.addPassthroughCopy('src/manifest.webmanifest');
     return {
+        htmlTemplateEngine: "webc",
         dir: {
             input: "src",
             output: "dist",

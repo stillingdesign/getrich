@@ -1,0 +1,22 @@
+<!--- Unified markup for block-style links --->
+
+<a data-link href="#" webc:root="override" class="link">
+    <slot name="left"></slot>
+    <span>
+        <slot>
+            Label
+        </slot>
+    </span>
+    <slot name="right"></slot>
+</a>
+
+<!--- 
+
+    CSS: Lives in assets/css/components/_link-txt.css
+
+    Color variants:
+    • variant-primary (default)
+    • variant-theme   (same as background)
+    • variant-text    (contrasts background)
+
+--->

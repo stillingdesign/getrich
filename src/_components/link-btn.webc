@@ -1,0 +1,31 @@
+<!--- Unified markup for block-style links --->
+
+<a data-link data-btn href="#" webc:root="override" class="button">
+    <slot name="left"></slot>
+    <span>
+        <slot>
+            Label
+        </slot>
+    </span>
+    <slot name="right"></slot>
+</a>
+
+<!--- 
+
+    CSS: Lives in assets/css/components/_link-btn.css
+
+    Color variants:
+    • variant-primary (default)
+    • variant-secondary
+    • variant-text
+
+    Size variants:
+    • size-3xs
+    • size-2xs
+    • size-xs
+    • size-sm
+    • size-md (default)
+    • size-lg
+    • size-xl
+
+--->

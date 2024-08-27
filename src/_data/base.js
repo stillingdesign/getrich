@@ -4,11 +4,11 @@ module.exports = {
     name: "GetRich",
     env: process.env.ENVIRONMENT || "local",
 
-    twitterHandle: "@goblamedesign",
-    twitterLink: "https://twitter.com/blamedesign",
-    githubLink: "https://github.com/stillingdesign/blame.design/",
-    linkedinLink: "https://www.linkedin.com/company/blame/",
-    instagramLink: "https://www.instagram.com/blame_design",
+    twitterHandle: "@mikestilling",
+    twitterLink: "https://twitter.com/mikestilling",
+    githubLink: "https://github.com/stillingdesign/getrich/",
+    linkedinLink: "https://www.linkedin.com/in/mikestilling/",
+    instagramLink: "https://www.instagram.com/mikestilling/",
 
     // Current year
     currentYear() {

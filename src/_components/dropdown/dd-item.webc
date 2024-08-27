@@ -1,0 +1,5 @@
+<li webc:root="override">
+    <a href="#">
+        <slot></slot>
+    </a>
+</li>
