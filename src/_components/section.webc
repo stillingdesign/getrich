@@ -8,4 +8,8 @@
 
     CSS: Lives in assets/css/components/_section.css
 
+    The same styling is available through the use of the .section class.
+    However, position and flex direction is intentionally unset on that class.
+    This in hopes to allow for more flexibility.
+
 --->

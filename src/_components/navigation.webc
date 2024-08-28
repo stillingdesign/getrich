@@ -1,0 +1,77 @@
+<header class="section fixed top-0 left-0 border-b border-headline/10 h-56 z-10" webc:root="override">
+    <container class="flex items-center justify-between">
+        <!--- Logo --->
+        <div class="flex items-center mr-4">
+            <a href="/" class="flex items-center h-36 px-8 -ml-8 shrink-0 button-focus">
+                <wordmark class="w-72 h-auto"></wordmark>
+            </a>
+        </div>
+        <!--- Navigation --->
+        <div class="w-full flex justify-start">
+            <nav>
+                <ul data-tab-group class="flex items-center">
+                    <div data-tab-indicator class="absolute h-full bg-headline/6 rounded-6"></div>
+                    <li data-tab webc:for="item of navigation">
+                        <!--- Dropdown --->
+                        <details open webc:if="item.header === true && item.items">
+                            <summary class="button size-sm variant-tab theme">
+                                <span @text="item.label"></span>
+                                <chevrondown></chevrondown>
+                            </summary>
+                            <div class="absolute pt-10 -mt-1">
+                                <ul class="relative flex flex-col min-w-224 bg-foreground border border-headline/10 rounded-6 shadow-xl p-2">
+                                    <li webc:for="subitem of item.items" class="relative w-full">
+                                        <a href="subitem.href" class="flex items-center text-12/100 font-medium px-12 py-12 rounded-4">
+                                            <span @text="subitem.label"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                        <!--- Non-dropdown --->
+                        <link-btn data-tab :href="item.href" class="size-sm variant-tab theme" webc:if="item.header === true && !item.items">
+                            <span @text="item.label"></span>
+                        </link-btn>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--- CTAs --->
+        <div class="flex items-center gap-4">
+            <link-btn href="#" class="size-sm variant-ghost theme">
+                Docs
+            </link-btn>
+            <link-btn href="#" class="size-sm variant-primary">
+                Get started
+                <chevronright slot="right"></chevronright>
+            </link-btn>
+        </div>
+    </container>
+</header>
+
+<!--- Javascript --->
+
+<script>
+    
+    function tabs() {
+        const tabgroup = document.querySelectorAll('[data-tab-group]');
+        tabgroup.forEach(group => {
+            const indicator = group.querySelector('[data-tab-indicator]');
+            const tabs = group.querySelectorAll('[data-tab]');
+            indicator.style.transition = 'all 300ms ease 0ms';
+            // for each tab, if it is hovered, move the indicator to that tab
+            tabs.forEach(tab => {
+                tab.addEventListener('mouseover', () => {
+                    indicator.style.opacity = 1;
+                    indicator.style.left = tab.offsetLeft + 'px';
+                    indicator.style.width = tab.offsetWidth + 'px';
+                });
+                tab.addEventListener('mouseout', () => {
+                    indicator.style.opacity = 0;
+                });
+            });
+        });
+    }
+    tabs();
+
+</script>

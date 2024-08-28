@@ -1,8 +1,10 @@
-section {
-    position: relative;
+section,
+.section {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-@media (min-width: 768px) { section { padding-left: 3rem; padding-right: 3rem; }}
+
+section { position: relative; flex-direction: column; }
+@media (min-width: 768px) { .section, section { padding-left: 3rem; padding-right: 3rem; }}

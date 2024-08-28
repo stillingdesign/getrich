@@ -9,8 +9,10 @@ ogImageAlt: "Person with 90s style apparrel sitting on office chair with large o
 changefreq: daily
 ---
 
+<navigation></navigation>
+
 <main class="flex flex-col items-center">
-    <grid></grid>
+    <grid class="hidden"></grid>
 
     <!--- Hero --->
     <section>
@@ -20,14 +22,14 @@ changefreq: daily
                     Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
                 </h1>
                 <p class="text-20/170 text-detail text-balance">
-                    GetRich is opinionated boilerplate for <link-txt href="#" class="">your SaaS</link-txt> brand. Bypass the bullshit and start growing your business.
+                    GetRich is opinionated boilerplate for <link-txt href="#" class="variant-text">your SaaS</link-txt> brand. Bypass the bullshit and start growing your business.
                 </p>
                 <div class="flex gap-16 mt-12">
                     <link-btn href="https://github.com/stillingdesign/getrich" class="size-sm variant-primary min-w-160">
                         Use the template
                         <chevronright slot="right"></chevronright>
                     </link-btn>
-                    <link-btn href="/docs/" class="size-sm variant-secondary min-w-160">
+                    <link-btn href="/docs/" class="size-sm variant-outline min-w-160">
                         Read the docs
                     </link-btn>
                 </div>
