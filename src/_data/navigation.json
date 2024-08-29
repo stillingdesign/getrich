@@ -31,7 +31,27 @@
         "href": "/theme/",
         "header": true,
         "footer": true,
-        "mobile": true
+        "mobile": true,
+        "items": [
+            {
+                "label": "It's just HTML",
+                "header": false,
+                "footer": true,
+                "href": "#"
+            },
+            {
+                "label": "Anyone can do it",
+                "header": false,
+                "footer": true,
+                "href": "#"
+            },
+            {
+                "label": "This is an example",
+                "header": false,
+                "footer": true,
+                "href": "#"
+            }
+        ]
     },
     {
         "label": "Build",

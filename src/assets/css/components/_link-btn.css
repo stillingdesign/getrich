@@ -101,6 +101,34 @@
     color: rgba(var(--color-headline), 0.6);
 }
 
+.button.variant-nav {
+    background-color: transparent;
+    color: rgba(var(--color-headline), 0.6);
+}
+
+@media (max-width: 767px) {
+    .button.variant-nav {
+        justify-content: space-between;
+        height: 3rem;
+        padding: 0 1.5rem;
+        font-size: 1rem;
+    }
+    .button.variant-nav > svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+.button.variant-nav-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+}
+
 /* Hovers */
 
 @media (hover: hover) {
@@ -124,7 +152,8 @@
     .button.size-xl:hover  > .hover-right { transform: translate3d(-0.25rem,0,0);   }
     .button > .hover-flip  { transition: transform 100ms linear 50ms }
     .button:hover > .hover-flip,
-    details:hover > .button > .hover-flip { transform: rotate3d(0,0,1,180deg);   }
+    details:hover > .button > .hover-flip,
+    details[open] > .button > .hover-flip { transform: rotate3d(0,0,1,180deg);   }
 
     .button:hover {
         background-color: rgba(var(--color-headline), 0.8);
@@ -142,7 +171,9 @@
     .button.variant-underline.theme:hover { color: rgba(var(--color-headline), 1); }
 
     details:hover > .button.variant-tab,
-    .button.variant-tab:hover { background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1); }
+    .button.variant-tab:hover,
+    details:hover > .button.variant-nav,
+    button.variant-nav:hover { background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1); }
 
     .button.variant-ghost:hover { background-color: rgba(var(--color-headline), 0.06); box-shadow: none; color: rgba(var(--color-headline), 1); }
 

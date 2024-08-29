@@ -12,7 +12,7 @@ changefreq: daily
 <navigation></navigation>
 
 <main class="flex flex-col items-center">
-    <grid class="hidden"></grid>
+    <grid class=""></grid>
 
     <!--- Hero --->
     <section>

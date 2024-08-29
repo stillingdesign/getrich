@@ -35,6 +35,8 @@ module.exports = {
         headline: 'rgba(var(--color-headline), <alpha-value>)',
         link: 'rgba(var(--color-link), <alpha-value>)',
         linkhover: 'rgba(var(--color-linkhover), <alpha-value>)',
+        current: 'currentColor',
+        transparent: 'transparent',
       },
       fontFamily: {
         'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],

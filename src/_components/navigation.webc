@@ -7,19 +7,19 @@
             </a>
         </div>
         <!--- Navigation --->
-        <div class="w-full flex justify-start">
-            <nav>
-                <ul data-tab-group class="flex items-center">
-                    <div data-tab-indicator class="absolute h-full bg-headline/6 rounded-6"></div>
+        <div class="absolute left-0 top-48 -mt-2 sm:left-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-theme sm:bg-transparent">
+            <nav class="w-full sm:w:auto">
+                <ul data-tab-group class="flex flex-col sm:flex-row sm:items-center">
+                    <div data-tab-indicator class="absolute h-full bg-headline/6 rounded-6 hidden sm:block"></div>
                     <li data-tab webc:for="item of navigation">
                         <!--- Dropdown --->
-                        <details open webc:if="item.header === true && item.items">
-                            <summary class="button size-sm variant-tab theme">
+                        <details data-hoverdown open webc:if="item.header === true && item.items">
+                            <summary class="button size-sm variant-nav theme">
                                 <span @text="item.label"></span>
                                 <chevrondown></chevrondown>
                             </summary>
-                            <div class="absolute pt-10 -mt-1">
-                                <ul class="relative flex flex-col min-w-224 bg-foreground border border-headline/10 rounded-6 shadow-xl p-2">
+                            <div data-content class="sm:absolute sm:pt-10 sm:-mt-1">
+                                <ul class="relative flex flex-col min-w-224 bg-foreground border border-headline/10 sm:rounded-6 sm:shadow-xl p-2">
                                     <li webc:for="subitem of item.items" class="relative w-full">
                                         <a href="subitem.href" class="flex items-center text-12/100 font-medium px-12 py-12 rounded-4">
                                             <span @text="subitem.label"></span>
@@ -29,7 +29,7 @@
                             </div>
                         </details>
                         <!--- Non-dropdown --->
-                        <link-btn data-tab :href="item.href" class="size-sm variant-tab theme" webc:if="item.header === true && !item.items">
+                        <link-btn data-tab :href="item.href" class="size-sm variant-nav theme" webc:if="item.header === true && !item.items">
                             <span @text="item.label"></span>
                         </link-btn>
                     </li>
@@ -45,9 +45,19 @@
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
+            <button class="flex sm:hidden flex-col gap-4 items-center justify-center w-36 h-36 -mr-10 button-focus">
+                <div class="w-16 h-2 bg-current"></div>
+                <div class="w-16 h-2 bg-current"></div>
+            </button>
         </div>
     </container>
 </header>
+
+<!--- 
+
+    CSS: For nav items lives in assets/css/components/_link-btn.css
+
+--->
 
 <!--- Javascript --->
 
@@ -59,7 +69,6 @@
             const indicator = group.querySelector('[data-tab-indicator]');
             const tabs = group.querySelectorAll('[data-tab]');
             indicator.style.transition = 'all 300ms ease 0ms';
-            // for each tab, if it is hovered, move the indicator to that tab
             tabs.forEach(tab => {
                 tab.addEventListener('mouseover', () => {
                     indicator.style.opacity = 1;
@@ -73,5 +82,37 @@
         });
     }
     tabs();
+
+    const hoverdowns = document.querySelectorAll('[data-hoverdown]');
+
+    function hoverdown(el) {
+        // el = current element
+        // e = event
+
+        const summary = el.querySelector('summary');
+        const content = el.querySelector('[data-content]');
+
+        function open(e) {
+            const tmln = gsap.timeline();
+            tmln.set(content, { autoAlpha: 0, scale: 0.8, transformOrigin: 'top left' })
+                .call(() => { el.open = true; })
+                .to(content, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out' });
+        }
+
+        function close() {
+            const tmln = gsap.timeline();
+            tmln.to(content, { autoAlpha: 0, scale: 0.8, duration: 0.1, ease: 'power3.out' })
+                .call(() => { el.open = false; });
+        }
+
+        function reset() {}
+
+        el.addEventListener('mouseenter', (e) => { open(e); });
+        el.addEventListener('mouseleave', (e) => { close(e); });
+    }
+
+    hoverdowns.forEach((el) => {
+        //hoverdown(el);
+    });
 
 </script>
