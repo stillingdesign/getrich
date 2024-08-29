@@ -19,9 +19,9 @@
                                 <chevrondown></chevrondown>
                             </summary>
                             <div data-content class="sm:absolute sm:pt-10 sm:-mt-1">
-                                <ul class="relative flex flex-col min-w-224 bg-foreground border border-headline/10 sm:rounded-6 sm:shadow-xl p-2">
+                                <ul class="relative flex flex-col min-w-224 bg-foreground border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2">
                                     <li webc:for="subitem of item.items" class="relative w-full">
-                                        <a href="subitem.href" class="flex items-center text-12/100 font-medium px-12 py-12 rounded-4">
+                                        <a :href="subitem.href" class="button variant-nav-item">
                                             <span @text="subitem.label"></span>
                                         </a>
                                     </li>

@@ -10,19 +10,19 @@
                 "label": "It's just HTML",
                 "header": false,
                 "footer": true,
-                "href": "#"
+                "href": "#test"
             },
             {
                 "label": "Anyone can do it",
                 "header": false,
                 "footer": true,
-                "href": "#"
+                "href": "#work"
             },
             {
                 "label": "This is an example",
                 "header": false,
                 "footer": true,
-                "href": "#"
+                "href": "#this"
             }
         ]
     },
