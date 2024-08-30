@@ -52,4 +52,9 @@ changefreq: daily
             </link-btn>
         </container>
     </section>
+
+    <section class="h-svh bg-background"></section>
+
+    <section class="h-svh bg-background"></section>
+
 </main>

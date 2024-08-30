@@ -7,7 +7,9 @@ module.exports = {
       borderRadius: {
         '0': '0',
         '2': '0.125rem',
+        '3': '0.1875rem',
         '4': '0.25rem',
+        '5': '0.3125rem',
         '6': '0.375rem',
         '8': '0.5rem',
         '10': '0.625rem',
@@ -145,6 +147,10 @@ module.exports = {
         '952': '59.5rem',
       },
       extend: {
+        height: {
+          'dvh-56': 'calc(100dvh - 3.5rem)',
+          'dvh-112': 'calc(100dvh - 7rem)',
+        },
         maxWidth: {
           'screen-lg': '1040px',
         },

@@ -7,34 +7,49 @@
             </a>
         </div>
         <!--- Navigation --->
-        <div class="absolute left-0 top-48 -mt-2 sm:left-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-theme sm:bg-transparent">
-            <nav class="w-full sm:w:auto">
-                <ul data-tab-group class="flex flex-col sm:flex-row sm:items-center">
-                    <div data-tab-indicator class="absolute h-full bg-headline/6 rounded-6 hidden sm:block"></div>
-                    <li data-tab webc:for="item of navigation">
-                        <!--- Dropdown --->
-                        <details data-hoverdown open webc:if="item.header === true && item.items">
-                            <summary class="button size-sm variant-nav theme">
+        <div class="absolute left-0 top-48 -mt-2 h-dvh-56 sm:h-auto sm:left-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-theme sm:bg-transparent">
+            <nav class="relative w-full sm:w:auto h-dvh-112 sm:h-auto overflow-y-scroll sm:overflow-y-visible">
+                <tab-group class="relative w-full" tab="bg-headline/6 rounded-5 hidden">
+                    <ul class="relative w-full flex flex-col sm:flex-row sm:items-center">
+                        <li webc:for="item of navigation">
+                            <!--- Dropdown --->
+                            <details data-hoverdown webc:if="item.header === true && item.items">
+                                <summary class="button size-sm variant-nav theme">
+                                    <span @text="item.label"></span>
+                                    <chevrondown data-chevron></chevrondown>
+                                </summary>
+                                <div data-content class="relative sm:absolute overflow-hidden sm:overflow-visible sm:origin-top-left">
+                                    <ul class="relative flex flex-col min-w-160 sm:mt-10 bg-foreground sm:border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2 variant-nav-item-list">
+                                        <li webc:for="subitem of item.items" class="relative w-full">
+                                            <a :href="subitem.href" class="button variant-nav-item">
+                                                <p lass="variant-nav-item-label" @text="subitem.label"></p>
+                                                <chevronright></chevronright>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <!--- Non-dropdown --->
+                            <link-btn data-tab :href="item.href" class="size-sm variant-nav theme" webc:if="item.header === true && !item.items">
                                 <span @text="item.label"></span>
-                                <chevrondown></chevrondown>
-                            </summary>
-                            <div data-content class="sm:absolute sm:pt-10 sm:-mt-1">
-                                <ul class="relative flex flex-col min-w-224 bg-foreground border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2">
-                                    <li webc:for="subitem of item.items" class="relative w-full">
-                                        <a :href="subitem.href" class="button variant-nav-item">
-                                            <span @text="subitem.label"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </details>
-                        <!--- Non-dropdown --->
-                        <link-btn data-tab :href="item.href" class="size-sm variant-nav theme" webc:if="item.header === true && !item.items">
-                            <span @text="item.label"></span>
-                        </link-btn>
-                    </li>
-                </ul>
+                            </link-btn>
+                        </li>
+                    </ul>
+                </tab-group>
             </nav>
+            <div class="absolute bottom-0 left-0 flex sm:hidden items-center justify-between h-56 w-full border-t border-headline/10 px-24">
+                <div class="flex items-center -ml-12">
+                    <link-btn href="#" class="size-sm variant-ghost theme">
+                        Sign in
+                        <chevronright slot="right"></chevronright>
+                    </link-btn>
+                </div>
+                <div class="flex items-center -ml-12">
+                    <link-btn href="#" class="size-sm variant-ghost theme">
+                        Contact
+                    </link-btn>
+                </div>
+            </div>
         </div>
         <!--- CTAs --->
         <div class="flex items-center gap-4">
@@ -45,7 +60,7 @@
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
-            <button class="flex sm:hidden flex-col gap-4 items-center justify-center w-36 h-36 -mr-10 button-focus">
+            <button class="flex sm:hidden flex-col gap-4 items-center justify-center w-36 h-36 ml-4 -mr-10 button-focus">
                 <div class="w-16 h-2 bg-current"></div>
                 <div class="w-16 h-2 bg-current"></div>
             </button>
@@ -63,56 +78,69 @@
 
 <script>
     
-    function tabs() {
-        const tabgroup = document.querySelectorAll('[data-tab-group]');
-        tabgroup.forEach(group => {
-            const indicator = group.querySelector('[data-tab-indicator]');
-            const tabs = group.querySelectorAll('[data-tab]');
-            indicator.style.transition = 'all 300ms ease 0ms';
-            tabs.forEach(tab => {
-                tab.addEventListener('mouseover', () => {
-                    indicator.style.opacity = 1;
-                    indicator.style.left = tab.offsetLeft + 'px';
-                    indicator.style.width = tab.offsetWidth + 'px';
-                });
-                tab.addEventListener('mouseout', () => {
-                    indicator.style.opacity = 0;
-                });
-            });
-        });
-    }
-    tabs();
-
     const hoverdowns = document.querySelectorAll('[data-hoverdown]');
 
     function hoverdown(el) {
-        // el = current element
-        // e = event
-
-        const summary = el.querySelector('summary');
         const content = el.querySelector('[data-content]');
+        const icon = el.querySelector('[data-chevron]');
 
-        function open(e) {
-            const tmln = gsap.timeline();
-            tmln.set(content, { autoAlpha: 0, scale: 0.8, transformOrigin: 'top left' })
-                .call(() => { el.open = true; })
-                .to(content, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out' });
+        function open(targetEl, desktop = true) {
+            const targetContent = targetEl.querySelector('[data-content]');
+            const tmln = gsap.timeline({});
+            targetEl.open = true;
+            if (desktop) { tmln.from(targetContent, { overwrite: true, opacity: 0, scale: 0.5, duration: 0.4, ease: 'power3.out' }); }
+            else { tmln.from(targetContent, { overwrite: true, opacity: 0, height: 0, duration: 0.4, ease: 'power3.out' }); }
+            tmln.set(targetContent, { clearProps: 'all' });
         }
 
-        function close() {
-            const tmln = gsap.timeline();
-            tmln.to(content, { autoAlpha: 0, scale: 0.8, duration: 0.1, ease: 'power3.out' })
-                .call(() => { el.open = false; });
+        function close(targetEl, desktop = true) {
+            const targetContent = targetEl.querySelector('[data-content]');
+            const targetIcon = targetEl.querySelector('[data-chevron]');
+            const tmln = gsap.timeline({});
+            if (desktop) { tmln.to(targetContent, { scale: 0.8, opacity: 0, duration: 0.25, ease: 'power3.out' }); }
+            else { tmln.to(targetContent, { height: 0, opacity: 0, duration: 0.4, ease: 'power3.out' }); }
+            tmln.to(targetIcon, { rotationZ: 0, duration: 0.25, ease: 'power2.out' }, "-=0.25");
+            tmln.call(() => { targetEl.open = false; })
+                .set(targetContent, { clearProps: 'all' })
+                .set(targetIcon, { clearProps: 'all' });
         }
 
-        function reset() {}
+        function closeInactive(currentEl) {
+            hoverdowns.forEach((hoverdown) => {
+                if (hoverdown !== currentEl && hoverdown.open) {
+                    close(hoverdown, window.innerWidth >= 768);
+                }
+            });
+        }
 
-        el.addEventListener('mouseenter', (e) => { open(e); });
-        el.addEventListener('mouseleave', (e) => { close(e); });
+        function toggle(e) {
+            e.preventDefault();
+            const isDesktop = window.innerWidth >= 768;
+            if (el.open) { close(el, isDesktop); }
+            else { open(el, isDesktop); closeInactive(el); }
+        }
+
+        function hover() {
+            if (window.innerWidth >= 768) {
+                el.addEventListener('mouseenter', toggle);
+                el.addEventListener('mouseleave', () => close(el, true));
+            } else {
+                el.removeEventListener('mouseenter', toggle);
+                el.removeEventListener('mouseleave', () => close(el, true));
+            }
+        }
+
+        function reset() {
+            gsap.set(content, { clearProps: 'all' });
+            gsap.set(icon, { clearProps: 'all' });
+            el.open = false;
+        }
+
+        hover();
+        el.addEventListener('click', toggle);
+        window.addEventListener('resize', () => { reset(); hover(); });
     }
 
-    hoverdowns.forEach((el) => {
-        //hoverdown(el);
-    });
+    hoverdowns.forEach(hoverdown);
 
 </script>

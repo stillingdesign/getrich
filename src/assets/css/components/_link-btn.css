@@ -142,6 +142,8 @@
         height: 3rem;
         padding: 0 1.5rem;
         font-size: 1rem;
+        border-radius: 0;
+        border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.06);
 
         & > svg {
             width: 1.25rem;
@@ -151,7 +153,9 @@
 
     @media (hover: hover) {
         &:hover {
-            background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1);
+            background-color: transparent;
+            box-shadow: none;
+            color: rgba(var(--color-headline), 1);
         }
     }
 }
@@ -169,29 +173,42 @@
     color: rgba(var(--color-headline), 0.6);
     background-color: transparent;
     box-shadow: none;
+    transition: color 100ms linear 0ms, background-color 100ms linear 0ms, border 100ms linear 0ms;
 
     @media (max-width: 767px) {
-        height: 2rem;
+        height: 2.5rem;
         padding: 0 1.5rem;
         font-size: 0.875rem;
         border-radius: 0;
         border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.06);
-        margin-bottom: -0.0625rem;
 
         & > svg {
-            width: 1.25rem;
-            height: 1.25rem;
+            display: none;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: rgba(var(--color-headline), 1);
+            background-color: rgba(var(--color-highlight), 1);
+        }
+    }
+
+    @media (hover: hover) and (min-width: 768px) {
+        &:hover {
+            border: 0.0625rem solid rgba(var(--color-headline), 0.12);
         }
     }
 }
 
 /* Hovers utilities */
 
-@media (hover: hover) {
+@media (hover: hover) and (min-width: 768px)  {
 
     /* Icons */
     .button > .hover-left,
     .button > .hover-right { transition: transform 100ms linear 50ms }
+    .button:hover  > .hover-left  { transform: translate3d(0.1875rem,0,0);  }
     .button.size-3xs:hover > .hover-left  { transform: translate3d(0.125rem,0,0);   }
     .button.size-2xs:hover > .hover-left  { transform: translate3d(0.125rem,0,0);   }
     .button.size-xs:hover  > .hover-left  { transform: translate3d(0.125rem,0,0);   }
@@ -199,6 +216,7 @@
     .button.size-md:hover  > .hover-left  { transform: translate3d(0.1875rem,0,0);  }
     .button.size-lg:hover  > .hover-left  { transform: translate3d(0.1875rem,0,0);  }
     .button.size-xl:hover  > .hover-left  { transform: translate3d(0.25rem,0,0);    }
+    .button:hover  > .hover-right { transform: translate3d(-0.1875rem,0,0); }
     .button.size-3xs:hover > .hover-right { transform: translate3d(-0.125rem,0,0);  }
     .button.size-2xs:hover > .hover-right { transform: translate3d(-0.125rem,0,0);  }
     .button.size-xs:hover  > .hover-right { transform: translate3d(-0.125rem,0,0);  }
@@ -206,16 +224,18 @@
     .button.size-md:hover  > .hover-right { transform: translate3d(-0.1875rem,0,0); }
     .button.size-lg:hover  > .hover-right { transform: translate3d(-0.1875rem,0,0); }
     .button.size-xl:hover  > .hover-right { transform: translate3d(-0.25rem,0,0);   }
-    .button > .hover-flip  { transition: transform 100ms linear 50ms }
     .button:hover > .hover-flip { transform: rotate3d(0,0,1,180deg); }
 
     /* Nested within details */
-    details:hover > .button > .hover-flip,
-    details[open] > .button > .hover-flip { transform: rotate3d(0,0,1,180deg);   }
+    details:hover > .button > .hover-flip
     details:hover > .button.variant-tab,
     details:hover > .button.variant-nav { background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1); }
 
 }
+
+/* Details Utilities */
+.button > .hover-flip  { transition: transform 100ms cubic-bezier(0,0.3,0.3,1) 0ms; }
+details[open] > .button > .hover-flip { transform: rotate3d(0,0,1,180deg);   }
 
 /* Focus utilities */
 
@@ -240,3 +260,6 @@
     border-radius: 0.375rem;
     box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1) !important;
 }
+
+/* Misc utilities */
+details summary::-webkit-details-marker { display:none; }

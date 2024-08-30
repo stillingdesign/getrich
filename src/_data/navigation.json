@@ -8,18 +8,21 @@
         "items": [
             {
                 "label": "It's just HTML",
+                "desc": "This is to see how this looks",
                 "header": false,
                 "footer": true,
                 "href": "#test"
             },
             {
                 "label": "Anyone can do it",
+                "desc": "This is to see how this looks",
                 "header": false,
                 "footer": true,
                 "href": "#work"
             },
             {
                 "label": "This is an example",
+                "desc": "This is to see how this looks",
                 "header": false,
                 "footer": true,
                 "href": "#this"
@@ -35,18 +38,21 @@
         "items": [
             {
                 "label": "It's just HTML",
+                "desc": "This is to see how this looks",
                 "header": false,
                 "footer": true,
                 "href": "#"
             },
             {
                 "label": "Anyone can do it",
+                "desc": "This is to see how this looks",
                 "header": false,
                 "footer": true,
                 "href": "#"
             },
             {
                 "label": "This is an example",
+                "desc": "This is to see how this looks",
                 "header": false,
                 "footer": true,
                 "href": "#"

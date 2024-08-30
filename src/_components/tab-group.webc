@@ -1,0 +1,37 @@
+<div data-tab-group class="flex" webc:root="override">
+    <div data-tab class="absolute sm:block opacity-0" :class="tab"></div>
+    <slot></slot>
+</div>
+
+<script>
+    function tabs() {
+        const tabgroup = document.querySelectorAll('[data-tab-group]');
+        tabgroup.forEach(group => {
+            const highlight = group.querySelector('[data-tab]');
+            const tabs = group.querySelectorAll('&>ul>li>a, &>ul>li>button, &>ul>li>details');
+
+            function set() {
+                highlight.style.transition = 'all 300ms ease 0ms';
+                highlight.style.width = tabs[0].offsetWidth + 'px';
+                highlight.style.height = tabs[0].offsetHeight + 'px';
+                highlight.style.top = tabs[0].offsetTop + 'px';
+                highlight.style.left = tabs[0].offsetLeft + 'px';
+            }
+            set();
+            function indicate(tab) {
+                highlight.style.opacity = 1;
+                highlight.style.top = tab.offsetTop + 'px';
+                highlight.style.left = tab.offsetLeft + 'px';
+                highlight.style.width = tab.offsetWidth + 'px';
+                highlight.style.height = tab.offsetHeight + 'px';
+            }
+            function close() { highlight.style.opacity = 0; }
+            tabs.forEach(tab => {
+                tab.addEventListener('mouseover', () => { indicate(tab); });
+                tab.addEventListener('mouseout', () => { close(); });
+                window.addEventListener('resize', () => { set(); });
+            });
+        });
+    }
+    tabs();
+</script>
