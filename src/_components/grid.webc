@@ -2,18 +2,18 @@
 
 <div class="absolute w-full h-full flex items-center justify-center sm:px-48" webc:root="override">
     <div class="container flex justify-between h-full">
-        <div class="items-center justify-center w-24 sm:w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 flex -ml-24 sm:-ml-16"><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 flex                         "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/8"></div></div>
-        <div class="items-center justify-center w-24 sm:w-16 h-full border-x border-inverse/6 border-dashed bg-inverse/2 flex -mr-24 sm:-mr-16"><div class="h-full border-r border-inverse/8"></div></div>
+        <div class="items-center justify-center w-24 sm:w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 flex -ml-24 sm:-ml-16"><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 flex                         "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 hidden sm:flex               "><div class="h-full border-r border-inverse/6"></div></div>
+        <div class="items-center justify-center w-24 sm:w-16 h-full border-x border-inverse/4 border-dashed bg-inverse/2 flex -mr-24 sm:-mr-16"><div class="h-full border-r border-inverse/6"></div></div>
     </div>
 </div>

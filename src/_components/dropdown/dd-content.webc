@@ -1,5 +1,0 @@
-<div webc:root="override">
-    <ul>
-        <slot></slot>
-    </ul>
-</div>

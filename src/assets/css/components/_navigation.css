@@ -97,7 +97,7 @@
 
 [data-navigation]:has(input:checked) {
     @media (max-width: 767px) {
-        [data-navigation-bg] { background-color: rgba(var(--color-theme), 1); opacity: 1; }
+        [data-navigation-bg] { background-color: rgba(var(--color-background), 1); opacity: 1; }
         [data-navigation-icon] { transform: rotate3d(0, 0, 1, -45deg); }
         [data-navigation-icon] > div:nth-child(1) { transform: translate3d(0, 0.1875rem, 0) rotate3d(0, 0, 1, 90deg); }
         [data-navigation-icon] > div:nth-child(2) { transform: translate3d(0, -0.1875rem, 0); }

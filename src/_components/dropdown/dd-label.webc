@@ -1,9 +1,0 @@
-<summary webc:root="override">
-    <slot></slot>
-</summary>
-
-<style>
-    summary {
-        color:green;
-    }
-</style>

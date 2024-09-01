@@ -34,22 +34,6 @@ changefreq: daily
                     </link-btn>
                 </div>
             </div>
-            <dd>
-                <dd-label slot="label" class="button variant-primary size-sm">
-                    Content replaced
-                </dd-label>
-                <dd-content slot="content">
-                    <dd-item href="/test/">
-                        Testing this out
-                    </dd-item>
-                    <dd-item href="/huh/">
-                        Testing this out again
-                    </dd-item>
-                </dd-content>
-            </dd>
-            <link-btn href="/test/">
-                This is with contents
-            </link-btn>
         </container>
     </section>
 

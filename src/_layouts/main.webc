@@ -50,7 +50,7 @@
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
 
-<body>
+<body class="text-headline">
     <div>
         <!--- Content --->
         <div @html="this.content">

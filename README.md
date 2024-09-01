@@ -7,6 +7,6 @@ Most _good_ SaaS brands are a unique color (usually somewhere between blue and p
 
 Having seen complete messes of marketing and analytics integrations at _most_ companies I've been at, I highly recommend keeping things simple here, too. **Use markdown, not a CMS.** Quite frankly, it's easier to learn and manage _than Contentful_. For tracking, just **use [Fathom](https://usefathom.com) or [Plausible](https://plausible.io/).** You're not going to get _that much_ more out of something else—and we're all tired of seeing cookie consent banners before homepage content. While [Vercel](https://vercel.com) looks cooler, **[Netlify](https://www.netlify.com) makes [handling forms](https://www.netlify.com/platform/core/forms/) and [A/B testing](https://docs.netlify.com/site-deploys/split-testing/) a lot easier.**
 
-**Once I get through the initial design of this, I'll create some getting started videos.** If you dive in before then, just update the color variables in `src/assets/main.css`, then mirror those in `tailwind.config.js`, and _(potentially)_ update your button styles in `src/assets/css/elements/_button.css`.
+**Once I get through the initial design of this, I'll create some getting started videos.** If you dive in before then, just update the color variables in `src/assets/main.css` and _(potentially)_ update your button styles in `src/assets/css/elements/_button.css`.
 
 ✌️

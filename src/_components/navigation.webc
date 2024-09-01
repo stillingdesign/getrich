@@ -25,7 +25,7 @@
             </div>
         </div>
         <!--- Navigation --->
-        <div data-navigation-contents class="absolute right-0 top-48 -mt-2 h-dvh-56 sm:h-auto sm:right-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-theme sm:bg-transparent">
+        <div data-navigation-contents class="absolute right-0 top-48 -mt-2 h-dvh-56 sm:h-auto sm:right-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-background sm:bg-transparent">
             <nav class="relative w-full sm:w:auto h-dvh-112 sm:h-auto overflow-y-scroll sm:overflow-y-visible">
                 <tab-group class="relative w-full" tab="bg-headline/6 rounded-5 hidden">
                     <ul class="relative w-full flex flex-col sm:flex-row sm:items-center">
@@ -37,7 +37,7 @@
                                     <chevrondown data-chevron></chevrondown>
                                 </summary>
                                 <div data-content class="relative sm:absolute overflow-hidden sm:overflow-visible sm:origin-top-left">
-                                    <ul class="relative flex flex-col min-w-160 sm:mt-8 bg-foreground sm:border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2 variant-nav-item-list">
+                                    <ul class="relative flex flex-col min-w-160 sm:mt-8 bg-middleground sm:border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2 variant-nav-item-list">
                                         <li webc:for="subitem of item.items" class="relative w-full">
                                             <a :href="subitem.href" class="button variant-nav-item">
                                                 <p lass="variant-nav-item-label" @text="subitem.label"></p>
