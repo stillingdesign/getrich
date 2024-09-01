@@ -133,78 +133,9 @@
     }
 }
 
-.button.variant-nav {
-    background-color: transparent;
-    color: rgba(var(--color-headline), 0.6);
-
-    @media (max-width: 767px) {
-        justify-content: space-between;
-        height: 3rem;
-        padding: 0 1.5rem;
-        font-size: 1rem;
-        border-radius: 0;
-        border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.06);
-
-        & > svg {
-            width: 1.25rem;
-            height: 1.25rem;
-        }
-    }
-
-    @media (hover: hover) {
-        &:hover {
-            background-color: transparent;
-            box-shadow: none;
-            color: rgba(var(--color-headline), 1);
-        }
-    }
-}
-
-.button.variant-nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    font-weight: 500;
-    line-height: 1;
-    padding: 0 0.75rem;
-    height: 2rem;
-    border-radius: 0.25rem;
-    color: rgba(var(--color-headline), 0.6);
-    background-color: transparent;
-    box-shadow: none;
-    transition: color 100ms linear 0ms, background-color 100ms linear 0ms, border 100ms linear 0ms;
-
-    @media (max-width: 767px) {
-        height: 2.5rem;
-        padding: 0 1.5rem;
-        font-size: 0.875rem;
-        border-radius: 0;
-        border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.06);
-
-        & > svg {
-            display: none;
-        }
-    }
-
-    @media (hover: hover) {
-        &:hover {
-            color: rgba(var(--color-headline), 1);
-            background-color: rgba(var(--color-highlight), 1);
-        }
-    }
-
-    @media (hover: hover) and (min-width: 768px) {
-        &:hover {
-            border: 0.0625rem solid rgba(var(--color-headline), 0.12);
-        }
-    }
-}
-
-/* Hovers utilities */
+/* Icon hover utilities */
 
 @media (hover: hover) and (min-width: 768px)  {
-
     /* Icons */
     .button > .hover-left,
     .button > .hover-right { transition: transform 100ms linear 50ms }
@@ -225,12 +156,6 @@
     .button.size-lg:hover  > .hover-right { transform: translate3d(-0.1875rem,0,0); }
     .button.size-xl:hover  > .hover-right { transform: translate3d(-0.25rem,0,0);   }
     .button:hover > .hover-flip { transform: rotate3d(0,0,1,180deg); }
-
-    /* Nested within details */
-    details:hover > .button > .hover-flip
-    details:hover > .button.variant-tab,
-    details:hover > .button.variant-nav { background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1); }
-
 }
 
 /* Details Utilities */

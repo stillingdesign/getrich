@@ -1,25 +1,43 @@
-<header class="section fixed top-0 left-0 border-b border-headline/10 h-56 z-10" webc:root="override">
+<header data-navigation class="section fixed top-0 left-0 border-b border-headline/10 h-56 z-50" webc:root="override">
+    <div data-navigation-bg class="absolute top-0 left-0 w-full h-full bg-background/95 backdrop-blur-sm"></div>
     <container class="flex items-center justify-between">
         <!--- Logo --->
-        <div class="flex items-center mr-4">
+        <div class="relative flex items-center mr-4">
             <a href="/" class="flex items-center h-36 px-8 -ml-8 shrink-0 button-focus">
                 <wordmark class="w-72 h-auto"></wordmark>
             </a>
         </div>
+        <!--- Mobile CTAs --->
+        <div class="relative flex sm:hidden items-center gap-4">
+            <link-btn href="#" class="size-sm variant-ghost theme">
+                Docs
+            </link-btn>
+            <link-btn href="#" class="size-sm variant-primary">
+                Get started
+                <chevronright slot="right"></chevronright>
+            </link-btn>
+            <div class="relative ml-4 -mr-10 flex items-center justify-center sm:hidden">
+                <div data-navigation-icon class="flex flex-col gap-4 items-center justify-center w-36 h-36">
+                    <div class="w-16 h-2 bg-current origin-center"></div>
+                    <div class="w-16 h-2 bg-current origin-center"></div>
+                </div>
+                <input data-navigation-toggle type="checkbox" name="Toggle navigation menu" aria-label="Toggle navigation menu" class="absolute flex items-center justify-center w-full h-full opacity-0 cursor-pointer">
+            </div>
+        </div>
         <!--- Navigation --->
-        <div class="absolute left-0 top-48 -mt-2 h-dvh-56 sm:h-auto sm:left-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-theme sm:bg-transparent">
+        <div data-navigation-contents class="absolute right-0 top-48 -mt-2 h-dvh-56 sm:h-auto sm:right-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-theme sm:bg-transparent">
             <nav class="relative w-full sm:w:auto h-dvh-112 sm:h-auto overflow-y-scroll sm:overflow-y-visible">
                 <tab-group class="relative w-full" tab="bg-headline/6 rounded-5 hidden">
                     <ul class="relative w-full flex flex-col sm:flex-row sm:items-center">
                         <li webc:for="item of navigation">
                             <!--- Dropdown --->
                             <details data-hoverdown webc:if="item.header === true && item.items">
-                                <summary class="button size-sm variant-nav theme">
+                                <summary class="button size-md variant-nav theme">
                                     <span @text="item.label"></span>
                                     <chevrondown data-chevron></chevrondown>
                                 </summary>
                                 <div data-content class="relative sm:absolute overflow-hidden sm:overflow-visible sm:origin-top-left">
-                                    <ul class="relative flex flex-col min-w-160 sm:mt-10 bg-foreground sm:border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2 variant-nav-item-list">
+                                    <ul class="relative flex flex-col min-w-160 sm:mt-8 bg-foreground sm:border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2 variant-nav-item-list">
                                         <li webc:for="subitem of item.items" class="relative w-full">
                                             <a :href="subitem.href" class="button variant-nav-item">
                                                 <p lass="variant-nav-item-label" @text="subitem.label"></p>
@@ -30,7 +48,7 @@
                                 </div>
                             </details>
                             <!--- Non-dropdown --->
-                            <link-btn data-tab :href="item.href" class="size-sm variant-nav theme" webc:if="item.header === true && !item.items">
+                            <link-btn data-tab :href="item.href" class="size-md variant-nav theme" webc:if="item.header === true && !item.items">
                                 <span @text="item.label"></span>
                             </link-btn>
                         </li>
@@ -51,26 +69,22 @@
                 </div>
             </div>
         </div>
-        <!--- CTAs --->
-        <div class="flex items-center gap-4">
-            <link-btn href="#" class="size-sm variant-ghost theme">
+        <!-- Desktop CTAs -->
+        <div class="hidden sm:flex items-center gap-4">
+            <link-btn href="#" class="size-md variant-ghost theme">
                 Docs
             </link-btn>
-            <link-btn href="#" class="size-sm variant-primary">
+            <link-btn href="#" class="size-md variant-primary">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
-            <button class="flex sm:hidden flex-col gap-4 items-center justify-center w-36 h-36 ml-4 -mr-10 button-focus">
-                <div class="w-16 h-2 bg-current"></div>
-                <div class="w-16 h-2 bg-current"></div>
-            </button>
         </div>
     </container>
 </header>
 
 <!--- 
 
-    CSS: For nav items lives in assets/css/components/_link-btn.css
+    CSS: For nav related stuff lives in assets/css/components/_navigation.css
 
 --->
 

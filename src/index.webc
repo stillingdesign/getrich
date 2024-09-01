@@ -11,8 +11,8 @@ changefreq: daily
 
 <navigation></navigation>
 
-<main class="flex flex-col items-center">
-    <grid class=""></grid>
+<main class="relative flex flex-col items-center bg-background">
+    <grid class="z-10 h-full pointer-events-none"></grid>
 
     <!--- Hero --->
     <section>
@@ -53,7 +53,7 @@ changefreq: daily
         </container>
     </section>
 
-    <section class="h-svh bg-background"></section>
+    <section class="h-svh bg-foreground"></section>
 
     <section class="h-svh bg-background"></section>
 
