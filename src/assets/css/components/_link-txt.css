@@ -1,4 +1,5 @@
 .link {
+    z-index: 1;
     position: relative;
     color: rgba(var(--color-primary), 1);
     white-space: nowrap;
@@ -49,9 +50,7 @@
     color: rgba(var(--white), 1);
 }
 
-.link:focus-visible:after,
-.link.variant-theme:focus-visible:after,
-.link.variant-text:focus-visible:after { background-color: transparent; }
+.link:focus-visible:after { opacity: 0; }
 
 .link:focus-visible:before {
     opacity: 1;

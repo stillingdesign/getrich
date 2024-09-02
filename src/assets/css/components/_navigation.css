@@ -91,11 +91,11 @@
             opacity: 1;
         }
         
-        input { display: none; }
+        [data-navigation-toggle] { display: none; }
     }
 }
 
-[data-navigation]:has(input:checked) {
+[data-navigation]:has([data-navigation-toggle]:checked) {
     @media (max-width: 767px) {
         [data-navigation-bg] { background-color: rgba(var(--color-background), 1); opacity: 1; }
         [data-navigation-icon] { transform: rotate3d(0, 0, 1, -45deg); }

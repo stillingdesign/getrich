@@ -15,7 +15,7 @@ changefreq: daily
     <grid class="z-10 h-full pointer-events-none"></grid>
 
     <!--- Hero --->
-    <section>
+    <section class="bg-background/0 z-10">
         <container class="flex flex-col items-center gap-72 pt-160">
             <div class="relative flex flex-col items-center gap-y-12 max-w-896 text-center">
                 <h1 class="text-48/100 sm:text-72/100 md:text-80/100 text-balance" style="letter-spacing: -0.04em;">

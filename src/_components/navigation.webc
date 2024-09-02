@@ -1,5 +1,5 @@
 <header data-navigation class="section fixed top-0 left-0 border-b border-headline/10 h-56 z-50" webc:root="override">
-    <div data-navigation-bg class="absolute top-0 left-0 w-full h-full bg-background/95 backdrop-blur-sm"></div>
+    <div data-navigation-bg class="absolute top-0 left-0 w-full h-full bg-background/95 backdrop-blur-md"></div>
     <container class="flex items-center justify-between">
         <!--- Logo --->
         <div class="relative flex items-center mr-4">
@@ -92,6 +92,9 @@
 
 <script>
     
+    const sections = document.querySelectorAll('section');
+    const navigation =  document.querySelector('[data-navigation]');
+    const navigationBg =  document.querySelector('[data-navigation-bg]');
     const hoverdowns = document.querySelectorAll('[data-hoverdown]');
 
     function hoverdown(el) {
@@ -156,5 +159,29 @@
     }
 
     hoverdowns.forEach(hoverdown);
+
+    function setNavigationBg() {
+        sections.forEach((section) => {
+            const bgColor = window.getComputedStyle(section).backgroundColor;
+            const values = bgColor.replace(/rgba?\(|\)|\s/g, '').split(',');
+            function updateBg() {
+                console.log('fire')
+                const tmln = gsap.timeline({});
+                tmln.to(navigationBg, { backgroundColor: `rgba(${values[0]},${values[1]},${values[2]}, 0.95)`, duration: 0.25, ease: 'power1.out' });
+            }
+            const tmln = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top top',
+                    end: 'bottom top',
+                    onEnter: () => {updateBg();},
+                    onEnterBack: () => {updateBg();},
+                }
+            });
+        });
+    }
+    
+    setNavigationBg();
+    
 
 </script>
