@@ -91,11 +91,11 @@
             opacity: 1;
         }
         
-        [data-navigation-toggle] { display: none; }
+        [data-toggle-navigation] { display: none; }
     }
 }
 
-[data-navigation]:has([data-navigation-toggle]:checked) {
+[data-navigation]:has([data-toggle-navigation]:checked) {
     @media (max-width: 767px) {
         [data-navigation-bg] { background-color: rgba(var(--color-background), 1); opacity: 1; }
         [data-navigation-icon] { transform: rotate3d(0, 0, 1, -45deg); }
@@ -111,7 +111,7 @@
     }
 }
 
-[data-navigation]:has(input:focus-visible) {
+[data-navigation]:has([data-toggle-navigation]:focus-visible) {
     [data-navigation-icon] {
         border-radius: 0.3125rem;
         outline: none !important;
@@ -119,5 +119,44 @@
         border-color: rgba(var(--color-primary), 1) !important;
         color: rgba(var(--white), 1) !important;
         box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1) !important;
+    }
+}
+
+[data-toggle-scheme] > [data-toggle-knob] { transition: transform 300ms cubic-bezier(0,0.3,0.3,1) 0ms; }
+[data-toggle-scheme] > [data-toggle-dark],
+[data-toggle-scheme] > [data-toggle-light] { transition: opacity 300ms cubic-bezier(0,0.3,0.3,1) 0ms; }
+
+@media (prefers-color-scheme: light) {
+    [data-toggle-scheme] > [data-toggle-knob] { transform: translate3d(0, 0, 0); }
+    [data-toggle-scheme] > [data-toggle-dark] { opacity: 0.3; }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-toggle-scheme] > [data-toggle-knob] { transform: translate3d(1.25rem, 0, 0); }
+    [data-toggle-scheme] > [data-toggle-light] { opacity: 0.3; }
+    [data-toggle-scheme] > [data-toggle-dark] { opacity: 1; }
+}
+
+:root[color-scheme="light"] {
+    [data-toggle-scheme] > [data-toggle-knob] { transform: translate3d(0, 0, 0); }
+    [data-toggle-scheme] > [data-toggle-dark] { opacity: 0.3; }
+}
+
+:root[color-scheme="dark"] {
+    [data-toggle-scheme] > [data-toggle-knob] { transform: translate3d(1.25rem, 0, 0); }
+    [data-toggle-scheme] > [data-toggle-light] { opacity: 0.3; }
+    [data-toggle-scheme] > [data-toggle-dark] { opacity: 1; }
+}
+
+
+[data-toggle-scheme]:has([data-toggle-scheme-checkbox]:focus-visible) {
+    outline: none !important;
+    background-color: rgba(var(--color-primary), 1) !important;
+    border-color: rgba(var(--color-primary), 1) !important;
+    color: rgba(var(--white), 1) !important;
+    box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1) !important;
+    [data-toggle-knob] {
+        border-color: rbga(var(--white), 0.2);
+        background-color: rgba(var(--white), 0.06);
     }
 }

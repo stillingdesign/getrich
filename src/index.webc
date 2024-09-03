@@ -11,12 +11,12 @@ changefreq: daily
 
 <navigation></navigation>
 
-<main class="relative flex flex-col items-center bg-background">
-    <grid class="z-10 h-full pointer-events-none"></grid>
+<main id="main" class="relative flex flex-col items-center bg-background">
+    <grid class="z-10 h-full pointer-events-none hidden"></grid>
 
     <!--- Hero --->
-    <section class="bg-background/0 z-10">
-        <container class="flex flex-col items-center gap-72 pt-160">
+    <section class="bg-background/0 z-10 pb-160">
+        <container class="flex flex-col items-center gap-72 pt-160 mb-72">
             <div class="relative flex flex-col items-center gap-y-12 max-w-896 text-center">
                 <h1 class="text-48/100 sm:text-72/100 md:text-80/100 text-balance" style="letter-spacing: -0.04em;">
                     Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
@@ -35,10 +35,17 @@ changefreq: daily
                 </div>
             </div>
         </container>
+        <container class="p-4 rounded-16 bg-middleground shadow-2xl border border-headline/10">
+            <div class="relative w-full flex aspect-16/9 bg-background rounded-12 border border-headline/6">
+
+            </div>
+        </container>
     </section>
 
-    <section class="h-svh bg-foreground"></section>
+    <section class="h-svh bg-middleground"></section>
 
     <section class="h-svh bg-background"></section>
 
+    <section class="h-svh bg-middleground"></section>
+    
 </main>

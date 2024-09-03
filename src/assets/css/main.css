@@ -22,11 +22,11 @@
         font-display: swap;
         src: url(/assets/fonts/InterVariable-Italic.woff2) format('woff2');
     }
+    /* Light */
     :root {
         --color-primary: 0, 85, 255;
         --black: 0, 0, 0;
         --white: 255, 255, 255;
-        /* Light */
         --color-theme: 255, 255, 255;
         --color-inverse: 0, 0, 0;
         --color-shadow: 230, 230, 230;
@@ -40,7 +40,7 @@
         --color-link: 0, 85, 255;
         --color-linkhover: 66, 129, 255;
         -webkit-font-smoothing: antialiased;
-
+        /* Dark */
         @media (prefers-color-scheme: dark) {
             --color-theme: 0, 0, 0;
             --color-inverse: 255, 255, 255;
@@ -55,5 +55,20 @@
             --color-link: 102, 153, 255;
             --color-linkhover: 138, 177, 255;
         }
+    }
+    /* Dark copy/paste */
+    :root[color-scheme="dark"] {
+        --color-theme: 0, 0, 0;
+            --color-inverse: 255, 255, 255;
+            --color-shadow: 0, 0, 0;
+            --color-background: 13, 13, 13;
+            --color-middleground: 20, 20, 20;
+            --color-foreground: 26, 26, 26;
+            --color-highlight: 31, 31, 31;
+            --color-detail: 170, 170, 170;
+            --color-content: 210, 210, 210;
+            --color-headline: 255, 255, 255;
+            --color-link: 102, 153, 255;
+            --color-linkhover: 138, 177, 255;
     }    
 }

@@ -4,6 +4,12 @@ module.exports = {
       container: false,
     },
     theme: {
+      aspectRatio: {
+        '3/4': '3 / 4',
+        '4/3': '4 / 3',
+        '9/16': '9/16',
+        '16/9': '16 / 9',
+      },
       borderRadius: {
         '0': '0',
         '2': '0.125rem',
