@@ -16,6 +16,7 @@ changefreq: daily
 
     <!--- Hero --->
     <section class="bg-background/0 z-10 pb-160">
+        <!--- Content --->
         <container class="flex flex-col items-center gap-72 pt-160 mb-72">
             <div class="relative flex flex-col items-center gap-y-12 max-w-896 text-center">
                 <h1 class="text-48/100 sm:text-72/100 md:text-80/100 text-balance" style="letter-spacing: -0.04em;">
@@ -35,6 +36,7 @@ changefreq: daily
                 </div>
             </div>
         </container>
+        <!--- Graphic --->
         <container class="p-4 rounded-16 bg-middleground shadow-2xl border border-headline/10">
             <div class="relative w-full flex aspect-16/9 bg-background rounded-12 border border-headline/6">
 
