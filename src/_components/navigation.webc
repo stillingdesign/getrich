@@ -13,13 +13,12 @@
         </div>
         <!--- Mobile CTAs --->
         <div class="relative flex sm:hidden items-center gap-4">
-            <link-btn href="#" class="size-sm variant-ghost theme">
-                Docs
-            </link-btn>
+            <!--- Primary CTA --->
             <link-btn href="#" class="size-sm variant-primary">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
+            <!--- Hamburger --->
             <div class="relative ml-4 -mr-10 flex items-center justify-center sm:hidden">
                 <div data-navigation-icon class="flex flex-col gap-4 items-center justify-center w-36 h-36">
                     <div class="w-16 h-2 bg-current origin-center"></div>
@@ -60,15 +59,23 @@
                 </tab-group>
             </nav>
             <div class="absolute bottom-0 left-0 flex sm:hidden items-center justify-between h-56 w-full border-t border-headline/10 px-24">
-                <div class="flex items-center -ml-12">
+                <div class="flex items-center">
+                    <!--- Toggle scheme --->
+                    <div data-toggle-scheme class="relative flex items-center justify-center border border-headline/8 bg-headline/4 rounded-16 px-2 mr-14">
+                        <div data-toggle-knob class="absolute w-20 h-20 border bg-headline/6 border-headline/20 rounded-full left-2"></div>
+                        <div data-toggle-light class="relative flex items-center justify-center w-20 h-24">
+                            <sun class="w-12 h-auto"></sun>
+                        </div>
+                        <div data-toggle-dark class="relative flex items-center justify-center w-20 h-24">
+                            <moon class="w-12 h-auto"></moon>
+                        </div>
+                        <input data-toggle-scheme-checkbox type="checkbox" name="Toggle dark/light mode" aria-label="Toggle dark/light mode" class="absolute flex items-center justify-center left-0 top-0 w-full h-full opacity-0 cursor-pointer">
+                    </div>
+                </div>
+                <div class="flex items-center -mr-12">
                     <link-btn href="#" class="size-sm variant-ghost theme">
                         Sign in
                         <chevronright slot="right"></chevronright>
-                    </link-btn>
-                </div>
-                <div class="flex items-center -ml-12">
-                    <link-btn href="#" class="size-sm variant-ghost theme">
-                        Contact
                     </link-btn>
                 </div>
             </div>
@@ -109,7 +116,7 @@
     const navigation =  document.querySelector('[data-navigation]');
     const navigationBg =  document.querySelector('[data-navigation-bg]');
     const hoverdowns = document.querySelectorAll('[data-hoverdown]');
-    const toggleScheme = document.querySelector('[data-toggle-scheme-checkbox]');
+    const toggleSchemes = document.querySelectorAll('[data-toggle-scheme-checkbox]');
 
     function hoverdown(el) {
         const content = el.querySelector('[data-content]');
@@ -204,17 +211,24 @@
 
     window.addEventListener('load', updateNavigationBg);
 
-    toggleScheme.addEventListener('click', () => {
-        if (toggleScheme.checked) {
-            document.documentElement.setAttribute('color-scheme', 'dark');
-            localStorage.scheme = 'dark';
-            if(window.scrollY === 0) { setNavigationBg(); }
-        } else {
-            document.documentElement.setAttribute('color-scheme', 'light');
-            localStorage.scheme = 'light';
-            if(window.scrollY === 0) { setNavigationBg(); }
+    function toggleColorScheme(el) {
+        function toggle() {
+            if (el.checked) {
+                document.documentElement.setAttribute('color-scheme', 'dark');
+                localStorage.scheme = 'dark';
+                if(window.scrollY === 0) { setNavigationBg(); }
+                toggleSchemes.forEach((toggleScheme) => { toggleScheme.checked = true; });
+            } else {
+                document.documentElement.setAttribute('color-scheme', 'light');
+                localStorage.scheme = 'light';
+                if(window.scrollY === 0) { setNavigationBg(); }
+                toggleSchemes.forEach((toggleScheme) => { toggleScheme.checked = false; });
+            }
+            updateNavigationBg();
         }
-        updateNavigationBg();
-    });
+        el.addEventListener('click', toggle);
+    }
+
+    toggleSchemes.forEach(toggleColorScheme);
 
 </script>

@@ -7,8 +7,8 @@
         "mobile": true
     },
     {
-        "label": "Theme",
-        "href": "/theme/",
+        "label": "Design",
+        "href": "/design/",
         "header": true,
         "footer": false,
         "mobile": true
@@ -53,8 +53,8 @@
         ]
     },
     {
-        "label": "Theme",
-        "href": "/theme/",
+        "label": "Design",
+        "href": "/design/",
         "header": false,
         "footer": true,
         "mobile": true,
