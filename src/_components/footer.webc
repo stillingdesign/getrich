@@ -1,0 +1,51 @@
+<footer data-footer class="section flex-col relative border-t border-t-headline/6" webc:root="override">
+    <grid class="z-10 h-full pointer-events-none top-0 hidden"></grid>
+    <container class="grid sm:grid-cols-6 items-start gap-16 py-48">
+        <!--- Logo, Version, Note, Btns --->
+        <div class="relative w-full flex flex-col items-start justify-between h-full sm:col-span-2 border-b border-b-headline/6 sm:border-b-0 pb-24 sm:pb-4">
+            <div class="flex flex-col items-start">
+                <div class="relative flex items-center mr-4">
+                    <a href="/" title="Getrich homepage" class="flex items-center h-36 px-8 -ml-8 shrink-0 button-focus">
+                        <wordmark class="w-72 h-auto"></wordmark>
+                    </a>
+                    <link-btn href="https://github.com/stillingdesign/getrich" class="size-3xs variant-outline mt-1">
+                        Alpha
+                    </link-btn>
+                </div>
+                <p class="text-18/100 sm:text-16/100 text-content mt-10 sm:mt-6">
+                    Boilerplate for SaaS brands
+                </p>
+            </div>
+            <div class="absolute right-0 top-4 sm:relative flex items-center gap-8">
+                <link-btn href="https://github.com/stillingdesign/getrich" target="_blank" class="size-2xs">
+                    GitHub
+                    <github slot="left" class="-mt-1"></github>
+                </link-btn>
+                <link-btn href="#" target="_blank" class="size-2xs">
+                    Figma
+                    <figma slot="left"></figma>
+                </link-btn>
+            </div>
+        </div>
+        <!--- Navigation --->
+        <div class="relative w-full mt-4 sm:col-span-4">
+            <nav class="relative w-full text-14/100">
+                <ul class="relative w-full grid grid-cols-2 sm:grid-cols-4 items-start gap-16">
+                    <li webc:for="item of navigation" webc:if="item.footer === true" class="flex flex-col items-start">
+                        <a data-link :href="item.href" class="flex -ml-8 px-8 py-8 font-medium hover:text-link button-focus">
+                            <span @text="item.label" class="whitespace-nowrap"></span>
+                        </a>
+                        <ul class="flex flex-col items-start">
+                            <li webc:for="subitem of item.items">
+                                <a :href="subitem.href" class="flex -ml-8 px-8 py-6 text-detail hover:text-link button-focus">
+                                    <span @text="subitem.label" class="whitespace-nowrap"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </container>
+    <div class="w-full h-1 bg-headline/6 mt-48 mb-32"></div>
+</footer>

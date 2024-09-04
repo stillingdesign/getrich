@@ -34,16 +34,13 @@
             if (localStorage.scheme === 'dark') {
                 document.documentElement.setAttribute('color-scheme', 'dark');
                 toggleScheme.checked = true;
-                console.log(scheme, + toggleScheme.checked);
             } else if (localStorage.scheme === 'light') {
                 document.documentElement.setAttribute('color-scheme', 'light');
                 toggleScheme.checked = false;
-                console.log(scheme, + toggleScheme.checked);
             } else {
                 document.documentElement.setAttribute('color-scheme', scheme);
                 if (scheme === 'dark') { toggleScheme.checked = true; }
                 else { toggleScheme.checked = false; }
-                console.log(scheme, + toggleScheme.checked);
             }
         }
         setScheme();

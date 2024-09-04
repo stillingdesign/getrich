@@ -7,7 +7,7 @@
         </link-btn>
         <!--- Logo --->
         <div class="relative flex items-center mr-4 -mt-1">
-            <a href="/" class="flex items-center h-36 px-8 -ml-8 shrink-0 button-focus">
+            <a href="/" title="Getrich homepage" class="flex items-center h-36 px-8 -ml-8 shrink-0 button-focus">
                 <wordmark class="w-72 h-auto"></wordmark>
             </a>
         </div>
@@ -30,7 +30,7 @@
         </div>
         <!--- Navigation --->
         <div data-navigation-contents class="absolute right-0 top-48 -mt-2 h-dvh-56 sm:h-auto sm:right-auto sm:top-auto sm:mt-0 sm:relative w-full flex justify-start bg-background sm:bg-transparent">
-            <nav class="relative w-full sm:w:auto h-dvh-112 sm:h-auto overflow-y-scroll sm:overflow-y-visible">
+            <nav class="relative w-full sm:w-auto h-dvh-112 sm:h-auto overflow-y-scroll sm:overflow-y-visible">
                 <tab-group class="relative w-full" tab="bg-headline/6 rounded-5 hidden">
                     <ul class="relative w-full flex flex-col sm:flex-row sm:items-center">
                         <li webc:for="item of navigation">
@@ -44,7 +44,7 @@
                                     <ul class="relative flex flex-col min-w-160 sm:mt-8 bg-middleground sm:border border-headline/10 sm:rounded-6 sm:shadow-xl sm:p-2 variant-nav-item-list">
                                         <li webc:for="subitem of item.items" class="relative w-full">
                                             <a :href="subitem.href" class="button variant-nav-item">
-                                                <p lass="variant-nav-item-label" @text="subitem.label"></p>
+                                                <p class="variant-nav-item-label" @text="subitem.label"></p>
                                                 <chevronright></chevronright>
                                             </a>
                                         </li>

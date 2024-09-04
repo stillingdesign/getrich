@@ -3,58 +3,76 @@
         "label": "Approach",
         "href": "/approach/",
         "header": true,
+        "footer": false,
+        "mobile": true
+    },
+    {
+        "label": "Theme",
+        "href": "/theme/",
+        "header": true,
+        "footer": false,
+        "mobile": true
+    },
+    {
+        "label": "Build",
+        "href": "/build/",
+        "header": true,
+        "footer": false,
+        "mobile": true
+    },
+    {
+        "label": "Analyze",
+        "href": "/analytics/",
+        "header": true,
+        "footer": false,
+        "mobile": true
+    },
+    {
+        "label": "Approach",
+        "href": "/approach/",
+        "header": false,
         "footer": true,
         "mobile": true,
         "items": [
             {
-                "label": "It's just HTML",
-                "desc": "This is to see how this looks",
-                "header": false,
-                "footer": true,
-                "href": "#test"
+                "label": "Design",
+                "href": "#"
             },
             {
-                "label": "Anyone can do it",
-                "desc": "This is to see how this looks",
-                "header": false,
-                "footer": true,
-                "href": "#work"
+                "label": "Code",
+                "href": "#"
             },
             {
-                "label": "This is an example",
-                "desc": "This is to see how this looks",
-                "header": false,
-                "footer": true,
-                "href": "#this"
+                "label": "Content",
+                "href": "#"
+            },
+            {
+                "label": "Integrations",
+                "href": "#"
             }
         ]
     },
     {
         "label": "Theme",
         "href": "/theme/",
-        "header": true,
+        "header": false,
         "footer": true,
         "mobile": true,
         "items": [
             {
-                "label": "It's just HTML",
-                "desc": "This is to see how this looks",
-                "header": false,
-                "footer": true,
+                "label": "Core",
                 "href": "#"
             },
             {
-                "label": "Anyone can do it",
-                "desc": "This is to see how this looks",
-                "header": false,
-                "footer": true,
+                "label": "Color",
                 "href": "#"
             },
             {
-                "label": "This is an example",
-                "desc": "This is to see how this looks",
-                "header": false,
-                "footer": true,
+                "label": "Tokens",
+                "href": "#"
+            },
+            {
+                "label": "Components",
                 "href": "#"
             }
         ]
@@ -62,16 +80,52 @@
     {
         "label": "Build",
         "href": "/build/",
-        "header": true,
+        "header": false,
         "footer": true,
-        "mobile": true
+        "mobile": true,
+        "items": [
+            {
+                "label": "Pages",
+                "href": "#"
+            },
+            {
+                "label": "Templates",
+                "href": "#"
+            },
+            {
+                "label": "Forms",
+                "href": "#"
+            },
+            {
+                "label": "Docs",
+                "href": "#"
+            }
+        ]
     },
     {
         "label": "Analyze",
-        "href": "/analyze/",
-        "header": true,
+        "href": "/analytics/",
+        "header": false,
         "footer": true,
-        "mobile": true
+        "mobile": true,
+        "items": [
+            {
+                "label": "Why Fathom?",
+                "href": "#"
+            },
+            {
+                "label": "Built-in events",
+                "href": "#"
+            },
+            {
+                "label": "Custom events",
+                "href": "#"
+            },
+            {
+                "label": "A/B testing",
+                "href": "#"
+            }
+        ]
     },
     {
         "label": "Legal",
@@ -82,7 +136,7 @@
             {
                 "label": "Blame's Analytics",
                 "header": false,
-                "footer": true,
+                "footer": false,
                 "href": "#"
             }
         ]
