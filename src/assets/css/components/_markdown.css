@@ -1,0 +1,43 @@
+.markdown {
+    font-size: 1rem;
+    line-height: 170%;
+    color: rgba(var(--color-content), 1);
+}
+
+.markdown > h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: rgba(var(--color-headline), 1);
+}
+
+.markdown > .intro {
+    font-size: 1.125rem;
+    line-height: 170%;
+    color: rgba(var(--color-content), 1);
+}
+
+.markdown > h2 {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: rgba(var(--color-headline), 1);
+}
+
+.markdown > p > code {
+    font-size: 0.9375em;
+    white-space: nowrap;
+    border: 0.0625rem solid rgba(var(--color-headline), 0.15);
+    border-radius: 0.25rem;
+    color: rgba(var(--color-detail), 1);
+    padding: 0.125em 0.3125em 0.25em 0.3125em;
+    background-color: rgba(var(--color-middleground), 1);
+}
+
+.markdown > h1 + p { margin-top: 0.75rem; }
+.markdown > h2 + p { margin-top: 0.75rem; }
+
+.markdown > p + h2 { margin-top: 2rem; }
+.markdown > p + p { margin-top: 1rem; }

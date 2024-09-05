@@ -1,0 +1,57 @@
+---
+layout: "main.webc"
+tag: docs
+---
+
+<navigation></navigation>
+
+<main id="main" class="relative flex flex-col items-center bg-background">
+    <grid class="z-10 h-full pointer-events-none hidden"></grid>
+
+    <div class="section pt-56">
+        <container class="grid grid-cols-4 gap-16">
+            <!--- Docs nav --->
+            <div class="sticky top-56 h-dvh-56">
+                <div class="relative flex flex:col w-full h-full pt-56 text-14/100 tracking-tight">
+                    <ul>
+                        <li>
+                            <p class="font-medium">
+                                Getting started
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--- Docs content --->
+            <div class="relative col-span-2 pt-56">
+                <div class="flex items-center text-14/100 gap-4 mb-24">
+                    <p class="text-detail">
+                        Docs
+                    </p>
+                    <chevronright class="w-14 text-detail -mb-1"></chevronright>
+                    <p>
+                        Getting started
+                    </p>
+                </div>
+                <!--- Content --->
+                <div @html="this.content" class="markdown">
+                </div>
+            </div>
+            <!--- Page nav --->
+            <div class="sticky top-56 h-dvh-56">
+                <div class="relative flex flex:col w-full h-full pt-56 text-14/100 tracking-tight">
+                    <ul>
+                        <li>
+                            <p class="font-medium">
+                                On this page
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </container>
+    </div>
+
+</main>
+
+<footer></footer>

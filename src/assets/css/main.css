@@ -1,6 +1,7 @@
 @import url("components/_container.css");
 @import url("components/_link-btn.css");
 @import url("components/_link-txt.css");
+@import url("components/_markdown.css");
 @import url("components/_navigation.css");
 @import url("components/_section.css");
 @tailwind base;
@@ -58,7 +59,7 @@
     }
     /* Dark copy/paste */
     :root[color-scheme="dark"] {
-        --color-theme: 0, 0, 0;
+            --color-theme: 0, 0, 0;
             --color-inverse: 255, 255, 255;
             --color-shadow: 0, 0, 0;
             --color-background: 13, 13, 13;

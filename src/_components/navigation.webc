@@ -14,7 +14,7 @@
         <!--- Mobile CTAs --->
         <div class="relative flex sm:hidden items-center gap-4">
             <!--- Primary CTA --->
-            <link-btn href="#" class="size-sm variant-primary">
+            <link-btn href="/docs/" class="size-sm variant-primary">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
@@ -94,7 +94,7 @@
                 <input data-toggle-scheme-checkbox type="checkbox" name="Toggle dark/light mode" aria-label="Toggle dark/light mode" class="absolute flex items-center justify-center left-0 top-0 w-full h-full opacity-0 cursor-pointer">
             </div>
             <!--- Primary CTA --->
-            <link-btn href="#" class="size-md variant-primary">
+            <link-btn href="/docs/" class="size-md variant-primary">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>

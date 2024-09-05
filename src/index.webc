@@ -1,11 +1,11 @@
 ---
 layout: "main.webc"
-seoTitle: "GetRich: A framework-free design system for marketing websites"
-seoDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
-ogTitle: "GetRich: A framework-free design system for marketing websites"
-ogDesc: "Unleash creative people and processes to unlock the next large wave of growth for your business."
+seoTitle: "GetRich: Build a fancy website, sell lots of software"
+seoDesc: "Getrich is opinionated boilerplate for your SaaS brand. Bypass the basics and start growing your business."
+ogTitle: "GetRich: Build a fancy website, sell lots of software"
+ogDesc: "Getrich is opinionated boilerplate for your SaaS brand. Bypass the basics and start growing your business."
 ogImage: "/assets/images/og/default.jpg"
-ogImageAlt: "Person with 90s style apparrel sitting on office chair with large old computer on lap with their thumbs up."
+ogImageAlt: ""
 changefreq: daily
 ---
 
@@ -23,14 +23,14 @@ changefreq: daily
                     Build a <span class="hidden sm:inline">fancy</span> website, sell <span class="hidden sm:inline">lots of</span> software
                 </h1>
                 <p class="text-20/170 text-detail text-balance">
-                    GetRich is opinionated boilerplate for <link-txt href="#" class="variant-text">your SaaS</link-txt> brand. Bypass the bullshit and start growing your business.
+                    Getrich is opinionated boilerplate for your SaaS brand. Bypass the basics and start growing your business.
                 </p>
                 <div class="flex gap-16 mt-12">
-                    <link-btn href="https://github.com/stillingdesign/getrich" class="size-sm variant-primary min-w-160">
+                    <link-btn href="https://github.com/stillingdesign/getrich" class="size-md variant-primary min-w-160">
                         Use the template
                         <chevronright slot="right"></chevronright>
                     </link-btn>
-                    <link-btn href="/docs/" class="size-sm variant-outline min-w-160">
+                    <link-btn href="/docs/" class="size-md variant-outline min-w-160">
                         Read the docs
                     </link-btn>
                 </div>
