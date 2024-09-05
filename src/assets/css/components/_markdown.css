@@ -36,8 +36,22 @@
     background-color: rgba(var(--color-middleground), 1);
 }
 
-.markdown > h1 + p { margin-top: 0.75rem; }
-.markdown > h2 + p { margin-top: 0.75rem; }
+.markdown > hr {
+    margin: 3rem 0 2.5rem 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.1);
+}
 
-.markdown > p + h2 { margin-top: 2rem; }
-.markdown > p + p { margin-top: 1rem; }
+.markdown strong {
+    font-weight: 600;
+}
+
+.markdown > h1 + p { margin-top: 1rem; }
+.markdown > h2 + p { margin-top: 1rem; }
+.markdown > .intro + hr { margin-top: 2.5rem; }
+
+.markdown > p + h2 { margin-top: 2.25rem; }
+.markdown > p + p { margin-top: 1.25rem; }
+.markdown > p + .md-block { margin-top: 1.5rem; }

@@ -1,11 +1,13 @@
-.link {
+.link,
+.markdown > p > a {
     z-index: 1;
     position: relative;
-    color: rgba(var(--color-primary), 1);
+    color: rgba(var(--color-link), 1);
     white-space: nowrap;
 }
 
-.link:before {
+.link:before,
+.markdown > p > a:before {
     content: '';
     position: absolute;
     top: -0.0625em;
@@ -18,14 +20,15 @@
     z-index: -1;
 }
 
-.link:after {
+.link:after,
+.markdown > p > a:after {
     content: '';
     position: absolute;
     bottom: -0.125em;
     left: 0.0625rem;
     width: calc(100% - 0.125rem);
-    height: 0.08em;
-    background-color: rgba(var(--color-primary), 1);
+    height: 0.0625em;
+    background-color: rgba(var(--color-link), 1);
     transform: scale3d(1,1,1);
     transform-origin: left center;
     transition: transform 200ms cubic-bezier(0.3,0,0.3,1) 50ms;
@@ -33,26 +36,33 @@
 
 .link.variant-theme { color: rgba(var(--color-background), 1); }
 .link.variant-theme:after { background-color: rgba(var(--color-background), 1); }
-.link.variant-text { color: rgba(var(--color-headline), 1); }
-.link.variant-text:after { background-color: rgba(var(--color-headline), 1); }
+.link.variant-text,
+.markdown > p > a { color: rgba(var(--color-headline), 1); }
+.link.variant-text:after,
+.markdown > p > a:after  { background-color: rgba(var(--color-headline), 1); }
 
 @media (hover: hover) {
-    .link:hover {
+    .link:hover,
+    .markdown > p > a:hover {
         opacity: 0.8;
     }
-    .link:hover:after {
+    .link:hover:after,
+    .markdown > p > a:hover:after {
         opacity: 0.8;
     }
 }
 
-.link:focus-visible {
+.link:focus-visible,
+.markdown > p > a:focus-visible {
     outline: none;
     color: rgba(var(--white), 1);
 }
 
-.link:focus-visible:after { opacity: 0; }
+.link:focus-visible:after,
+.markdown > p > a:focus-visible:after { opacity: 0; }
 
-.link:focus-visible:before {
+.link:focus-visible:before,
+.markdown > p > a:focus-visible:before {
     opacity: 1;
     box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1);
 }

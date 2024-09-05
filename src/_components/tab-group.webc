@@ -1,7 +1,11 @@
+<!--- Highlight list items with links on hover --->
+
 <div data-tab-group class="flex" webc:root="override">
     <div data-tab class="absolute sm:block opacity-0" :class="tab"></div>
     <slot></slot>
 </div>
+
+<!--- Javascript  --->
 
 <script>
     function tabs() {

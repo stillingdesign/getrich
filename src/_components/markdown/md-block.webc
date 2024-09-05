@@ -1,0 +1,5 @@
+<!--- A little block with text inside of it for highlighting content in posts --->
+
+<div class="md-block relative pt-12 pb-14 px-16 bg-middleground rounded-6 border border-headline/10 text-14/170" webc:keep webc:root="override">
+    <slot></slot>
+</div>

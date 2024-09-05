@@ -1,3 +1,5 @@
+<!--- The global site header --->
+
 <header data-navigation class="section fixed top-0 left-0 h-56 z-50" webc:root="override">
     <div data-navigation-bg class="absolute top-0 left-0 w-full h-full bg-background/95 backdrop-blur-md border-b border-headline/4"></div>
     <container class="flex items-center justify-between">

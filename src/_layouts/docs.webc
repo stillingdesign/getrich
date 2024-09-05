@@ -24,6 +24,7 @@ tag: docs
             </div>
             <!--- Docs content --->
             <div class="relative col-span-2 pt-56">
+                <!--- Bread crumbs --->
                 <div class="flex items-center text-14/100 gap-4 mb-24">
                     <p class="text-detail">
                         Docs
@@ -34,7 +35,7 @@ tag: docs
                     </p>
                 </div>
                 <!--- Content --->
-                <div @html="this.content" class="markdown">
+                <div @html="this.content" class="markdown pb-128">
                 </div>
             </div>
             <!--- Page nav --->
