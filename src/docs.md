@@ -37,7 +37,7 @@ To get the template, click the button below or visit the [GitHub Page](https://g
 After getting the code onto your machine and opening it within your code editor, simply run an `npm i` to install dependencies. Follow that up with `npm start` to fire up the <link-txt class="variant-text" href="https://www.11ty.dev/docs/dev-server/" target="_blank">11ty Dev Server.</link-txt>
 
 <md-block>
-    <strong>Confused?</strong> Watch the video below for a full step-by-step. It will walk you through the basics of GitHub and NodeJS/NPM.
+    <strong>Confused?</strong> Hop over to the <link-txt class="variant-text" href="/docs/user-guide/">non-technical user guide</link-txt> where Mike will walk you through how to work on this website step-by-step.
 </md-block>
 
 ---
@@ -45,3 +45,13 @@ After getting the code onto your machine and opening it within your code editor,
 ## Build your site
 
 To run a production build of your new site type `npm run build` into your terminal and click enter. By default, the HTML, CSS, and Javascript will be minified.
+
+---
+
+## Background
+
+This approach is purposefully simple. After working on a handful of SaaS marketing websites, it seems the biggest hang-up is adding complexity to provide ways for non-technical, "back-end" users to interact with the code (CMS, block-building, etc).
+
+Getrich instead aims to make a marketing website codebase _simple enough_ that any member of the team can dive in and make updates while simultaneously being performant and fully customizeable.
+
+Here, my hope is that the code is simple enough for anyone on the team to work with. More to come, but I hope to build docs to help any team member get up to speed here.
