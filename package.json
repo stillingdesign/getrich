@@ -8,9 +8,10 @@
     "dev:css": "tailwindcss -i src/assets/css/main.css -o dist/assets/css/main.css",
     "watch:css": "tailwindcss -i src/assets/css/main.css -o dist/assets/css/main.css --watch",
     "build:css": "tailwindcss -i src/assets/css/main.css -o dist/assets/css/main.css --minify",
+    "purge:css": "purgecss --content './**/*.html' --css './dist/assets/css/main.css' --output './dist/assets/css/'",
     "watch:all": "npm run watch:html & npm run watch:css",
     "start": "npm run clean && npm run dev:css && npm run watch:all",
-    "build": "npm run clean && npm run build:html && npm run build:css"
+    "build": "npm run clean && npm run build:html && npm run build:css && npm run purge:css"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@fullhuman/postcss-purgecss": "^6.0.0",
     "tailwindcss": "^3.4.10"
   }
 }
