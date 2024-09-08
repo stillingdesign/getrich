@@ -1,8 +1,8 @@
 <footer data-footer class="section flex-col relative border-t border-t-headline/6" webc:root="override">
     <grid class="z-10 h-full pointer-events-none top-0 hidden"></grid>
-    <container class="grid sm:grid-cols-6 items-start gap-16 py-48">
+    <container class="grid sm:grid-cols-6 items-start sm:items-stretch gap-16 py-48">
         <!--- Logo, Version, Note, Btns --->
-        <div class="relative w-full flex flex-col items-start justify-between h-full sm:col-span-2 border-b border-b-headline/6 sm:border-b-0 pb-24 sm:pb-4">
+        <div class="relative w-full flex flex-col items-start justify-between sm:col-span-2 border-b border-b-headline/6 sm:border-b-0 pb-24 sm:pb-4">
             <div class="flex flex-col items-start">
                 <div class="relative flex items-center mr-4">
                     <a href="/" title="Getrich homepage" class="flex items-center h-36 px-8 -ml-8 shrink-0 button-focus">
@@ -16,7 +16,7 @@
                     Boilerplate for SaaS brands
                 </p>
             </div>
-            <div class="absolute right-0 top-4 sm:relative flex items-center gap-8">
+            <div class="absolute right-0 top-4 sm:right-auto sm:top-auto sm:relative flex items-center gap-8">
                 <link-btn href="https://github.com/stillingdesign/getrich" target="_blank" class="size-2xs">
                     GitHub
                     <github slot="left" class="-mt-1"></github>
