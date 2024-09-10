@@ -1,4 +1,5 @@
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier-terser");
 
 module.exports = (eleventyConfig) => {
@@ -22,6 +23,11 @@ module.exports = (eleventyConfig) => {
 		}
 		return content;
 	});
+
+    // Syntax Highlighting
+    eleventyConfig.addPlugin(syntaxHighlight, {
+
+    });
 
     return {
         htmlTemplateEngine: "webc",

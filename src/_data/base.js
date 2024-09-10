@@ -1,7 +1,7 @@
 module.exports = {
     url: process.env.URL || "http://localhost:8080",
     domain: "https://getrich.design",
-    name: "GetRich",
+    name: "Getrich",
     env: process.env.ENVIRONMENT || "local",
 
     twitterHandle: "@mikestilling",

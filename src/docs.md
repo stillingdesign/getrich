@@ -55,3 +55,44 @@ This approach is purposefully simple. After working on a handful of SaaS marketi
 Getrich instead aims to make a marketing website codebase _simple enough_ that any member of the team can dive in and make updates while simultaneously being performant and fully customizeable.
 
 Here, my hope is that the code is simple enough for anyone on the team to work with. More to come, but I hope to build docs to help any team member get up to speed here.
+
+
+``` javascript
+const test = document.querySelector('[data-test]');
+test.addEventListener('click', function() {
+    test.classlist.add('red');
+})
+// select all
+let test = document.querySelector('[data-test]');
+test.addEventListener('click', () => {
+    if(test === true) {
+        console.log('hello world');
+    }
+    y: Math.random() * canvas.width,
+    const tmln = gsap.timeline();
+        tmln
+            .to(test, {y:0, duration:1}, 0)
+});
+```
+
+``` css
+.test {
+    color: red;
+}
+
+#test {
+    color: green !important;
+}
+
+:root {
+    --variable: 24, 38, 95;
+}
+```
+
+``` html
+<div class="container">
+    <h1 id="title">
+        Hello world
+    </h1>
+</div>
+```
