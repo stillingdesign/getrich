@@ -56,8 +56,11 @@ Getrich instead aims to make a marketing website codebase _simple enough_ that a
 
 Here, my hope is that the code is simple enough for anyone on the team to work with. More to come, but I hope to build docs to help any team member get up to speed here.
 
+<md-code>
+    Page.js
+</md-code>
 
-``` javascript
+``` js
 const test = document.querySelector('[data-test]');
 test.addEventListener('click', function() {
     test.classlist.add('red');

@@ -3,8 +3,9 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier-terser");
 
 module.exports = (eleventyConfig) => {
+    
     eleventyConfig.setServerOptions({ watch: ["dist/**/*.css"] });
-    eleventyConfig.addPlugin(pluginWebc, { components: "src/_components/**/*.webc", });
+    eleventyConfig.addPlugin(pluginWebc, { components: "src/_components/**/*.webc"});
     eleventyConfig.addPassthroughCopy({"src/assets/images": "assets/images"});
     eleventyConfig.addPassthroughCopy({"src/assets/fonts": "assets/fonts"});
     eleventyConfig.addPassthroughCopy('src/manifest.webmanifest');
@@ -25,9 +26,7 @@ module.exports = (eleventyConfig) => {
 	});
 
     // Syntax Highlighting
-    eleventyConfig.addPlugin(syntaxHighlight, {
-
-    });
+    eleventyConfig.addPlugin(syntaxHighlight);
 
     return {
         htmlTemplateEngine: "webc",
