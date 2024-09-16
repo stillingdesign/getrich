@@ -4,26 +4,30 @@
     color: rgba(var(--color-content), 1);
 }
 
-.markdown > h1 {
-    font-size: 2rem;
+.markdown > h1,
+.markdown > h2,
+.markdown > h3 {
+    position: relative;
     font-weight: 500;
     line-height: 130%;
     letter-spacing: -0.02em;
     color: rgba(var(--color-headline), 1);
+}
+
+.markdown > h1 {
+    font-size: 2rem;
+    scroll-margin-top: 9.5rem;
+}
+
+.markdown > h2 {
+    font-size: 1.375rem;
+    scroll-margin-top: 6.625rem;
 }
 
 .markdown > .intro {
     font-size: 1.125rem;
     line-height: 170%;
     color: rgba(var(--color-content), 1);
-}
-
-.markdown > h2 {
-    font-size: 1.375rem;
-    font-weight: 500;
-    line-height: 130%;
-    letter-spacing: -0.02em;
-    color: rgba(var(--color-headline), 1);
 }
 
 .markdown > p > code {

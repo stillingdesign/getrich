@@ -1,6 +1,9 @@
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier-terser");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const mdIt = require("markdown-it");
+const mdAnchor = require('markdown-it-anchor');
+const slugify = require("slugify");
 
 module.exports = (eleventyConfig) => {
     
@@ -27,6 +30,31 @@ module.exports = (eleventyConfig) => {
 
     // Syntax Highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
+
+    // Anchor links on markdown titles
+    const linkAfterHeader = mdAnchor.permalink.linkAfterHeader({
+        class: "anchor",
+        style: "aria-labelledby",
+    });
+    const mdAnchorOptions = {
+        level: [1, 2, 3],
+        tabIndex: false,
+        slugify: (str) => slugify(str, {
+            lower: true,
+            strict: true,
+            remove: /["1234567890]/g,
+        })
+    }
+    const md = new mdIt({
+        html: true,
+        linkify: true,
+        typographer: true,
+    });
+    md.use(mdAnchor, mdAnchorOptions);
+    eleventyConfig.setLibrary('md', md);
+    eleventyConfig.addFilter('markdown', (value) => {
+        return md.render(value);
+    });
 
     return {
         htmlTemplateEngine: "webc",

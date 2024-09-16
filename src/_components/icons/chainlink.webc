@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="16" height="16" class="h-auto" webc:root="override">
+    <title>Link icon</title>
+    <path fill-rule="evenodd" d="M8.91 6.03a.75.75 0 0 1 1.06 0 3.5 3.5 0 0 1 0 4.94l-2 2a3.5 3.5 0 0 1-5.4-4.4.75.75 0 0 1 1.26.83 2 2 0 0 0 3.08 2.51l2-2a2 2 0 0 0 0-2.82.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
+    <path fill-rule="evenodd" d="M7.09 9.97a.75.75 0 0 1-1.06 0 3.5 3.5 0 0 1 0-4.95l2-2a3.5 3.5 0 0 1 5.4 4.4.75.75 0 0 1-1.26-.82A2 2 0 0 0 9.1 4.09l-2 2a2 2 0 0 0 0 2.82.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"/>
+</svg>

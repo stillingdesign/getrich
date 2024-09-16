@@ -89,7 +89,7 @@ module.exports = {
       },
       screens: {
         'sm': '768px',
-        'md': '1168px',
+        'md': '1136px',
         'lg': '1536px',
       },
       spacing: {
@@ -158,6 +158,7 @@ module.exports = {
       },
       extend: {
         height: {
+          'full-56': 'calc(100% - 3.5rem)',
           'dvh-56': 'calc(100dvh - 3.5rem)',
           'dvh-112': 'calc(100dvh - 7rem)',
         },

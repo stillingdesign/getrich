@@ -1,13 +1,26 @@
 ---
 layout: "docs.webc"
+title: "Quick start"
 seoTitle: "GetRich: Documentation"
 seoDesc: "Get started with Getrich, the opinionated boilerplate for your SaaS brand."
 ogTitle: "GetRich: Documentation"
 ogDesc: "Get started with Getrich, the opinionated boilerplate for your SaaS brand."
 ogImage: "/assets/images/og/default.jpg"
 ogImageAlt: ""
-docsOrder: 0
-changefreq: daily
+changefreq: "daily"
+toc:
+    -   title: "Introduction"
+        href: "#getrich-quickstart-guide"
+        tag: "h1"
+    -   title: "Get the template"
+        href: "#get-the-template"
+        tag: "h2"
+    -   title: "Run the code"
+        href: "#run-the-code"
+        tag: "h2"
+    -   title: "Build your site"
+        href: "#build-your-site"
+        tag: "h2"
 ---
 
 # Getrich quickstart guide
@@ -37,7 +50,7 @@ To get the template, click the button below or visit the [GitHub Page](https://g
 After getting the code onto your machine and opening it within your code editor, simply run an `npm i` to install dependencies. Follow that up with `npm start` to fire up the <link-txt class="variant-text" href="https://www.11ty.dev/docs/dev-server/" target="_blank">11ty Dev Server.</link-txt>
 
 <md-block>
-    <strong>Confused?</strong> Hop over to the <link-txt class="variant-text" href="/docs/user-guide/">non-technical user guide</link-txt> where Mike will walk you through how to work on this website step-by-step.
+    <strong>Confused?</strong> Check out the <link-txt class="variant-text" href="/docs/how-it-works/">contributor guide.</link-txt> Here, Mike walks through how to get setup and start working on this website (with videos).
 </md-block>
 
 ---

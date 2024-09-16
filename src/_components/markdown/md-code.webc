@@ -1,9 +1,30 @@
+<!--- Titles for codeblocks --->
+
 <div class="md-code relative w-full flex items-center justify-between bg-middleground border-t border-x border-headline/10 px-16 rounded-t-4 text-14/100 font-medium h-32 mt-24" webc:root="override">
     <p class="mt:1">
         <slot></slot>
     </p>
     <button data-copy-code class="button variant-outline size-3xs -mr-12">
         <copypaste></copypaste>
-        Copy
+        <span>Copy</span>
     </button>
 </div>
+
+<script>
+    const copyCode = document.querySelectorAll('[data-copy-code]');
+    copyCode.forEach((button) => {
+        button.addEventListener('click', () => {
+            const parent = button.parentElement;
+            const code = parent.nextElementSibling.querySelector('code');
+            if (code && code.tagName.toLowerCase() === 'code') {
+                navigator.clipboard.writeText(code.textContent);
+                button.querySelector('span').textContent = 'Copied!';
+                setTimeout(() => {
+                    button.querySelector('span').textContent = 'Copy';
+                }, 2000);
+            } else {
+                console.error('No next <code> element found');
+            }
+        });
+    });
+</script>

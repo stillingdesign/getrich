@@ -9,45 +9,82 @@ tag: docs
     <grid class="z-10 h-full pointer-events-none hidden"></grid>
 
     <div class="section pt-56">
-        <container class="grid grid-cols-4 gap-16">
+        <!--- Docs Navigations --->
+        <div class="absolute top-56 md:grid md:grid-cols-4 w-full md:max-w-screen-lg gap-16 h-full-56 z-20 pointer-events-none">
             <!--- Docs nav --->
-            <div class="sticky top-56 h-dvh-56">
-                <div class="relative flex flex:col w-full h-full pt-56 text-14/100 tracking-tight">
-                    <ul>
-                        <li>
-                            <p class="font-medium">
-                                Getting started
-                            </p>
-                        </li>
-                    </ul>
+            <div class="sticky md:top-56 md:h-dvh-56 pointer-events-auto">
+                <div class="relative flex flex-col items-start w-full h-full md:pt-56 text-14/100 tracking-tight overflow-y-scroll scrollbar-hidden">
+                    <button class="relative w-full px-24 py-12 sm:px-48 font-medium text-left md:hidden pointer-events-auto border-b border-b-headline/10">
+                        Explore docs
+                    </button>
+                    <div class="relative w-full md:mb-64">
+                        <div class="relative md:-mt-24">
+                            <div class="absolute left-0 top-10 h-full hidden md:block" style="height:calc(100% - 1rem);"></div>
+                            <ul class="relative w-full">
+                                <!--- Items --->
+                                <li webc:for="item of documentation" class="relative w-full">
+                                    <p class="font-medium mb-12 pt-24" @text="item.label"></p>
+                                    <div class="relative w-full">
+                                        <div class="absolute left-0 top-8 h-full border-l border-l-headline/10" style="height:calc(100% - 1rem);"></div>
+                                        <ul class="relative pl-16 pointer-events-auto">
+                                            <li webc:for="subitem of item.items" class="relative w-full">
+                                                <div webc:if="subitem.href === page.url" class="absolute -left-16 top-8 h-14 border-l border-l-link"></div>
+                                                <a webc:if="subitem.href === page.url" :href="subitem.href" @text="subitem.label" class="relative w-full overflow-hidden text-ellipsis block py-6 text-link font-medium transition-colors hover:text-link button-focus rounded-6 px-8 -ml-8 whitespace-nowrap"></a>
+                                                <a webc:else :href="subitem.href" @text="subitem.label" class="relative w-full overflow-hidden text-ellipsis block py-6 text-detail transition-colors hover:text-link button-focus rounded-6 px-8 -ml-8 whitespace-nowrap"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                <!--- Fade out overflow --->
+                <div class="hidden md:block absolute top-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 0), rgba(var(--color-background), 1))"></div>
+                <div class="hidden md:block absolute bottom-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 1), rgba(var(--color-background), 0))"></div>
             </div>
-            <!--- Docs content --->
-            <div class="relative col-span-2 pt-56">
+            <!--- Page nav --->
+            <div webc:if="toc" class="sticky sm:col-start-4 top-56 md:h-dvh-56 pointer-events-auto">
+                <div class="relative flex flex:col items-start w-full h-full pt-56 text-14/100 tracking-tight overflow-y-scroll scrollbar-hidden">
+                    <div class="relative w-full mb-64">
+                        <p class="font-medium mb-12">
+                            On this page:
+                        </p>
+                        <div class="relative">
+                            <div class="absolute left-0 top-10 h-full" style="height:calc(100% - 1rem);"></div>
+                            <ul data-toc class="relative w-full">
+                                <!--- Items --->
+                                <li webc:for="item of toc" class="relative w-full">
+                                    <a data-toc-item :href="item.href" @text="item.title" class="relative w-full overflow-hidden text-ellipsis block py-6 text-detail transition-colors hover:text-link button-focus rounded-6 px-8 -ml-8 whitespace-nowrap"></a>
+                                    <!--- Subitems --->
+                                    <ul webc:if="item.subitems" class="relative pl-16 w-full">
+                                        <li webc:for="subitem of item.subitems" class="relative w-full">
+                                            <a data-toc-item :href="subitem.href" @text="subitem.title" class="relative w-full overflow-hidden text-ellipsis block py-6 text-detail transition-colors hover:text-link button-focus rounded-6 px-8 -ml-8 whitespace-nowrap"></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--- Fade out overflow --->
+                <div class="absolute top-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 0), rgba(var(--color-background), 1))"></div>
+                <div class="absolute bottom-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 1), rgba(var(--color-background), 0))"></div>
+            </div>
+        </div>
+        <!--- Docs content --->
+        <container class="flex flex-col items-center md:grid md:grid-cols-4 gap-16 pointer-events-none">
+            <div class="relative max-w-640 md:col-start-2 md:col-end-4 pt-56 pointer-events-auto">
                 <!--- Bread crumbs --->
                 <div class="flex items-center text-14/100 gap-4 mb-24">
                     <p class="text-detail">
                         Docs
                     </p>
                     <chevronright class="w-14 text-detail -mb-1"></chevronright>
-                    <p>
-                        Getting started
-                    </p>
+                    <p @html="this.title"></p>
                 </div>
                 <!--- Content --->
                 <div @html="this.content" class="markdown pb-128">
-                </div>
-            </div>
-            <!--- Page nav --->
-            <div class="sticky top-56 h-dvh-56">
-                <div class="relative flex flex:col w-full h-full pt-56 text-14/100 tracking-tight">
-                    <ul>
-                        <li>
-                            <p class="font-medium">
-                                On this page
-                            </p>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </container>
@@ -56,3 +93,44 @@ tag: docs
 </main>
 
 <footer></footer>
+
+<script>
+
+    const toc = document.querySelector('[data-toc]');
+
+    // Highlight TOC Items
+    function highlightToc() {
+        const headings = document.querySelectorAll('h1[id], h2[id], h3[id]');
+        const tocItems = document.querySelectorAll('[data-toc-item]');
+        const tocLinks = Array.from(tocItems).map(item => item.getAttribute('href'));
+        function highlight(link) {
+            tocItems.forEach(item => item.classList.remove('font-medium', 'text-headline', 'text-link'));
+            document.querySelector(`[href="${link}"]`).classList.add('font-medium', 'text-headline', 'text-link');
+        }
+        tocItems[0].classList.add('font-medium', 'text-headline', 'text-link');
+        headings.forEach((heading, index) => {
+            const id = heading.getAttribute('id');
+            const link = tocLinks.find(link => link.includes(id));
+            const computedStyle = window.getComputedStyle(heading);
+            const scrollMarginTop = parseFloat(computedStyle.getPropertyValue('scroll-margin-top').slice(0, -2));
+            console.log(scrollMarginTop + 1)
+            if (link) {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: `top ${scrollMarginTop + 1}`,
+                        toggleActions: 'play none none none',
+                        onEnter: () => { highlight(link) },
+                        onEnterBack: () => { highlight(link) },
+                    }
+                });
+            }
+        });
+
+    }
+
+    window.addEventListener('load', () => {
+        if (toc) { highlightToc();}
+    });
+
+</script>

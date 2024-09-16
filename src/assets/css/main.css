@@ -4,6 +4,7 @@
 @import url("components/_markdown.css");
 @import url("components/_navigation.css");
 @import url("components/_section.css");
+@import url("components/_scrollbar.css");
 @import url("components/_syntax.css");
 @tailwind base;
 @tailwind components;
