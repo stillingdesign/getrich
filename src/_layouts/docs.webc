@@ -139,7 +139,6 @@ tag: docs
             const link = tocLinks.find(link => link.includes(id));
             const computedStyle = window.getComputedStyle(heading);
             const scrollMarginTop = parseFloat(computedStyle.getPropertyValue('scroll-margin-top').slice(0, -2));
-            console.log(scrollMarginTop + 1)
             if (link) {
                 gsap.timeline({
                     scrollTrigger: {
