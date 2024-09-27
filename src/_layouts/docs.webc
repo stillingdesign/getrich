@@ -52,6 +52,16 @@ tag: docs
                                     </li>
                                 </ul>
                             </div>
+                            <div class="hidden md:block relative w-full pr-24 mt-24">
+                                <div class="relative flex flex-col items-start ">
+                                    <link-btn href="https://opencollective.com/11ty" target="_blank" class="size-2xs mb-6">
+                                        Sponsor 11ty   
+                                    </link-btn>
+                                    <p class="text-12/150 text-content text-balance">
+                                        This project uses 11ty, an open source SSG. To help continue it's development, please donate.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--- Fade out overflow --->
@@ -70,11 +80,11 @@ tag: docs
                                 <ul data-toc class="relative w-full">
                                     <!--- Items --->
                                     <li webc:for="item of toc" class="relative w-full">
-                                        <a data-toc-item :href="item.href" @text="item.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-6  text-detail transition-colors hover:text-link button-focus md:rounded-6 px-24 sm:px-48 md:px-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
+                                        <a data-toc-item data-anchor="72" :href="item.href" @text="item.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-6  text-detail transition-colors hover:text-link button-focus md:rounded-6 px-24 sm:px-48 md:px-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
                                         <!--- Subitems --->
                                         <ul webc:if="item.subitems" class="relative md:pl-16 w-full">
                                             <li webc:for="subitem of item.subitems" class="relative w-full">
-                                                <a data-toc-item :href="subitem.href" @text="subitem.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-8 text-detail transition-colors hover:text-link button-focus md:rounded-6 pl-40 pr-24 sm:pl-64 sm:pr-48 md:pl-8 md:pr-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
+                                                <a data-toc-item data-anchor="72" :href="subitem.href" @text="subitem.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-8 text-detail transition-colors hover:text-link button-focus md:rounded-6 pl-40 pr-24 sm:pl-64 sm:pr-48 md:pl-8 md:pr-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
                                             </li>
                                         </ul>
                                     </li>
@@ -93,11 +103,11 @@ tag: docs
             <div class="relative w-full max-w-640 md:col-start-2 md:col-end-4 pt-72 md:pt-56 pointer-events-auto">
                 <!--- Bread crumbs --->
                 <div class="flex items-center text-14/100 gap-4 mb-24">
-                    <p class="text-detail">
+                    <link-txt href="/docs/" class="variant-text">
                         Docs
-                    </p>
+                    </link-txt>
                     <chevronright class="w-14 text-detail -mb-1"></chevronright>
-                    <p @html="this.title"></p>
+                    <p @html="this.title" class="text-detail"></p>
                 </div>
                 <!--- Content --->
                 <div @html="this.content" class="markdown pb-128">
@@ -190,8 +200,24 @@ tag: docs
         });
     }
 
+    // Smooth scroll to anchor links
+    function anchorScroll() {
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(anchor => {
+            const link = anchor.href;
+            const sectionId = link.split("/").pop();
+            const offset = anchor.getAttribute('data-anchor');
+            const scrollToSection = (event) => {
+                event.preventDefault();
+                gsap.to(window, {duration: 1, scrollTo: { y: sectionId, offsetY: offset, }, ease: "power3.inOut"});
+            }
+            anchor.addEventListener(`click`, scrollToSection, false);
+        })
+    }
+
     window.addEventListener('load', () => {
         toggleDocsNav();
+        anchorScroll();
         if (toc) { highlightToc(); }
     });
 

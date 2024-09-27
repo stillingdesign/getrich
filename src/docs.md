@@ -18,10 +18,6 @@ toc:
     -   title: "Run the code"
         href: "#run-the-code"
         tag: "h2"
-        subitems:
-        - title: "Testing Sub-item"
-          href: "#getrich-quickstart-guide-subitem"
-          tag: "h3"
     -   title: "Build your site"
         href: "#build-your-site"
         tag: "h2"
