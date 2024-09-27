@@ -135,7 +135,9 @@
     color: rgba(var(--color-headline), 0.6);
     @media (hover: hover) {
         &:hover {
-            background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1);
+            background-color: transparent;
+            box-shadow: none;
+            color: rgba(var(--color-headline), 1);
         }
     }
 }
@@ -145,7 +147,9 @@
     color: rgba(var(--color-headline), 0.6);
     @media (hover: hover) {
         &:hover {
-            background-color: rgba(var(--color-headline), 0.06); box-shadow: none; color: rgba(var(--color-headline), 1);
+            background-color: rgba(var(--color-headline), 0.06);
+            box-shadow: none;
+            color: rgba(var(--color-headline), 1);
         }
     }
 }

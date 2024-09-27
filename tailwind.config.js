@@ -160,6 +160,7 @@ module.exports = {
         height: {
           'full-56': 'calc(100% - 3.5rem)',
           'dvh-56': 'calc(100dvh - 3.5rem)',
+          'dvh-96': 'calc(100dvh - 6rem)',
           'dvh-112': 'calc(100dvh - 7rem)',
         },
         maxWidth: {

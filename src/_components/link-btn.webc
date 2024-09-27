@@ -16,8 +16,10 @@
 
     Color variants:
     • variant-primary (default)
-    • variant-secondary
-    • variant-text
+    • variant-outline
+    • variant-underline
+    • variant-tab
+    • variant-ghost
 
     Size variants:
     • size-3xs
