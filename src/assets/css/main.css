@@ -4,6 +4,8 @@
 @import url("components/_markdown.css");
 @import url("components/_navigation.css");
 @import url("components/_section.css");
+@import url("components/_scrollbar.css");
+@import url("components/_syntax.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,6 +42,9 @@
         --color-headline: 0, 0, 0;
         --color-link: 0, 85, 255;
         --color-linkhover: 66, 129, 255;
+        --color-error: 224, 0, 120;
+        --color-caution: 247, 104, 0;
+        --color-accent: 159, 67, 229;
         -webkit-font-smoothing: antialiased;
         /* Dark */
         @media (prefers-color-scheme: dark) {
@@ -54,7 +59,10 @@
             --color-content: 210, 210, 210;
             --color-headline: 255, 255, 255;
             --color-link: 102, 153, 255;
-            --color-linkhover: 138, 177, 255;
+            --color-linkhover: 145, 187, 255;
+            --color-error: 255, 93, 161;
+            --color-caution: 255, 163, 24;
+            --color-accent: 181, 130, 247;
         }
     }
     /* Dark copy/paste */
@@ -70,6 +78,9 @@
             --color-content: 210, 210, 210;
             --color-headline: 255, 255, 255;
             --color-link: 102, 153, 255;
-            --color-linkhover: 138, 177, 255;
+            --color-linkhover: 145, 187, 255;
+            --color-error: 255, 93, 161;
+            --color-caution: 255, 163, 24;
+            --color-accent: 181, 130, 247;
     }    
 }

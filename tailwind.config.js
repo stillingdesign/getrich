@@ -43,6 +43,9 @@ module.exports = {
         headline: 'rgba(var(--color-headline), <alpha-value>)',
         link: 'rgba(var(--color-link), <alpha-value>)',
         linkhover: 'rgba(var(--color-linkhover), <alpha-value>)',
+        caution: 'rgba(var(--color-caution), <alpha-value>)',
+        error: 'rgba(var(--color-error), <alpha-value>)',
+        accent: 'rgba(var(--color-accent), <alpha-value>)',
         current: 'currentColor',
         transparent: 'transparent',
       },
@@ -86,7 +89,7 @@ module.exports = {
       },
       screens: {
         'sm': '768px',
-        'md': '1168px',
+        'md': '1136px',
         'lg': '1536px',
       },
       spacing: {
@@ -155,7 +158,9 @@ module.exports = {
       },
       extend: {
         height: {
+          'full-56': 'calc(100% - 3.5rem)',
           'dvh-56': 'calc(100dvh - 3.5rem)',
+          'dvh-96': 'calc(100dvh - 6rem)',
           'dvh-112': 'calc(100dvh - 7rem)',
         },
         maxWidth: {

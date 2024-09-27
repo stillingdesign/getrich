@@ -9,45 +9,108 @@ tag: docs
     <grid class="z-10 h-full pointer-events-none hidden"></grid>
 
     <div class="section pt-56">
-        <container class="grid grid-cols-4 gap-16">
-            <!--- Docs nav --->
-            <div class="sticky top-56 h-dvh-56">
-                <div class="relative flex flex:col w-full h-full pt-56 text-14/100 tracking-tight">
-                    <ul>
-                        <li>
-                            <p class="font-medium">
-                                Getting started
-                            </p>
-                        </li>
-                    </ul>
+        <!--- Docs Navigations --->
+        <div class="fixed md:absolute top-56 w-full md:max-w-screen-lg h-full-56 z-20 pointer-events-none">
+            <div class="relative w-full h-40 flex items-center justify-between px-24 sm:px-48 font-medium text-left md:hidden pointer-events-auto border-b border-b-headline/4 bg-background">
+                <button data-docs-nav-toggle aria-expanded="false" aria-controls="docs-nav" aria-label="Toggle Docs navigation" class="flex items-center gap-4 button-focus rounded-4 h-32 pl-6 pr-8 -ml-6">
+                    <pluscircle></pluscircle>
+                    <span>
+                        Documentation
+                    </span>
+                </button>
+                <div class="flex items-center gap-4 -mr-10">
+                    <link-btn href="/docs/tools/" class="variant-ghost size-xs">
+                        Develop
+                    </link-btn>
+                    <div class="block rounded-full w-3 h-3 bg-headline"></div>
+                    <link-btn href="/docs/tools/" class="variant-ghost size-xs">
+                        Contribute
+                    </link-btn>
                 </div>
             </div>
-            <!--- Docs content --->
-            <div class="relative col-span-2 pt-56">
+            <div data-docs-nav id="docs-nav" class="absolute top-40 md:top-0 translate-x-full md:translate-x-0 md:relative grid grid-cols-2 md:grid-cols-4 md:gap-16 w-full bg-background md:bg-transparent h-dvh-96 md:h-full  overflow-y-scroll md:overflow-y-visible">
+                <!--- Docs nav --->
+                <div class="md:sticky md:top-56 md:h-dvh-56 pointer-events-auto border-r border-r-headline/6 md:border-r-0">
+                    <div class="relative flex flex-col items-start w-full h-full md:pt-56 text-14/100 tracking-tight overflow-y-scroll scrollbar-hidden">
+                        <div class="relative w-full md:mb-64">
+                            <div class="relative md:-mt-24">
+                                <div class="absolute left-0 top-10 h-full hidden md:block" style="height:calc(100% - 1rem);"></div>
+                                <ul class="relative w-full">
+                                    <!--- Items --->
+                                    <li webc:for="item of documentation" class="relative w-full">
+                                        <p class="font-medium pb-16 pt-16 md:pb-12 md:pt-24 px-24 sm:px-48 md:px-0 border-b border-b-headline/6 md:border-b-0" @text="item.label"></p>
+                                        <div class="relative w-full">
+                                            <div class="absolute left-0 top-8 h-full border-l border-l-headline/10" style="height:calc(100% - 1rem);"></div>
+                                            <ul class="relative md:pl-16 pointer-events-auto">
+                                                <li webc:for="subitem of item.items" class="relative w-full">
+                                                    <div webc:if="subitem.href === page.url" class="hidden md:block absolute -left-16 top-8 h-14 border-l border-l-link"></div>
+                                                    <a webc:if="subitem.href === page.url" :href="subitem.href" @text="subitem.label" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-6 text-link font-medium transition-colors hover:text-link button-focus md:rounded-6 px-24 sm:px-48 md:px-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
+                                                    <a webc:else :href="subitem.href" @text="subitem.label" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-8 text-detail transition-colors hover:text-link button-focus md:rounded-6 px-24 sm:px-48 md:px-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="hidden md:block relative w-full pr-24 mt-24">
+                                <div class="relative flex flex-col items-start ">
+                                    <link-btn href="https://opencollective.com/11ty" target="_blank" class="size-2xs mb-6">
+                                        Sponsor 11ty   
+                                    </link-btn>
+                                    <p class="text-12/150 text-content text-balance">
+                                        This project uses 11ty, an open source SSG. To help continue it's development, please donate.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--- Fade out overflow --->
+                    <div class="hidden md:block absolute top-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 0), rgba(var(--color-background), 1))"></div>
+                    <div class="hidden md:block absolute bottom-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 1), rgba(var(--color-background), 0))"></div>
+                </div>
+                <!--- Page nav --->
+                <div webc:if="toc" class="md:sticky md:col-start-4 md:top-56 md:h-dvh-56 pointer-events-auto">
+                    <div class="relative flex flex:col items-start w-full h-full md:pt-56 text-14/100 tracking-tight overflow-y-scroll scrollbar-hidden">
+                        <div class="relative w-full mb-64">
+                            <p class="font-medium pb-16 pt-16 md:pb-12 md:pt-0 border-b border-b-headline/6 md:border-b-0 px-24 sm:px-48 md:px-0">
+                                On this page:
+                            </p>
+                            <div class="relative">
+                                <div class="absolute left-0 top-10 h-full" style="height:calc(100% - 1rem);"></div>
+                                <ul data-toc class="relative w-full">
+                                    <!--- Items --->
+                                    <li webc:for="item of toc" class="relative w-full">
+                                        <a data-toc-item data-anchor="72" :href="item.href" @text="item.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-6  text-detail transition-colors hover:text-link button-focus md:rounded-6 px-24 sm:px-48 md:px-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
+                                        <!--- Subitems --->
+                                        <ul webc:if="item.subitems" class="relative md:pl-16 w-full">
+                                            <li webc:for="subitem of item.subitems" class="relative w-full">
+                                                <a data-toc-item data-anchor="72" :href="subitem.href" @text="subitem.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-8 text-detail transition-colors hover:text-link button-focus md:rounded-6 pl-40 pr-24 sm:pl-64 sm:pr-48 md:pl-8 md:pr-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--- Fade out overflow --->
+                    <div class="hidden md:absolute top-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 0), rgba(var(--color-background), 1))"></div>
+                    <div class="hidden md:absolute bottom-0 left-0 w-full h-64" style="background: linear-gradient(0deg, rgba(var(--color-background), 1), rgba(var(--color-background), 0))"></div>
+                </div>
+            </div>
+        </div>
+        <!--- Docs content --->
+        <container class="flex flex-col items-center md:grid md:grid-cols-4 gap-16 pointer-events-none">
+            <div class="relative w-full max-w-640 md:col-start-2 md:col-end-4 pt-72 md:pt-56 pointer-events-auto">
                 <!--- Bread crumbs --->
                 <div class="flex items-center text-14/100 gap-4 mb-24">
-                    <p class="text-detail">
+                    <link-txt href="/docs/" class="variant-text">
                         Docs
-                    </p>
+                    </link-txt>
                     <chevronright class="w-14 text-detail -mb-1"></chevronright>
-                    <p>
-                        Getting started
-                    </p>
+                    <p @html="this.title" class="text-detail"></p>
                 </div>
                 <!--- Content --->
                 <div @html="this.content" class="markdown pb-128">
-                </div>
-            </div>
-            <!--- Page nav --->
-            <div class="sticky top-56 h-dvh-56">
-                <div class="relative flex flex:col w-full h-full pt-56 text-14/100 tracking-tight">
-                    <ul>
-                        <li>
-                            <p class="font-medium">
-                                On this page
-                            </p>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </container>
@@ -56,3 +119,105 @@ tag: docs
 </main>
 
 <footer></footer>
+
+<script>
+
+    const toc = document.querySelector('[data-toc]');
+
+    // Highlight TOC Items
+    function highlightToc() {
+        const headings = document.querySelectorAll('h1[id], h2[id], h3[id]');
+        const tocItems = document.querySelectorAll('[data-toc-item]');
+        const tocLinks = Array.from(tocItems).map(item => item.getAttribute('href'));
+        function highlight(link) {
+            tocItems.forEach(item => item.classList.remove('font-medium', 'text-headline', 'text-link'));
+            document.querySelector(`[href="${link}"]`).classList.add('font-medium', 'text-headline', 'text-link');
+        }
+        tocItems[0].classList.add('font-medium', 'text-headline', 'text-link');
+        headings.forEach((heading, index) => {
+            const id = heading.getAttribute('id');
+            const link = tocLinks.find(link => link.includes(id));
+            const computedStyle = window.getComputedStyle(heading);
+            const scrollMarginTop = parseFloat(computedStyle.getPropertyValue('scroll-margin-top').slice(0, -2));
+            if (link) {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: `top ${scrollMarginTop + 1}`,
+                        toggleActions: 'play none none none',
+                        onEnter: () => { highlight(link) },
+                        onEnterBack: () => { highlight(link) },
+                    }
+                });
+            }
+        });
+
+    }
+
+    // Toggle Docs Nav on Mobile
+    function toggleDocsNav() {
+        const body = document.querySelector('body');
+        const nav = document.querySelector('[data-docs-nav]');
+        const toggle = document.querySelector('[data-docs-nav-toggle]');
+        const toggleSvg = toggle.querySelector('svg');
+
+        function open() {
+            toggle.setAttribute('aria-expanded', 'true');
+            const tmln = gsap.timeline();
+            tmln
+                .set(body, { overflowY: 'hidden' })
+                .set(nav, { overflowY: 'scroll' })
+                .to(nav, { x: 0, duration: 0.5, ease: 'power3.inOut' })
+                .to(toggleSvg, { rotate: 45, duration: 0.5, ease: 'power3.inOut' }, 0);
+        }
+
+        function close() {
+            toggle.setAttribute('aria-expanded', 'false');
+            const tmln = gsap.timeline();
+            tmln
+                .set(body, { overflowY: 'auto' })
+                .set(nav, { overflowY: 'hidden' })
+                .to(nav, { x: '100%', duration: 0.5, ease: 'power3.inOut' })
+                .to(toggleSvg, { rotate: 0, duration: 0.5, ease: 'power3.inOut' }, 0);
+        }
+
+        function reset() {
+            const tmln = gsap.timeline();
+            tmln
+                .set([body, nav], { clearProps: 'overflowY' })
+                .set(nav, { clearProps: 'x' })
+                .set(toggleSvg, { clearProps: 'rotate' });
+        }
+
+        toggle.addEventListener('click', () => {
+            if (toggle.getAttribute('aria-expanded') === 'true') { close(); }
+            else { open(); }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1136) { reset(); }
+        });
+    }
+
+    // Smooth scroll to anchor links
+    function anchorScroll() {
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(anchor => {
+            const link = anchor.href;
+            const sectionId = link.split("/").pop();
+            const offset = anchor.getAttribute('data-anchor');
+            const scrollToSection = (event) => {
+                event.preventDefault();
+                gsap.to(window, {duration: 1, scrollTo: { y: sectionId, offsetY: offset, }, ease: "power3.inOut"});
+            }
+            anchor.addEventListener(`click`, scrollToSection, false);
+        })
+    }
+
+    window.addEventListener('load', () => {
+        toggleDocsNav();
+        anchorScroll();
+        if (toc) { highlightToc(); }
+    });
+
+</script>

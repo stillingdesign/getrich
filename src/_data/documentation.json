@@ -1,0 +1,68 @@
+[
+    {
+        "label": "For developers",
+        "items": [
+            {
+                "label": "Quick start",
+                "href": "/docs/"
+            },
+            {
+                "label": "Theming",
+                "href": "/docs/theming/"
+            },
+            {
+                "label": "Branding",
+                "href": "/docs/branding/"
+            },
+            {
+                "label": "Navigation",
+                "href": "/docs/navigation/"
+            },
+            {
+                "label": "Customization",
+                "href": "/docs/customizing/"
+            },
+            {
+                "label": "Deploying",
+                "href": "/docs/deploying/"
+            },
+            {
+                "label": "Analytics",
+                "href": "/docs/analytics/"
+            },
+            {
+                "label": "A/B testing",
+                "href": "/docs/testing/"
+            }
+        ]
+    },
+    {
+        "label": "For contributors",
+        "items": [
+            {
+                "label": "Get the tools",
+                "href": "/docs/tools/"
+            },
+            {
+                "label": "How it works",
+                "href": "/docs/how-it-works/"
+            },
+            {
+                "label": "Update pages",
+                "href": "/docs/update-pages/"
+            },
+            {
+                "label": "Add pages",
+                "href": "/docs/add-pages/"
+            },
+            {
+                "label": "Write content",
+                "href": "/docs/writing/"
+            },
+            {
+                "label": "Start designing",
+                "href": "/docs/design/"
+            }
+        ]
+    }
+]
