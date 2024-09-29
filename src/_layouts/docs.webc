@@ -10,8 +10,8 @@ tag: docs
 
     <div class="section pt-56">
         <!--- Docs Navigations --->
-        <div class="fixed md:absolute top-56 w-full md:max-w-screen-lg h-full-56 z-20 pointer-events-none">
-            <div class="relative w-full h-40 flex items-center justify-between px-24 sm:px-48 font-medium text-left md:hidden pointer-events-auto border-b border-b-headline/4 bg-background">
+        <div class="fixed md:absolute top-56 mt:n1 w-full md:max-w-screen-lg h-full-56 z-20 pointer-events-none">
+            <div class="relative w-full h-48 flex items-center justify-between px-24 sm:px-48 font-medium text-left md:hidden pointer-events-auto bg-background/95 backdrop-blur-md border-b border-headline/6">
                 <button data-docs-nav-toggle aria-expanded="false" aria-controls="docs-nav" aria-label="Toggle Docs navigation" class="flex items-center gap-4 button-focus rounded-4 h-32 pl-6 pr-8 -ml-6">
                     <pluscircle></pluscircle>
                     <span>
@@ -28,7 +28,7 @@ tag: docs
                     </link-btn>
                 </div>
             </div>
-            <div data-docs-nav id="docs-nav" class="absolute top-40 md:top-0 translate-x-full md:translate-x-0 md:relative grid grid-cols-2 md:grid-cols-4 md:gap-16 w-full bg-background md:bg-transparent h-dvh-96 md:h-full  overflow-y-scroll md:overflow-y-visible">
+            <div data-docs-nav id="docs-nav" class="absolute top-48 md:top-0 translate-x-full md:translate-x-0 md:relative grid grid-cols-2 md:grid-cols-4 md:gap-16 w-full bg-background md:bg-transparent h-dvh-104 md:h-full  overflow-y-scroll md:overflow-y-visible">
                 <!--- Docs nav --->
                 <div class="md:sticky md:top-56 md:h-dvh-56 pointer-events-auto border-r border-r-headline/6 md:border-r-0">
                     <div class="relative flex flex-col items-start w-full h-full md:pt-56 text-14/100 tracking-tight overflow-y-scroll scrollbar-hidden">
@@ -40,7 +40,7 @@ tag: docs
                                     <li webc:for="item of documentation" class="relative w-full">
                                         <p class="font-medium pb-16 pt-16 md:pb-12 md:pt-24 px-24 sm:px-48 md:px-0 border-b border-b-headline/6 md:border-b-0" @text="item.label"></p>
                                         <div class="relative w-full">
-                                            <div class="absolute left-0 top-8 h-full border-l border-l-headline/10" style="height:calc(100% - 1rem);"></div>
+                                            <div class="hidden md:block absolute left-0 top-8 h-full border-l border-l-headline/10" style="height:calc(100% - 1rem);"></div>
                                             <ul class="relative md:pl-16 pointer-events-auto">
                                                 <li webc:for="subitem of item.items" class="relative w-full">
                                                     <div webc:if="subitem.href === page.url" class="hidden md:block absolute -left-16 top-8 h-14 border-l border-l-link"></div>

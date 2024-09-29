@@ -28,22 +28,56 @@
     <meta webc:if="page.noindex" name="robots" content="noindex, nofollow">
 
     <script>
+
+        const toggleSchemes = document.querySelectorAll('[data-toggle-scheme-checkbox]');
+        const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+        function darkMode() {
+            document.body.classList.add('no-transition');
+            setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
+            document.documentElement.setAttribute('color-scheme', 'dark');
+            toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = true; });
+        }
+
+        function lightMode() {
+            document.body.classList.add('no-transition');
+            setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
+            document.documentElement.setAttribute('color-scheme', 'light');
+            toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = false; });
+        }
+
+        function userMode() {
+            document.body.classList.add('no-transition');
+            setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
+            document.documentElement.setAttribute('color-scheme', scheme);
+            if (scheme === 'dark') { toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = true; }); }
+            else { toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = false; }); }
+        }
+
         function setScheme() {
-            const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            const toggleScheme = document.querySelector('[data-toggle-scheme-checkbox]')
-            if (localStorage.scheme === 'dark') {
-                document.documentElement.setAttribute('color-scheme', 'dark');
-                toggleScheme.checked = true;
-            } else if (localStorage.scheme === 'light') {
-                document.documentElement.setAttribute('color-scheme', 'light');
-                toggleScheme.checked = false;
-            } else {
-                document.documentElement.setAttribute('color-scheme', scheme);
-                if (scheme === 'dark') { toggleScheme.checked = true; }
-                else { toggleScheme.checked = false; }
-            }
+            if (localStorage.scheme === 'dark') { darkMode(); }
+            else if (localStorage.scheme === 'light') { lightMode(); }
+            else { userMode(); }
         }
         setScheme();
+
+        function updateScheme(event) {
+            console.log(event.target.checked);
+            if (event.target.checked === true) {
+                localStorage.setItem('scheme', 'dark');
+                darkMode();
+            } else {
+                localStorage.setItem('scheme', 'light');
+                lightMode();
+            }
+        }
+
+        toggleSchemes.forEach(toggleScheme => { 
+            toggleScheme.addEventListener('change', function(event) {
+                updateScheme(event);
+            });
+        });
+        
     </script>
 
     <!--- CSS --->
@@ -58,6 +92,7 @@
             unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
         }
         :root { font-family: "Inter", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+        .no-transition * { transition: none !important; }
     </style>
     <link rel="stylesheet" href="/assets/css/main.css" webc:keep/>
     <style @raw="getBundle('css')" webc:keep></style>

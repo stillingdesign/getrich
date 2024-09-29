@@ -69,6 +69,8 @@ Getrich instead aims to make a marketing website codebase _simple enough_ that a
 
 Here, my hope is that the code is simple enough for anyone on the team to work with. More to come, but I hope to build docs to help any team member get up to speed here.
 
+Below, is just some shit I'm using to get syntax highlighting working.
+
 <md-code>
     Page.js
 </md-code>
