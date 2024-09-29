@@ -21,10 +21,17 @@
                     GitHub
                     <github slot="left" class="-mt-1"></github>
                 </link-btn>
-                <link-btn href="#" target="_blank" class="size-2xs">
-                    Figma
-                    <figma slot="left"></figma>
-                </link-btn>
+                <!--- Toggle scheme --->
+                <div data-toggle-scheme class="relative flex items-center justify-center border border-headline/8 bg-headline/4 rounded-16 px-2">
+                    <div data-toggle-knob class="absolute w-20 h-20 border bg-headline/6 border-headline/20 rounded-full left-2"></div>
+                    <div data-toggle-light class="relative flex items-center justify-center w-20 h-24">
+                        <sun class="w-12 h-auto"></sun>
+                    </div>
+                    <div data-toggle-dark class="relative flex items-center justify-center w-20 h-24">
+                        <moon class="w-12 h-auto"></moon>
+                    </div>
+                    <input data-toggle-scheme-checkbox type="checkbox" name="Toggle dark/light mode" aria-label="Toggle dark/light mode" class="absolute flex items-center justify-center left-0 top-0 w-full h-full opacity-0 cursor-pointer"/>
+                </div>
             </div>
         </div>
         <!--- Navigation --->

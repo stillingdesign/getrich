@@ -49,7 +49,6 @@
         function userMode() {
             document.body.classList.add('no-transition');
             setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
-            document.documentElement.setAttribute('color-scheme', scheme);
             if (scheme === 'dark') { toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = true; }); }
             else { toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = false; }); }
         }
