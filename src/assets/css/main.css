@@ -65,6 +65,28 @@
             --color-accent: 181, 130, 247;
         }
     }
+    /* Light copy/paste */
+    :root[color-scheme="light"] {
+        --color-primary: 0, 85, 255;
+        --black: 0, 0, 0;
+        --white: 255, 255, 255;
+        --color-theme: 255, 255, 255;
+        --color-inverse: 0, 0, 0;
+        --color-shadow: 230, 230, 230;
+        --color-background: 237, 237, 237;
+        --color-middleground: 245, 245, 245;
+        --color-foreground: 250, 250, 250;
+        --color-highlight: 255, 255, 255;
+        --color-detail: 89, 89, 89;
+        --color-content: 64, 64, 64;
+        --color-headline: 0, 0, 0;
+        --color-link: 0, 85, 255;
+        --color-linkhover: 66, 129, 255;
+        --color-error: 224, 0, 120;
+        --color-caution: 247, 104, 0;
+        --color-accent: 159, 67, 229;
+        -webkit-font-smoothing: antialiased;
+    }   
     /* Dark copy/paste */
     :root[color-scheme="dark"] {
             --color-theme: 0, 0, 0;
