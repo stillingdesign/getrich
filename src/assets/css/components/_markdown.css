@@ -24,6 +24,11 @@
     scroll-margin-top: 6.625rem;
 }
 
+.markdown > h3 {
+    font-size: 1.125rem;
+    scroll-margin-top: 6.625rem;
+}
+
 .markdown > .intro {
     font-size: 1.125rem;
     line-height: 170%;
@@ -54,9 +59,11 @@
 
 .markdown > h1 + p { margin-top: 1rem; }
 .markdown > h2 + p { margin-top: 1rem; }
+.markdown > h3 + p { margin-top: 1rem; }
 .markdown > .intro + hr { margin-top: 2.5rem; }
 
 .markdown > p + h2 { margin-top: 2.25rem; }
+.markdown > p + h3 { margin-top: 1.75rem; }
 .markdown > p + p { margin-top: 1.25rem; }
 .markdown > p + .md-block { margin-top: 1.5rem; }
 

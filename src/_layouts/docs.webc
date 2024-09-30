@@ -83,6 +83,7 @@ tag: docs
                                         <a data-toc-item data-anchor="72" :href="item.href" @text="item.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-6  text-detail transition-colors hover:text-link button-focus md:rounded-6 px-24 sm:px-48 md:px-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
                                         <!--- Subitems --->
                                         <ul webc:if="item.subitems" class="relative md:pl-16 w-full">
+                                            <li class="absolute top-8 left-0 border-l border-l-headline/4 hidden md:block" style="height: calc(100% - 1rem);"></li>
                                             <li webc:for="subitem of item.subitems" class="relative w-full">
                                                 <a data-toc-item data-anchor="72" :href="subitem.href" @text="subitem.title" class="relative w-full overflow-hidden text-ellipsis block py-10 md:py-8 text-detail transition-colors hover:text-link button-focus md:rounded-6 pl-40 pr-24 sm:pl-64 sm:pr-48 md:pl-8 md:pr-8 md:-ml-8 whitespace-nowrap border-b-headline/6 md:border-b-0"></a>
                                             </li>
