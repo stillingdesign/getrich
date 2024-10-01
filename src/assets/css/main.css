@@ -28,8 +28,8 @@
     /* Light */
     :root {
         --color-primary: 0, 85, 255;
-        --black: 0, 0, 0;
-        --white: 255, 255, 255;
+        --color-black: 0, 0, 0;
+        --color-white: 255, 255, 255;
         --color-theme: 255, 255, 255;
         --color-inverse: 0, 0, 0;
         --color-shadow: 230, 230, 230;
