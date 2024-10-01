@@ -85,6 +85,21 @@
 
 /* Variants */
 
+.button.variant-primary {
+    background-color: rgba(var(--color-primary), 1);
+    color: rgba(var(--color-white), 1);
+    border-color: rgba(var(--color-primary), 1);
+    backdrop-filter: blur(4px);
+    transform: translate3d(0,0,0);
+    @media (hover: hover) {
+        &:hover {
+            background-color: rgba(var(--color-primary), 0.8);
+            border-color: rgba(var(--color-primary), 0);
+            box-shadow: 0 0.25rem 0.5rem 0 rgba(var(--black), 0.1), 0 0.125rem 0.25rem 0 rgba(var(--black),0.1);
+        }
+    }
+}
+
 .button.variant-outline {
     background-color: rgba(var(--color-headline), 0.02);
     color: rgba(var(--color-headline), 1);
@@ -97,36 +112,6 @@
             border-color: rgba(var(--color-headline), 0.3);
             box-shadow: 0 0.25rem 0.5rem 0 rgba(var(--black), 0.1), 0 0.125rem 0.25rem 0 rgba(var(--black),0.1);
         }
-    }
-}
-
-.button.variant-underline {
-    background-color: transparent;
-    color: rgba(var(--color-link), 1);
-
-    & > span:before {
-        content: '';
-        position: absolute;
-        bottom: -25%;
-        width: calc(100% - 0.125rem);
-        height: 0.09em;
-        background-color: rgba(var(--color-link), 1);
-        transform: scale3d(0,1,1);
-        transform-origin: left center;
-        transition: transform 200ms cubic-bezier(0.3,0,0.3,1) 50ms;
-    }
-
-    &.theme {
-        color: rgba(var(--color-headline), 0.6);
-        & > span:before { background-color: rgba(var(--color-headline), 1); }
-    }
-
-    @media (hover: hover) {
-        &:hover {
-            background-color: transparent; box-shadow: none;
-            & > span:before { transform: scale3d(1,1,1); }
-        }
-        &.theme:hover { color: rgba(var(--color-headline), 1); }
     }
 }
 
@@ -144,10 +129,13 @@
 
 .button.variant-ghost {
     background-color: transparent;
+    backdrop-filter: blur(0);
+    transform: translate3d(0,0,0);
     color: rgba(var(--color-headline), 0.6);
     @media (hover: hover) {
         &:hover {
             background-color: rgba(var(--color-headline), 0.06);
+            backdrop-filter: blur(4px);
             box-shadow: none;
             color: rgba(var(--color-headline), 1);
         }

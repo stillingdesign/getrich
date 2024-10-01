@@ -25,15 +25,25 @@ toc:
         -   title: "Other colors"
             href: "#other-colors"
             tag: "h3"
-        -   title: "Customize colors"
-            href: "#customize-colors"
+        -   title: "Customize color"
+            href: "#customize-color"
             tag: "h3"
         -   title: "Usage example"
             href: "#usage-example"
             tag: "h3"
-    -   title: "Buttons and links"
-        href: "#buttons-and-links"
+    -   title: "Buttons"
+        href: "#buttons"
         tag: "h2"
+        subitems:
+        -   title: "Variants"
+            href: "#button-variants"
+            tag: "h3"
+        -   title: "Sizes"
+            href: "#button-sizes"
+            tag: "h3"
+        -   title: "Customize"
+            href: "#customize-buttons"
+            tag: "h3"
 ---
 
 # Theming your website
@@ -359,7 +369,7 @@ colors: {
 
 To see how this works, check out the example below:
 
-<div class="relative flex w-full p-32 bg-shadow aspect-1/1 text-12/100 mt-24 mb-64 rounded-6 border border-headline/10">
+<div class="relative flex w-full p-32 bg-shadow aspect-1/1 text-12/100 mt-24 mb-48 rounded-6 border border-headline/10">
     <div class="absolute top-0 left-0 w-full px-12 py-10 flex justify-between items-center">
         <div>
             Shadow
@@ -389,16 +399,16 @@ To see how this works, check out the example below:
                             Highlight
                         </div>
                     </div>
-                    <div class="rounded-4 px-6 pt-4 pb-3 ml-16 bg-accent/10 border border-accent/10 text-accent text-12/100 mb-10">
+                    <div class="hidden sm:block ounded-4 px-6 pt-4 pb-3 ml-16 bg-accent/10 border border-accent/10 text-accent text-12/100 mb-10">
                         Accent
                     </div>
-                    <div class="text-headline text-16/110 px-16 pb-6 text-balance">
+                    <div class="hidden sm:block text-headline text-16/110 px-16 pb-6 text-balance">
                         Headline using headline.
                     </div>
-                    <div class="text-content text-14/150 px-16 pb-6 text-pretty">
+                    <div class="hidden sm:block text-content text-14/150 px-16 pb-6 text-pretty">
                         Subcopy and a <span class="text-link hover:text-linkhover cursor-pointer">faux link</span> that uses the color content and link.
                     </div>
-                    <div class="text-detail text-12/150 px-16 text-balance pb-16">
+                    <div class="hidden sm:block text-detail text-12/150 px-16 text-balance pb-16">
                         Note: this note is using the detail color.
                     </div>
                 </div>
@@ -407,7 +417,9 @@ To see how this works, check out the example below:
     </div>
 </div>
 
-## Buttons and links
+---
+
+## Buttons
 
 Rather than tying the the styling of buttons and links to `<button>` or `<a>` tags, Getrich approaches this type of formatting as a set of utility classes that can be used on any element.
 
@@ -415,19 +427,125 @@ Rather than tying the the styling of buttons and links to `<button>` or `<a>` ta
     Example
 </md-code>
 
-<div class="md-viewer relative flex items-center justify-center min-h-144 bg-middleground border-x border-t border-headline/10" style="background-image: linear-gradient(90deg, rgba(var(--color-headline), 0.04) 1px,transparent 0),linear-gradient(180deg,rgba(var(--color-headline), 0.04) 1px,transparent 0); background-size: 1rem 1rem; background-position: center;">
-    <div class="button variant-primary size-sm">
-        This div looks like a button
-    </div>
-</div>
+<md-viewer class="flex-col gap-16 py-24">
+    <button class="button size-sm">
+        A button tag
+    </button>
+    <a href="#" class="button size-sm">
+        An anchor tag
+    </a>
+</md-viewer>
 
 ```html
-<div class="button variant-primary size-sm">
-    This div looks like a button
-</div>
+<button class="button size-sm">
+    A button tag
+</button>
+<a href="#" class="button size-sm">
+    An anchor tag
+</a>
 ```
 
-Out of the box, Getrich provides two components for links specifically, `<link-txt>` and `<link-btn>`. These will have default button or link styling applied to an `<a>` tag.
+### Button variants
+
+By default, the `.button` and `.link` utility class will be displayed in this style. This can be overwritten by by adding a `.variant-{name}` style to the element, too.
+
+<md-code>
+    Variants
+</md-code>
+
+<md-viewer class="flex-col gap-16 min-h-256">
+    <a href="#" class="button size-sm min-w-80">
+        Default
+    </a>
+    <a href="#" class="button variant-primary size-sm min-w-80">
+        Primary
+    </a>
+    <a href="#" class="button variant-outline size-sm min-w-80">
+        Outline
+    </a>
+    <a href="#" class="button variant-ghost size-sm min-w-80">
+        Ghost
+    </a>
+</md-viewer>
+
+```html
+<a href="#" class="button size-sm min-w-80">
+    Default
+</a>
+<a href="#" class="button variant-primary size-sm min-w-80">
+    Primary
+</a>
+<a href="#" class="button variant-outline size-sm min-w-80">
+    Outline
+</a>
+<a href="#" class="button variant-ghost size-sm min-w-80">
+    Ghost
+</a>
+```
+
+### Button sizes
+
+Similar to variants, button sizing can be modified by adding a size utility class. The default sizes available are listed below.
+
+<md-code>
+    Sizes
+</md-code>
+
+<md-viewer class="flex-col gap-16 py-24">
+    <a href="#" class="button size-xl">
+        size-xl
+    </a>
+    <a href="#" class="button size-lg">
+        size-lg
+    </a>
+    <a href="#" class="button size-md">
+        size-md
+    </a>
+    <a href="#" class="button size-sm">
+        size-sm
+    </a>
+    <a href="#" class="button size-xs">
+        size-xs
+    </a>
+    <a href="#" class="button size-2xs">
+        size-2xs
+    </a>
+    <a href="#" class="button size-3xs">
+        size-3xs
+    </a>
+</md-viewer>
+
+```html
+<a href="#" class="button size-xl">
+    size-xl
+</a>
+```
+
+### Customize buttons
+
+`src/assets/css/components/_link-btn.css` is the place to go for customize button styles within Getrich. There, you can customize the foundational styles, variants, and sizing.
+
+---
+
+## Links
+
+Just like buttons, links can be easily styled with utility classes.
+
+<md-code>
+    Example
+</md-code>
+
+<md-viewer class="flex-col gap-16 pt-24 pb-28">
+    <a href="#" class="link">
+        Here's a link
+    </a>
+</md-viewer>
+
+```html
+<a href="#" class="link">
+    Here's a link
+</a>
+```
 
 <script>
     function setColorValues() {

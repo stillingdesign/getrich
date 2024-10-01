@@ -15,7 +15,7 @@
     CSS: Lives in assets/css/components/_link-btn.css
 
     Color variants:
-    • variant-primary (default)
+    • variant-primary
     • variant-outline
     • variant-underline
     • variant-tab

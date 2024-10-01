@@ -16,7 +16,7 @@
         <!--- Mobile CTAs --->
         <div class="relative flex sm:hidden items-center gap-4">
             <!--- Primary CTA --->
-            <link-btn href="/docs/" class="size-sm variant-primary">
+            <link-btn href="/docs/" class="size-sm">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
@@ -78,7 +78,7 @@
         <!-- Desktop CTAs -->
         <div class="hidden sm:flex items-center gap-12">
             <!--- Primary CTA --->
-            <link-btn href="/docs/" class="size-md variant-primary">
+            <link-btn href="/docs/" class="size-md">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
