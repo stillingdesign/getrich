@@ -67,7 +67,8 @@
 .markdown > p + p { margin-top: 1.25rem; }
 .markdown > p + .md-block { margin-top: 1.5rem; }
 
-.markdown > .md-code + pre {
+.markdown > .md-code + pre,
+.markdown > .md-viewer + pre {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     margin-top: 0;

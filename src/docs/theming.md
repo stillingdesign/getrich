@@ -32,7 +32,7 @@ toc:
             href: "#usage-example"
             tag: "h3"
     -   title: "Buttons and links"
-        href: "#button-and-links"
+        href: "#buttons-and-links"
         tag: "h2"
 ---
 
@@ -409,7 +409,25 @@ To see how this works, check out the example below:
 
 ## Buttons and links
 
-To make exploring color easier, we've built a Figma file hooked up to color variables. Here' it's easy to slide values around and dial in your palette.
+Rather than tying the the styling of buttons and links to `<button>` or `<a>` tags, Getrich approaches this type of formatting as a set of utility classes that can be used on any element.
+
+<md-code>
+    Example
+</md-code>
+
+<div class="md-viewer relative flex items-center justify-center min-h-144 bg-middleground border-x border-t border-headline/10" style="background-image: linear-gradient(90deg, rgba(var(--color-headline), 0.04) 1px,transparent 0),linear-gradient(180deg,rgba(var(--color-headline), 0.04) 1px,transparent 0); background-size: 1rem 1rem; background-position: center;">
+    <div class="button variant-primary size-sm">
+        This div looks like a button
+    </div>
+</div>
+
+```html
+<div class="button variant-primary size-sm">
+    This div looks like a button
+</div>
+```
+
+Out of the box, Getrich provides two components for links specifically, `<link-txt>` and `<link-btn>`. These will have default button or link styling applied to an `<a>` tag.
 
 <script>
     function setColorValues() {
