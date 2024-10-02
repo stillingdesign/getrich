@@ -8,6 +8,10 @@ ogDesc: "Get started with Getrich, the opinionated boilerplate for your SaaS bra
 ogImage: "/assets/images/og/default.jpg"
 ogImageAlt: ""
 changefreq: "daily"
+prevText: "Get started"
+prevLink: "docs"
+nextText: "Branding"
+nextLink: "branding"
 toc:
     -   title: "Introduction"
         href: "#theming-your-website"

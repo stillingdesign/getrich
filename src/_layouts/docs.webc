@@ -111,7 +111,28 @@ tag: docs
                     <p @html="this.title" class="text-detail"></p>
                 </div>
                 <!--- Content --->
-                <div @html="this.content" class="markdown pb-128">
+                <div @html="this.content" class="markdown pb-64">
+                </div>
+                <!--- Prev/Next --->
+                <div class="grid grid-cols-2 gap-16 justify-between items-center pt-24 pb-128 border-t border-headline/10">
+                    <div webc:if="this.prevLink && this.prevLink !== 'docs'" class="col-start-1">
+                        <a :href="`/docs/` + this.prevLink + `/`" class="button variant-outline">
+                            <chevronLeft></chevronLeft>
+                            <div @html="this.prevText"></div>
+                        </a>
+                    </div>
+                    <div webc:elseif="this.prevLink === 'docs'" class="col-start-1">
+                        <a href="/docs/" class="button variant-outline">
+                            <chevronLeft></chevronLeft>
+                            <div @html="this.prevText"></div>
+                        </a>
+                    </div>
+                    <div webc:if="this.nextLink" class="col-start-2">
+                        <a :href="`/docs/` + this.nextLink + `/`" class="button variant-outline">
+                            <div @html="this.nextText"></div>
+                            <chevronRight></chevronRight>
+                        </a>
+                    </div>
                 </div>
             </div>
         </container>
