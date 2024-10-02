@@ -78,7 +78,7 @@
         <!-- Desktop CTAs -->
         <div class="hidden sm:flex items-center gap-12">
             <!--- Primary CTA --->
-            <link-btn href="/docs/" class="size-md">
+            <link-btn href="/docs/" class="size-md max-h-36">
                 Get started
                 <chevronright slot="right"></chevronright>
             </link-btn>
