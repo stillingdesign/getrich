@@ -34,7 +34,7 @@ toc:
 To get the template, click the button below or visit the [GitHub Page](https://github.com/stillingdesign/getrich) and click "Use this template" in the top left corner. This creates a duplicate of this repository within your own GitHub account.
 
 <div class="flex flex-col justify-start md:flex-row md:items-center gap-16 mt-24">
-    <link-btn href="https://github.com/new?template_name=getrich&template_owner=stillingdesign" class="variant-primary size-md" target="_blank">
+    <link-btn href="https://github.com/new?template_name=getrich&template_owner=stillingdesign" class="size-md" target="_blank">
         Use the template
         <github slot="left" class="-mt-2 mr-4"></github>
     </link-btn>

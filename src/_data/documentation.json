@@ -19,12 +19,16 @@
                 "href": "/docs/navigation/"
             },
             {
-                "label": "Customization",
-                "href": "/docs/customizing/"
+                "label": "Building",
+                "href": "/docs/building/"
             },
             {
                 "label": "Deploying",
                 "href": "/docs/deploying/"
+            },
+            {
+                "label": "Forms",
+                "href": "/docs/forms/"
             },
             {
                 "label": "Analytics",

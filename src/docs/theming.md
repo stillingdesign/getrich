@@ -35,20 +35,39 @@ toc:
         href: "#buttons"
         tag: "h2"
         subitems:
-        -   title: "Variants"
+        -   title: "Button variants"
             href: "#button-variants"
             tag: "h3"
-        -   title: "Sizes"
+        -   title: "Button sizes"
             href: "#button-sizes"
             tag: "h3"
-        -   title: "Customize"
+        -   title: "Customize buttons"
             href: "#customize-buttons"
+            tag: "h3"
+    -   title: "Links"
+        href: "#links"
+        tag: "h2"
+        subitems:
+        -   title: "Link variants"
+            href: "#link-variants"
+            tag: "h3"
+        -   title: "Link sizes"
+            href: "#link-sizes"
+            tag: "h3"
+        -   title: "Customize links"
+            href: "#customize-links"
             tag: "h3"
 ---
 
 # Theming your website
 
 <p class="intro text-balance">How to change the foundational elements of Getrich to make it unique to your brand.</p>
+
+---
+
+## Overview
+
+At a foundational level, most SaaS marketing sites are foundationally differentiated by very few design decisions. Namely, they have subtle differences in their color palette and button/link styling. Below, you'll see how to customize these with Getrich.
 
 ---
 
@@ -399,7 +418,7 @@ To see how this works, check out the example below:
                             Highlight
                         </div>
                     </div>
-                    <div class="hidden sm:block ounded-4 px-6 pt-4 pb-3 ml-16 bg-accent/10 border border-accent/10 text-accent text-12/100 mb-10">
+                    <div class="hidden sm:block rounded-4 px-6 pt-4 pb-3 ml-16 bg-accent/10 border border-accent/10 text-accent text-12/100 mb-10">
                         Accent
                     </div>
                     <div class="hidden sm:block text-headline text-16/110 px-16 pb-6 text-balance">
@@ -424,7 +443,7 @@ To see how this works, check out the example below:
 Rather than tying the the styling of buttons and links to `<button>` or `<a>` tags, Getrich approaches this type of formatting as a set of utility classes that can be used on any element.
 
 <md-code>
-    Example
+    Button example
 </md-code>
 
 <md-viewer class="flex-col gap-16 py-24">
@@ -447,10 +466,10 @@ Rather than tying the the styling of buttons and links to `<button>` or `<a>` ta
 
 ### Button variants
 
-By default, the `.button` and `.link` utility class will be displayed in this style. This can be overwritten by by adding a `.variant-{name}` style to the element, too.
+By default, the `.button` utility class will be displayed in the style above. This can be overwritten by adding a `.variant-{name}` to the element, too.
 
 <md-code>
-    Variants
+    Button variants
 </md-code>
 
 <md-viewer class="flex-col gap-16 min-h-256">
@@ -488,7 +507,7 @@ By default, the `.button` and `.link` utility class will be displayed in this st
 Similar to variants, button sizing can be modified by adding a size utility class. The default sizes available are listed below.
 
 <md-code>
-    Sizes
+    Button sizes
 </md-code>
 
 <md-viewer class="flex-col gap-16 py-24">
@@ -523,7 +542,7 @@ Similar to variants, button sizing can be modified by adding a size utility clas
 
 ### Customize buttons
 
-`src/assets/css/components/_link-btn.css` is the place to go for customize button styles within Getrich. There, you can customize the foundational styles, variants, and sizing.
+`src/assets/css/components/_link-btn.css` is the place to go to customize button styles within Getrich. There, you can customize the foundational styles, variants, and sizing.
 
 ---
 
@@ -532,7 +551,7 @@ Similar to variants, button sizing can be modified by adding a size utility clas
 Just like buttons, links can be easily styled with utility classes.
 
 <md-code>
-    Example
+    Link example
 </md-code>
 
 <md-viewer class="flex-col gap-16 pt-24 pb-28">
@@ -546,6 +565,78 @@ Just like buttons, links can be easily styled with utility classes.
     Here's a link
 </a>
 ```
+
+### Link variants
+
+By default, the `.link` utility class will be displayed in the style above. This styling can be modified by by adding one of the `.variant-{name}` styles below to the element, too.
+
+<md-code>
+    Link variants
+</md-code>
+
+<md-viewer class="flex-col gap-16 min-h-256">
+    <a href="#" class="link">
+        Default
+    </a>
+    <a href="#" class="link variant-text">
+        Text
+    </a>
+    <div class="w-full bg-headline/80 pt-4 pb-8 flex justify-center max-w-192">
+        <a href="#" class="link variant-theme">
+            Theme
+        </a>
+    </div>
+</md-viewer>
+
+```html
+<a href="#" class="link">
+    Default
+</a>
+<a href="#" class="link variant-text">
+    Text
+</a>
+<div class="w-full bg-headline/80 pt-4 pb-8 flex justify-center max-w-192">
+    <a href="#" class="link variant-theme">
+        Theme
+    </a>
+</div>
+```
+
+### Link sizes
+
+Link sizing is based on `font-size` and `line-height`. The reason for this is to make links work inline, alongside other content.
+
+<md-code>
+    Link sizing
+</md-code>
+
+<md-viewer class="flex-col gap-24 pt-24 pb-32">
+    <a href="#" class="link">
+        Uses inherited font-size
+    </a>
+    <a href="#" class="link text-14/140">
+        Uses 14px font + 140% line height
+    </a>
+    <a href="#" class="link text-12/160">
+        Uses 12px font + 160% line height
+    </a>
+</md-viewer>
+
+```html
+<a href="#" class="link">
+    Uses inherited font-size
+</a>
+<a href="#" class="link text-14/140">
+    Uses 14px font + 140% line height
+</a>
+<a href="#" class="link text-12/160">
+    Uses 12px font + 160% line height
+</a>
+```
+
+### Customize links
+
+`src/assets/css/components/_link-txt.css` is the place to go to customize link styles within Getrich. There, you can customize the foundational styles and variants.
 
 <script>
     function setColorValues() {

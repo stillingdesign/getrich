@@ -15,7 +15,7 @@
     CSS: Lives in assets/css/components/_link-txt.css
 
     Color variants:
-    • variant-primary (default)
+    • default         (uses link color)
     • variant-theme   (same as background)
     • variant-text    (contrasts background)
 
