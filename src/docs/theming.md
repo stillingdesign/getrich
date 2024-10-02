@@ -67,7 +67,7 @@ toc:
 
 ## Overview
 
-At a foundational level, most SaaS marketing sites are foundationally differentiated by very few design decisions. Namely, they have subtle differences in their color palette and button/link styling. Below, you'll see how to customize these with Getrich.
+At a foundational level, most SaaS marketing sites are differentiated by very few design decisions. Namely, they have subtle differences in their color palette and button/link styling. Below, you'll see how to customize these with Getrich.
 
 ---
 
