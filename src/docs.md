@@ -1,9 +1,9 @@
 ---
 layout: "docs.webc"
 title: "Quick start"
-seoTitle: "GetRich: Documentation"
+seoTitle: "Getrich: Documentation"
 seoDesc: "Get started with Getrich, the opinionated boilerplate for your SaaS brand."
-ogTitle: "GetRich: Documentation"
+ogTitle: "Getrich: Documentation"
 ogDesc: "Get started with Getrich, the opinionated boilerplate for your SaaS brand."
 ogImage: "/assets/images/og/default.jpg"
 ogImageAlt: ""

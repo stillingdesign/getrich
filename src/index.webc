@@ -1,8 +1,8 @@
 ---
 layout: "main.webc"
-seoTitle: "GetRich: Build a fancy website, sell lots of software"
+seoTitle: "Getrich: Build a fancy website, sell lots of software"
 seoDesc: "Getrich is opinionated boilerplate for your SaaS brand. Bypass the basics and start growing your business."
-ogTitle: "GetRich: Build a fancy website, sell lots of software"
+ogTitle: "Getrich: Build a fancy website, sell lots of software"
 ogDesc: "Getrich is opinionated boilerplate for your SaaS brand. Bypass the basics and start growing your business."
 ogImage: "/assets/images/og/default.jpg"
 ogImageAlt: ""
