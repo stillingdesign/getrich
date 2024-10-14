@@ -26,7 +26,7 @@ changefreq: daily
                     Getrich is opinionated boilerplate for your SaaS brand. Bypass the basics and start growing your business.
                 </p>
                 <div class="flex gap-16 mt-12">
-                    <link-btn href="https://github.com/stillingdesign/getrich" class="size-md variant-primary min-w-160">
+                    <link-btn href="https://github.com/new?template_name=getrich&template_owner=stillingdesign" class="size-md variant-primary min-w-160">
                         Use the template
                         <chevronright slot="right"></chevronright>
                     </link-btn>
