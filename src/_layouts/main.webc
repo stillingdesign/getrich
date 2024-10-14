@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" color-scheme="">
+<html lang="en" color-scheme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +27,17 @@
     <!--- Prevent Indexing --->
     <meta webc:if="page.noindex" name="robots" content="noindex, nofollow">
 
+    <!--- Light/Dark Mode: Set initially --->  
+    <script webc:keep>
+        (function() {
+            const scheme = localStorage.getItem('scheme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (scheme === 'dark') { document.documentElement.setAttribute('color-scheme', 'dark'); }
+            else { document.documentElement.setAttribute('color-scheme', 'light'); }
+            document.documentElement.style.visibility = 'hidden';
+            window.addEventListener('DOMContentLoaded', function() { document.documentElement.style.visibility = ''; });
+        })();
+    </script>
+    <!--- Light/Dark Mode: Toggling --->   
     <script>
 
         const toggleSchemes = document.querySelectorAll('[data-toggle-scheme-checkbox]');
@@ -49,8 +60,8 @@
         function userMode() {
             document.body.classList.add('no-transition');
             setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
-            if (scheme === 'dark') { toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = true; }); }
-            else { toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = false; }); }
+            if (scheme === 'dark') { darkMode(); }
+            else { lightMode(); }
         }
 
         function setScheme() {
@@ -61,7 +72,6 @@
         setScheme();
 
         function updateScheme(event) {
-            console.log(event.target.checked);
             if (event.target.checked === true) {
                 localStorage.setItem('scheme', 'dark');
                 darkMode();
@@ -81,7 +91,7 @@
 
     <!--- CSS --->
     <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <style>
+    <style @html="defineColors(colors)">
         @font-face {
             font-family: "Inter";
             font-style:  normal;
@@ -90,7 +100,10 @@
             src: url("/assets/fonts/InterVariable.woff2") format("woff2");
             unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
         }
-        :root { font-family: "Inter", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+        :root {
+            font-family: "Inter", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            -webkit-font-smoothing: antialiased;
+        }
         .no-transition * { transition: none !important; }
     </style>
     <link rel="stylesheet" href="/assets/css/main.css" webc:keep/>

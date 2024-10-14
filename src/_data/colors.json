@@ -1,0 +1,144 @@
+[
+    {
+        "name": "primary",
+        "value": "0, 85, 255"
+    },
+    {
+        "name": "black",
+        "value": "0, 0, 0"
+    },
+    {
+        "name": "white",
+        "value": "255, 255, 255"
+    },
+    {
+        "theme": "light",
+        "colors": [
+            {
+                "name": "theme",
+                "value": "255, 255, 255"
+            },
+            {
+                "name": "inverse",
+                "value": "0, 0, 0"
+            },
+            {
+                "name": "shadow",
+                "value": "230, 230, 230"
+            },
+            {
+                "name": "background",
+                "value": "237, 237, 237"
+            },
+            {
+                "name": "middleground",
+                "value": "245, 245, 245"
+            },
+            {
+                "name": "foreground",
+                "value": "250, 250, 250"
+            },
+            {
+                "name": "highlight",
+                "value": "255, 255, 255"
+            },
+            {
+                "name": "detail",
+                "value": "89, 89, 89"
+            },
+            {
+                "name": "content",
+                "value": "64, 64, 64"
+            },
+            {
+                "name": "headline",
+                "value": "0, 0, 0"
+            },
+            {
+                "name": "link",
+                "value": "0, 85, 255"
+            },
+            {
+                "name": "linkhover",
+                "value": "66, 129, 255"
+            },
+            {
+                "name": "error",
+                "value": "224, 0, 120"
+            },
+            {
+                "name": "caution",
+                "value": "247, 104, 0"
+            },
+            {
+                "name": "accent",
+                "value": "159, 67, 229"
+            }
+        ]
+    },
+    {
+        "theme": "dark",
+        "colors": [
+            {
+                "name": "theme",
+                "value": "0, 0, 0"
+            },
+            {
+                "name": "inverse",
+                "value": "255, 255, 255"
+            },
+            {
+                "name": "shadow",
+                "value": "0, 0, 0"
+            },
+            {
+                "name": "background",
+                "value": "13, 13, 13"
+            },
+            {
+                "name": "middleground",
+                "value": "20, 20, 20"
+            },
+            {
+                "name": "foreground",
+                "value": "26, 26, 26"
+            },
+            {
+                "name": "highlight",
+                "value": "31, 31, 31"
+            },
+            {
+                "name": "detail",
+                "value": "170, 170, 170"
+            },
+            {
+                "name": "content",
+                "value": "210, 210, 210"
+            },
+            {
+                "name": "headline",
+                "value": "255, 255, 255"
+            },
+            {
+                "name": "link",
+                "value": "102, 153, 255"
+            },
+            {
+                "name": "linkhover",
+                "value": "145, 187, 255"
+            },
+            {
+                "name": "error",
+                "value": "255, 93, 161"
+            },
+            {
+                "name": "caution",
+                "value": "255, 163, 24"
+            },
+            {
+                "name": "accent",
+                "value": "181, 130, 247"
+            }
+        ]
+    }
+]

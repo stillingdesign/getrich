@@ -1,3 +1,5 @@
+const colorsJson = require('./src/_data/colors.json');
+
 export default {
     content: [ 'src/**/*.{md,html,webc}' ],
     corePlugins: {
@@ -28,28 +30,27 @@ export default {
         'full': '9999px',
         'card': '1rem',
       },
-      colors: {
-        primary: 'rgba(var(--color-primary), <alpha-value>)',
-        black: 'rgba(var(--color-black), <alpha-value>)',
-        white: 'rgba(var(--color-white), <alpha-value>)',
-        theme: 'rgba(var(--color-theme), <alpha-value>)',
-        inverse: 'rgba(var(--color-inverse), <alpha-value>)',
-        shadow: 'rgba(var(--color-shadow), <alpha-value>)',
-        background: 'rgba(var(--color-background), <alpha-value>)',
-        middleground: 'rgba(var(--color-middleground), <alpha-value>)',
-        foreground: 'rgba(var(--color-foreground), <alpha-value>)',
-        highlight: 'rgba(var(--color-highlight), <alpha-value>)',
-        detail: 'rgba(var(--color-detail), <alpha-value>)',
-        content: 'rgba(var(--color-content), <alpha-value>)',
-        headline: 'rgba(var(--color-headline), <alpha-value>)',
-        link: 'rgba(var(--color-link), <alpha-value>)',
-        linkhover: 'rgba(var(--color-linkhover), <alpha-value>)',
-        caution: 'rgba(var(--color-caution), <alpha-value>)',
-        error: 'rgba(var(--color-error), <alpha-value>)',
-        accent: 'rgba(var(--color-accent), <alpha-value>)',
-        current: 'currentColor',
-        transparent: 'transparent',
-      },
+      colors: (() => {
+        let colors = {};
+        // Add base colors
+        colorsJson.forEach(item => {
+          if (item.name && item.value) {
+            colors[item.name] = `rgba(var(--color-${item.name}), <alpha-value>)`;
+          }
+        });
+        // Add theme-specific colors (light and dark)
+        colorsJson.forEach(item => {
+          if (item.colors) {
+            item.colors.forEach(color => {
+              colors[color.name] = `rgba(var(--color-${color.name}), <alpha-value>)`;
+            });
+          }
+        });
+        // Add common Tailwind colors
+        colors['current'] = 'currentColor';
+        colors['transparent'] = 'transparent';
+        return colors;
+      })(),
       fontFamily: {
         'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
         'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],

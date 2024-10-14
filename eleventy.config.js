@@ -36,6 +36,38 @@ export default function(eleventyConfig)  {
 		slugify: eleventyConfig.getFilter("slugify"),
 	});
 
+    // Define CSS variables from colors.json
+    eleventyConfig.addFilter("defineColors", function(colors) {
+        let constantColors = ':root {\n';
+        let lightTheme = ':root[color-scheme="light"] {\n';
+        let darkTheme = ':root[color-scheme="dark"] {\n';
+        // Constant colors
+        colors.forEach(item => {
+            if (item.name && item.value) {
+                constantColors += `  --color-${item.name}: ${item.value};\n`;
+            }
+        });
+        // Theme-specific colors
+        colors.forEach(item => {
+            if (item.theme === 'light' && item.colors) {
+                item.colors.forEach(color => {
+                    lightTheme += `  --color-${color.name}: ${color.value};\n`;
+                });
+            }
+            if (item.theme === 'dark' && item.colors) {
+                item.colors.forEach(color => {
+                    darkTheme += `  --color-${color.name}: ${color.value};\n`;
+                });
+            }
+        });
+        // End of the CSS blocks
+        constantColors += '}\n';
+        lightTheme += '}\n';
+        darkTheme += '}\n';
+        // Return combined CSS
+        return constantColors + lightTheme + darkTheme;
+    });
+
     return {
         htmlTemplateEngine: "webc",
         dir: {
