@@ -77,11 +77,11 @@ At a foundational level, most SaaS marketing sites are differentiated by very fe
 
 ## Color palette
 
-Getrich uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) set within `src/assets/css/main.css` to define color across the site. Mainly, the colors used are part of a grayscale. By default the grayscale is monochromatic and untinted.
+Getrich uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) set within `src/_data_/colors.json` to define color across the site. Mainly, the colors used are part of a grayscale. By default the grayscale is monochromatic and untinted.
 
-When looking at `main.css`, you'll notice that there are a seperate set of color values for light and dark mode. They are duplicated to support user overrides of their operating system's [preferred theme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
+When looking at `colors.json`, you'll notice that there are a seperate set of RGB color values for light and dark mode, along with some colors that are the same in both.
 
-Once set and duplicated appropriately in `main.css`, these values need to be carried into `tailwind.config.js` to be utlized as utility classes. If you know a better way to do this with less duplication, please let me know!
+By default, users operating system's [preferred scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) will determine which set of colors are used. If a user manually toggles the scheme (from the footer), that scheme will then override system defaults.
 
 ### Background colors
 
@@ -319,78 +319,46 @@ By default, Getrich supplies a few additional colors for things like branding, a
 
 ### Customize color
 
-To customize colors in Getrich replace the CSS variable RGB values in `main.css`. Since these will be used as utility classes, the alpha can be set flexibly later on.
+To customize colors in Getrich replace the RGB values in `src/_data_/colors.json`. Since these will be used as utility classes using Tailwind, the alpha can be set flexibly [later on](https://tailwindcss.com/docs/background-color#changing-the-opacity).
+
+`color.json` is fed into `eleventy.config.js` and `tailwind.config.js` so that colors can be define in one place.
 
 <md-code>
     main.css
 </md-code>
 
-``` css
-:root {
-    /* Replace our values! */
-    --color-shadow: 230, 230, 230;
-    --color-background: 237, 237, 237;
-    --color-middleground: 245, 245, 245;
-    --color-foreground: 250, 250, 250;
-    --color-highlight: 255, 255, 255;
-    ...
-    @media (prefers-color-scheme: dark) {
-        /* Replace our values! */
-        --color-shadow: 0, 0, 0;
-        --color-background: 13, 13, 13;
-        --color-middleground: 20, 20, 20;
-        --color-foreground: 26, 26, 26;
-        --color-highlight: 31, 31, 31;
-        ...
+``` json
+[
+    {
+        "name": "constantColor",
+        "value": "0, 85, 255"
+    },
+    {
+        "theme": "light",
+        "colors": [
+            {
+                "name": "lightModeColor",
+                "value": "255, 255, 255"
+            }
+        ]
+    },
+    {
+        "theme": "dark",
+        "colors": [
+            {
+                "name": "darkModeColor",
+                "value": "0, 0, 0"
+            }
+        ]
     }
-}
+]
 ```
 
-To add new colors, create a new CSS variable in `main.css` and carry that over to `tailwind.config.js`. When poking around in those files, the patterns should be easy to understand.
-
-<md-code>
-    main.css
-</md-code>
-
-``` css
-:root {
-    --color-new: 255, 255, 255;
-    
-    /* OS set dark mode */
-    @media (prefers-color-scheme: dark) {
-        --color-new: 0, 0, 0;
-    }
-
-    /* User set light mode */ 
-    :root[color-scheme="light"] {
-        --color-new: 255, 255, 255;
-    }
-
-    /* User set dark mode */ 
-    :root[color-scheme="dark"] {
-        --color-new: 0, 0, 0;
-    }
-}
-```
-
-<md-code>
-    tailwind.config.js
-</md-code>
-
-``` js
-colors: {
-    shadow: 'rgba(var(--color-shadow), <alpha-value>)',
-    background: 'rgba(var(--color-background), <alpha-value>)',
-    middleground: 'rgba(var(--color-middleground), <alpha-value>)',
-    foreground: 'rgba(var(--color-foreground), <alpha-value>)',
-    highlight: 'rgba(var(--color-highlight), <alpha-value>)',
-    new: 'rgba(var(--color-new), <alpha-value>)'
-},
-```
+To add new colors, simply add more values to the appropriate list of constant or themed colors in `colors.json`.
 
 ### Usage example
 
-To see how this works, check out the example below:
+To see how colors work in Getrich, check out the example below. Click the toggle in the footer to preview in the opposite scheme.
 
 <div class="relative flex w-full p-32 bg-shadow aspect-1/1 text-12/100 mt-24 mb-48 rounded-6 border border-headline/10">
     <div class="absolute top-0 left-0 w-full px-12 py-10 flex justify-between items-center">
