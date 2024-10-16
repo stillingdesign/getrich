@@ -35,14 +35,14 @@ export default {
         // Add base colors
         colorsJson.forEach(item => {
           if (item.name && item.value) {
-            colors[item.name] = `rgba(var(--color-${item.name}), <alpha-value>)`;
+            colors[item.name] = `oklch(var(--color-${item.name}) / <alpha-value>)`;
           }
         });
         // Add theme-specific colors (light and dark)
         colorsJson.forEach(item => {
           if (item.colors) {
             item.colors.forEach(color => {
-              colors[color.name] = `rgba(var(--color-${color.name}), <alpha-value>)`;
+              colors[color.name] = `oklch(var(--color-${color.name}) / <alpha-value>)`;
             });
           }
         });

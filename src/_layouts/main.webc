@@ -121,6 +121,21 @@
         <!--- Content --->
         <div @html="this.content">
         </div>
+        <!-- OKLCH Toy -->
+        <div class="fixed bottom-24 left-24 px-24 py-16 flex item-center gap-24 bg-middleground shadow-xl z-50 font-mono">
+            <div class="flex items-center gap-8 text-14/100">
+                <label for="hue">
+                    Hue
+                </label>
+                <input type="text" id="hue" placeholder="000" class="flex items-center w-40 h-24 rounded-4 px-6 text-center">
+            </div>
+            <div class="flex items-center gap-8 text-14/100">
+                <label for="hue">
+                    Chroma
+                </label>
+                <input type="text" id="hue" placeholder="0.00" class="flex items-center w-48 h-24 rounded-4 px-6 text-center">
+            </div>
+        </div>
     </div>
     <script webc:keep src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script webc:keep src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

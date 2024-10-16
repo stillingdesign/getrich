@@ -2,7 +2,7 @@
 .markdown > p > a {
     z-index: 1;
     position: relative;
-    color: rgba(var(--color-link), 1);
+    color: oklch(var(--color-link)/1);
     white-space: nowrap;
 }
 
@@ -14,7 +14,7 @@
     left: -0.25em;
     width: calc(100% + 0.5em);
     height: calc(100% + 0.25em);
-    background: rgba(var(--color-primary), 1);
+    background: oklch(var(--color-primary)/1);
     border-radius: 0.25em;
     opacity: 0;
     z-index: -1;
@@ -28,18 +28,18 @@
     left: 0.0625rem;
     width: calc(100% - 0.125rem);
     height: 0.0625em;
-    background-color: rgba(var(--color-link), 1);
+    background-color: oklch(var(--color-link)/1);
     transform: scale3d(1,1,1);
     transform-origin: left center;
     transition: transform 200ms cubic-bezier(0.3,0,0.3,1) 50ms;
 }
 
-.link.variant-theme { color: rgba(var(--color-background), 1); }
-.link.variant-theme:after { background-color: rgba(var(--color-background), 1); }
+.link.variant-theme { color: oklch(var(--color-background)/1); }
+.link.variant-theme:after { background-color: oklch(var(--color-background)/1); }
 .link.variant-text,
-.markdown > p > a { color: rgba(var(--color-headline), 1); }
+.markdown > p > a { color: oklch(var(--color-headline)/1); }
 .link.variant-text:after,
-.markdown > p > a:after  { background-color: rgba(var(--color-headline), 1); }
+.markdown > p > a:after  { background-color: oklch(var(--color-headline)/1); }
 
 @media (hover: hover) {
     .link:hover,
@@ -55,7 +55,7 @@
 .link:focus-visible,
 .markdown > p > a:focus-visible {
     outline: none;
-    color: rgba(var(--white), 1);
+    color: oklch(var(--white)/1);
 }
 
 .link:focus-visible:after,
@@ -64,5 +64,5 @@
 .link:focus-visible:before,
 .markdown > p > a:focus-visible:before {
     opacity: 1;
-    box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1);
+    box-shadow: 0 0 0 0.0625rem oklch(var(--color-background)/1), 0 0 0 0.125rem oklch(var(--color-primary)/1);
 }

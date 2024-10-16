@@ -79,7 +79,7 @@ At a foundational level, most SaaS marketing sites are differentiated by very fe
 
 Getrich uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) set within `src/_data_/colors.json` to define color across the site. Mainly, the colors used are part of a grayscale. By default the grayscale is monochromatic and untinted.
 
-When looking at `colors.json`, you'll notice that there are a seperate set of RGB color values for light and dark mode, along with some colors that are the same in both.
+When looking at `colors.json`, you'll notice that there are a seperate set of [OKLCH color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) for light and dark mode, along with some colors that are the same in both. At the top, there are "core" values, these determine foundational hue and chroma of the site.
 
 By default, users operating system's [preferred scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) will determine which set of colors are used. If a user manually toggles the scheme (from the footer), that scheme will then override system defaults.
 
@@ -90,57 +90,57 @@ Similar to creating a composition with a light source, elements higher in the st
 <div class="relative flex flex-col gap-8 w-full mt-24 mb-16 text-14/100">
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-shadow rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-shadow rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Shadow
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-background rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-background rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Background
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-middleground rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-middleground rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Middleground
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-foreground rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-foreground rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Foreground
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-highlight rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-highlight rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Highlight
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
 </div>
@@ -156,57 +156,57 @@ Most sites consistently utilize a few text colors. Getrich defines and names the
 <div class="relative flex flex-col gap-8 w-full mt-24 mb-48 text-14/100">
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-headline rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-headline rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Headline
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-content rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-content rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Content
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-detail rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-detail rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Detail
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-link rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-link rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Link
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-linkhover rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-linkhover rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Link hover
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
 </div>
@@ -218,95 +218,95 @@ By default, Getrich supplies a few additional colors for things like branding, a
 <div class="relative flex flex-col gap-8 w-full mt-24 mb-48 text-14/100">
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-primary rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-primary rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Primary
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-accent rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-accent rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Accent
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-error rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-error rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Error
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-caution rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-caution rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Caution
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-black rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-black rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Black
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-white rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-white rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 White
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-theme rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-theme rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Theme
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div data-color class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div data-color-ref class="w-20 h-20 bg-inverse rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div data-color-ref class="w-20 h-20 bg-inverse rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div data-color-name class="text-headline">
                 Inverse
             </div>
         </div>
         <div data-color-value class="font-mono text-12/100">
-            rgb(00,00,00)
+            oklch(00% 00 00)
         </div>
     </div>
     <div class="flex items-center justify-between pl-10 pr-12 py-8 w-full bg-middleground border border-headline/4 rounded-6">
         <div class="flex items-center gap-8">
-            <div class="w-20 h-20 bg-current rounded-2" style="box-shadow: 0 0 0 1px rgba(var(--color-headline),0.04);"></div>
+            <div class="w-20 h-20 bg-current rounded-2" style="box-shadow: 0 0 0 1px oklch(var(--color-headline)/0.04);"></div>
             <div class="text-headline">
                 Current
             </div>
@@ -319,26 +319,26 @@ By default, Getrich supplies a few additional colors for things like branding, a
 
 ### Customize color
 
-To customize colors in Getrich replace the RGB values in `src/_data_/colors.json`. Since these will be used as utility classes using Tailwind, the alpha can be set flexibly [later on](https://tailwindcss.com/docs/background-color#changing-the-opacity).
+To customize colors in Getrich replace the OKLCH values in `src/_data_/colors.json`. Since these will be used as utility classes using Tailwind, the alpha can be set flexibly [later on](https://tailwindcss.com/docs/background-color#changing-the-opacity).
 
-`color.json` is fed into `eleventy.config.js` and `tailwind.config.js` so that colors can be define in one place.
+`colors.json` is fed into `eleventy.config.js` and `tailwind.config.js` so that colors can be define in one place.
 
 <md-code>
-    main.css
+    colors.json
 </md-code>
 
 ``` json
 [
     {
         "name": "constantColor",
-        "value": "0, 85, 255"
+        "value": "54% 0.25 262"
     },
     {
         "theme": "light",
         "colors": [
             {
                 "name": "lightModeColor",
-                "value": "255, 255, 255"
+                "value": "100% 0 0"
             }
         ]
     },
@@ -347,7 +347,7 @@ To customize colors in Getrich replace the RGB values in `src/_data_/colors.json
         "colors": [
             {
                 "name": "darkModeColor",
-                "value": "0, 0, 0"
+                "value": "0% 0 0"
             }
         ]
     }
