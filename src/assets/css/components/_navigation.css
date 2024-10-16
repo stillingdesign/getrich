@@ -1,6 +1,6 @@
 .button.variant-nav {
     background-color: transparent;
-    color: rgba(var(--color-headline), 0.6);
+    color: oklch(var(--color-headline)/0.6);
 
     @media (max-width: 767px) {
         justify-content: space-between;
@@ -8,7 +8,7 @@
         padding: 0 1.5rem;
         font-size: 1rem;
         border-radius: 0;
-        border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.06);
+        border-bottom: 0.0625rem solid oklch(var(--color-headline)/0.06);
 
         & > svg {
             width: 1.25rem;
@@ -20,7 +20,7 @@
         &:hover {
             background-color: transparent;
             box-shadow: none;
-            color: rgba(var(--color-headline), 1);
+            color: oklch(var(--color-headline)/1);
         }
     }
 }
@@ -35,7 +35,7 @@
     padding: 0 0.75rem;
     height: 2.25rem;
     border-radius: 0.25rem;
-    color: rgba(var(--color-headline), 0.6);
+    color: oklch(var(--color-headline)/0.6);
     background-color: transparent;
     box-shadow: none;
     transition: color 100ms linear 0ms, background-color 100ms linear 0ms, border 100ms linear 0ms;
@@ -45,7 +45,7 @@
         padding: 0 1.5rem;
         font-size: 0.875rem;
         border-radius: 0;
-        border-bottom: 0.0625rem solid rgba(var(--color-headline), 0.06);
+        border-bottom: 0.0625rem solid oklch(var(--color-headline)/0.06);
 
         & > svg {
             display: none;
@@ -54,21 +54,21 @@
 
     @media (hover: hover) {
         &:hover {
-            color: rgba(var(--color-headline), 1);
-            background-color: rgba(var(--color-highlight), 1);
+            color: oklch(var(--color-headline)/1);
+            background-color: oklch(var(--color-highlight)/1);
         }
     }
 
     @media (hover: hover) and (min-width: 768px) {
         &:hover {
-            border: 0.0625rem solid rgba(var(--color-headline), 0.12);
+            border: 0.0625rem solid oklch(var(--color-headline)/0.12);
         }
     }
 }
 
 @media (hover: hover) and (min-width: 768px) {
     details:hover > .button.variant-tab,
-    details:hover > .button.variant-nav { background-color: transparent; box-shadow: none; color: rgba(var(--color-headline), 1); }
+    details:hover > .button.variant-nav { background-color: transparent; box-shadow: none; color: oklch(var(--color-headline)/1); }
 }
 
 [data-navigation] {
@@ -97,7 +97,7 @@
 
 [data-navigation]:has([data-toggle-navigation]:checked) {
     @media (max-width: 767px) {
-        [data-navigation-bg] { background-color: rgba(var(--color-background), 1); opacity: 1; }
+        [data-navigation-bg] { background-color: oklch(var(--color-background)/1); opacity: 1; }
         [data-navigation-icon] { transform: rotate3d(0, 0, 1, -45deg); }
         [data-navigation-icon] > div:nth-child(1) { transform: translate3d(0, 0.1875rem, 0) rotate3d(0, 0, 1, 90deg); }
         [data-navigation-icon] > div:nth-child(2) { transform: translate3d(0, -0.1875rem, 0); }
@@ -115,10 +115,10 @@
     [data-navigation-icon] {
         border-radius: 0.3125rem;
         outline: none !important;
-        background-color: rgba(var(--color-primary), 1) !important;
-        border-color: rgba(var(--color-primary), 1) !important;
-        color: rgba(var(--white), 1) !important;
-        box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1) !important;
+        background-color: oklch(var(--color-primary)/1) !important;
+        border-color: oklch(var(--color-primary)/1) !important;
+        color: oklch(var(--white)/1) !important;
+        box-shadow: 0 0 0 0.0625rem oklch(var(--color-background)/1), 0 0 0 0.125rem oklch(var(--color-primary)/1) !important;
     }
 }
 
@@ -151,12 +151,12 @@
 
 [data-toggle-scheme]:has([data-toggle-scheme-checkbox]:focus-visible) {
     outline: none !important;
-    background-color: rgba(var(--color-primary), 1) !important;
-    border-color: rgba(var(--color-primary), 1) !important;
-    color: rgba(var(--white), 1) !important;
-    box-shadow: 0 0 0 0.0625rem rgba(var(--color-background), 1), 0 0 0 0.125rem rgba(var(--color-primary), 1) !important;
+    background-color: oklch(var(--color-primary)/1) !important;
+    border-color: oklch(var(--color-primary)/1) !important;
+    color: oklch(var(--white)/1) !important;
+    box-shadow: 0 0 0 0.0625rem oklch(var(--color-background)/1), 0 0 0 0.125rem oklch(var(--color-primary)/1) !important;
     [data-toggle-knob] {
-        border-color: rbga(var(--white), 0.2);
-        background-color: rgba(var(--white), 0.06);
+        border-color: oklch(var(--white)/0.2);
+        background-color: oklch(var(--white)/0.06);
     }
 }

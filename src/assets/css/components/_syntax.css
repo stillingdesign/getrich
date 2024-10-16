@@ -2,7 +2,7 @@
  pre[class*="language-"] {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
     font-size: 0.9375em;
-    color: rgba(var(--color-content), 1);
+    color: oklch(var(--color-content)/1);
     background: none;
     text-align: left;
     white-space: pre;
@@ -29,8 +29,8 @@
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-    border: 0.0625rem solid rgba(var(--color-headline), 0.1);
-    background: rgba(var(--color-middleground), 1);
+    border: 0.0625rem solid oklch(var(--color-headline)/0.1);
+    background: oklch(var(--color-middleground)/1);
  }
  
  /* Inline code */
@@ -44,11 +44,11 @@
  .token.prolog,
  .token.doctype,
  .token.cdata {
-    color: rgba(var(--color-detail), 0.85);
+    color: oklch(var(--color-detail)/0.85);
  }
  
  .token.punctuation {
-    color: rgba(var(--color-content), 1);
+    color: oklch(var(--color-content)/1);
  }
  
  .namespace {
@@ -60,12 +60,12 @@
  .token.constant,
  .token.symbol,
  .token.deleted {
-    color: rgba(var(--color-accent), 1);
+    color: oklch(var(--color-accent)/1);
  }
  
  .token.boolean,
  .token.number {
-    color: rgba(var(--color-accent), 1);
+    color: oklch(var(--color-accent)/1);
  }
  
  .token.selector,
@@ -74,7 +74,7 @@
  .token.char,
  .token.builtin,
  .token.inserted {
-    color: rgba(var(--color-linkhover), 1);
+    color: oklch(var(--color-linkhover)/1);
  }
  
  .token.operator,
@@ -83,23 +83,23 @@
  .language-css .token.string,
  .style .token.string,
  .token.variable {
-    color: rgba(var(--color-content), 1);
+    color: oklch(var(--color-content)/1);
  }
  
  .token.atrule,
  .token.attr-value,
  .token.function,
  .token.class-name {
-    color: rgba(var(--color-link), 1);
+    color: oklch(var(--color-link)/1);
  }
  
  .token.keyword {
-    color: rgba(var(--color-error), 1);
+    color: oklch(var(--color-error)/1);
  }
  
  .token.regex,
  .token.important {
-    color: rgba(var(--color-caution), 1);
+    color: oklch(var(--color-caution)/1);
  }
  
  .token.bold {

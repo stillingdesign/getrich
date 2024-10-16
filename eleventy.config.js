@@ -41,9 +41,12 @@ export default function(eleventyConfig)  {
         let constantColors = ':root {\n';
         let lightTheme = ':root[color-scheme="light"] {\n';
         let darkTheme = ':root[color-scheme="dark"] {\n';
-        // Constant colors
+        // Set foundation and constant colors
         colors.forEach(item => {
-            if (item.name && item.value) {
+            if (item.core && item.value) {
+                constantColors += `  --${item.core}: ${item.value};\n`;
+            }
+            else if (item.name && item.value) {
                 constantColors += `  --color-${item.name}: ${item.value};\n`;
             }
         });
