@@ -127,13 +127,13 @@
                 <label for="hue">
                     Hue
                 </label>
-                <input type="text" id="hue" placeholder="000" class="flex items-center w-40 h-24 rounded-4 px-6 text-center">
+                <input type="number" id="hue" placeholder="000" type="text" placeholder="255" minlength="1" maxlength="3" min="0" max="360" class="flex items-center w-40 h-24 rounded-4 px-6 text-center">
             </div>
             <div class="flex items-center gap-8 text-14/100">
-                <label for="hue">
+                <label for="chroma">
                     Chroma
                 </label>
-                <input type="text" id="hue" placeholder="0.00" class="flex items-center w-48 h-24 rounded-4 px-6 text-center">
+                <input type="number" id="chroma" placeholder="000" type="text" placeholder="255" minlength="1" maxlength="3" min="0" max="360" class="flex items-center w-40 h-24 rounded-4 px-6 text-center">
             </div>
         </div>
     </div>
