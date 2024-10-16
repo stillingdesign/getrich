@@ -122,18 +122,20 @@
         <div @html="this.content">
         </div>
         <!-- OKLCH Toy -->
-        <div class="fixed bottom-24 left-24 px-24 py-16 flex item-center gap-24 bg-middleground shadow-xl z-50 font-mono">
-            <div class="flex items-center gap-8 text-14/100">
-                <label for="hue">
-                    Hue
-                </label>
-                <input type="number" id="hue" placeholder="000" type="text" placeholder="255" minlength="1" maxlength="3" min="0" max="360" class="flex items-center w-40 h-24 rounded-4 px-6 text-center">
-            </div>
-            <div class="flex items-center gap-8 text-14/100">
-                <label for="chroma">
-                    Chroma
-                </label>
-                <input type="number" id="chroma" placeholder="000" type="text" placeholder="255" minlength="1" maxlength="3" min="0" max="360" class="flex items-center w-40 h-24 rounded-4 px-6 text-center">
+        <div class="fixed bottom-24 left-24 px-24 py-16 flex flex-col gap-24 bg-middleground shadow-xl z-50 font-mono rounded-12 text-14/100">
+            <div class="flex items-center gap-24">
+                <div class="flex items-center gap-8">
+                    <label for="hue">
+                        Hue:
+                    </label>
+                    <input type="number" id="hue" placeholder="000" type="text" minlength="1" maxlength="3" min="0" max="360" class="flex items-center w-40 h-24 rounded-4 px-6 text-center text-black">
+                </div>
+                <div class="flex items-center gap-8">
+                    <label for="chroma">
+                        Chroma:
+                    </label>
+                    <input type="number" id="chroma" placeholder="0.00" type="text" minlength="1" maxlength="4" min="0" max="1" class="flex items-center w-48 h-24 rounded-4 px-6 text-center text-black">
+                </div>
             </div>
         </div>
     </div>
@@ -142,6 +144,21 @@
     <script webc:keep src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script @raw="getBundle('js')" webc:keep>
         gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+        
+        function changeScheme() {
+            const inputHue = document.getElementById('hue');
+            const inputChroma = document.getElementById('chroma');
+            inputHue.addEventListener('input', function() {
+                const hue = inputHue.value;
+                console.log(hue);
+                document.documentElement.style.setProperty('--hue', `${hue}`);
+            });
+            inputChroma.addEventListener('input', function() {
+                const chroma = inputChroma.value;
+                document.documentElement.style.setProperty('--chroma', `${chroma}`);
+            });
+        }
+        changeScheme();
     </script>
 </body>
 </html>
