@@ -1,0 +1,105 @@
+<!--- Preview design tweaks --->
+
+<div class="fixed bottom-24 left-24 px-24 py-16 flex flex-col gap-24 bg-middleground shadow-xl z-50 font-mono rounded-12 text-12/100" webc:root="override">
+    <div class="flex flex-col gap-8">
+        <div class="flex items-center gap-8">
+            <label for="lightness" class="w-96">
+                Lightness:
+            </label>
+            <div class="relative w-144 mb-4">
+                <input type="range" min="80" max="100" value="90" class="slider-lightness w-full" id="lightness">
+            </div>
+            <span data-value-lightness class="flex items-center justify-center rounded-4 bg-highlight w-64 h-24">
+                90%
+            </span>
+        </div>
+        <div class="flex items-center gap-8">
+            <label for="contrast" class="w-96">
+                Contrast:
+            </label>
+            <div class="relative w-144 mb-4">
+                <input type="range" min="0" max="300" value="200" class="slider-contrast w-full" id="contrast">
+            </div>
+            <span data-value-contrast class="flex items-center justify-center rounded-4 bg-highlight w-64 h-24">
+                2%
+            </span>
+        </div>
+        <div class="flex items-center gap-8">
+            <label for="hue" class="w-96">
+                Hue:
+            </label>
+            <div class="relative w-144 mb-4">
+                <input type="range" min="0" max="360" value="262" class="slider-hue w-full" id="hue">
+            </div>
+            <span data-value-hue class="flex items-center justify-center rounded-4 bg-highlight w-64 h-24">
+                262
+            </span>
+        </div>
+        <div class="flex items-center gap-8">
+            <label for="chroma" class="w-96">
+                Chroma:
+            </label>
+            <div class="relative w-144 mb-4">
+                <input type="range" min="0" max="200" value="0" class="slider-chroma w-full" id="chroma">
+            </div>
+            <span data-value-chroma class="flex items-center justify-center rounded-4 bg-highlight w-64 h-24">
+                0
+            </span>
+        </div>
+    </div>
+</div>
+
+<!--- Javascript --->
+
+<script>
+
+    function changeScheme() {
+
+        function changeLightness() {
+            const inputLightness = document.getElementById('lightness');
+            const valueLightness = document.querySelector('[data-value-lightness]');
+            inputLightness.addEventListener('input', function() {
+                const lightness = inputLightness.value + '%';
+                valueLightness.textContent = lightness;
+                document.documentElement.style.setProperty('--lightness', `${lightness}`);
+            });
+        }
+
+        function changeContrast() {
+            const inputContrast = document.getElementById('contrast');
+            const valueContrast = document.querySelector('[data-value-contrast]');
+            inputContrast.addEventListener('input', function() {
+                const contrast = inputContrast.value/100 + '%';
+                valueContrast.textContent = contrast;
+                document.documentElement.style.setProperty('--contrast', `${contrast}`);
+            });
+        }
+
+        function changeHue() {
+            const inputHue = document.getElementById('hue');
+            const valueHue = document.querySelector('[data-value-hue]');
+            inputHue.addEventListener('input', function() {
+                const hue = inputHue.value;
+                valueHue.textContent = hue;
+                document.documentElement.style.setProperty('--hue', `${hue}`);
+            });
+        }
+
+        function changeChroma() {
+            const inputChroma = document.getElementById('chroma');
+            const valueChroma = document.querySelector('[data-value-chroma]');
+            inputChroma.addEventListener('input', function() {
+                const chroma = inputChroma.value / 1000;
+                valueChroma.textContent = chroma;
+                document.documentElement.style.setProperty('--chroma', `${chroma}`);
+            });
+        }
+
+        changeLightness();
+        changeContrast();
+        changeHue();
+        changeChroma();
+    }
+
+    changeScheme();
+</script>

@@ -1,5 +1,13 @@
 [
     {
+        "core": "lightness",
+        "value": "90%"
+    },
+    {
+        "core": "contrast",
+        "value": "2%"
+    },
+    {
         "core": "hue",
         "value": "262"
     },
@@ -9,7 +17,7 @@
     },
     {
         "name": "primary",
-        "value": "54% 0.25 var(--hue)"
+        "value": "calc(var(--lightness) - (var(--contrast) * 18)) 0.25 var(--hue)"
     },
     {
         "name": "black",
@@ -24,51 +32,51 @@
         "colors": [
             {
                 "name": "theme",
-                "value": "100% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + 10%) var(--chroma) var(--hue)"
             },
             {
                 "name": "inverse",
-                "value": "0% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) - 90%) var(--chroma) var(--hue)"
             },
             {
                 "name": "shadow",
-                "value": "92% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + var(--contrast)) var(--chroma) var(--hue)"
             },
             {
                 "name": "background",
-                "value": "94% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + (var(--contrast) * 2)) var(--chroma) var(--hue)"
             },
             {
                 "name": "middleground",
-                "value": "97% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + (var(--contrast) * 3)) var(--chroma) var(--hue)"
             },
             {
                 "name": "foreground",
-                "value": "98.5% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + (var(--contrast) * 4)) var(--chroma) var(--hue)"
             },
             {
                 "name": "highlight",
-                "value": "100% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + (var(--contrast) * 5)) var(--chroma) var(--hue)"
             },
             {
                 "name": "detail",
-                "value": "46.5% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 22)) var(--chroma) var(--hue)"
             },
             {
                 "name": "content",
-                "value": "37% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 28)) var(--chroma) var(--hue)"
             },
             {
                 "name": "headline",
-                "value": "0% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 34)) var(--chroma) var(--hue)"
             },
             {
                 "name": "link",
-                "value": "54% 0.25 var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 18)) 0.25 var(--hue)"
             },
             {
                 "name": "linkhover",
-                "value": "50% 0.25 var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 20)) 0.25 var(--hue)"
             },
             {
                 "name": "error",

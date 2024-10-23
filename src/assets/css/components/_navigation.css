@@ -1,6 +1,6 @@
 .button.variant-nav {
     background-color: transparent;
-    color: oklch(var(--color-headline)/0.6);
+    color: oklch(var(--color-headline)/0.65);
 
     @media (max-width: 767px) {
         justify-content: space-between;

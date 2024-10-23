@@ -177,7 +177,7 @@ details[open] > .button > .hover-flip { transform: rotate3d(0,0,1,180deg);   }
     outline: none !important;
     background-color: oklch(var(--color-primary)/1) !important;
     border-color: oklch(var(--color-primary)/1) !important;
-    color: oklch(var(--white)/1) !important;
+    color: oklch(var(--color-white)/1) !important;
     box-shadow: 0 0 0 0.0625rem oklch(var(--color-background)/1), 0 0 0 0.125rem oklch(var(--color-primary)/1) !important;
 }
 
@@ -189,7 +189,7 @@ details[open] > .button > .hover-flip { transform: rotate3d(0,0,1,180deg);   }
 
 .button-focus:focus-visible {
     outline:none;
-    color: oklch(var(--white)/1);
+    color: oklch(var(--color-white)/1);
     background-color: oklch(var(--color-primary)/1);
     border-radius: 0.375rem;
     box-shadow: 0 0 0 0.0625rem oklch(var(--color-background)/1), 0 0 0 0.125rem oklch(var(--color-primary)/1) !important;
