@@ -1,6 +1,6 @@
 <!--- Preview design tweaks --->
 
-<div class="fixed bottom-24 left-24 px-24 py-16 flex flex-col gap-24 bg-middleground shadow-xl z-50 font-mono rounded-12 text-12/100" webc:root="override">
+<div data-pane-design="false" class="fixed bottom-24 left-24 px-24 py-16 flex flex-col gap-24 bg-middleground shadow-xl z-50 font-mono rounded-12 text-12/100" webc:root="override" style="opacity:0; visibility:hidden;">
     <div class="flex flex-col gap-8">
         <div class="flex items-center gap-8">
             <label for="lightness" class="w-96">
@@ -40,10 +40,10 @@
                 Chroma:
             </label>
             <div class="relative w-144 mb-4">
-                <input type="range" min="0" max="200" value="0" class="slider-chroma w-full" id="chroma">
+                <input type="range" min="0" max="200" value="20" class="slider-chroma w-full" id="chroma">
             </div>
             <span data-value-chroma class="flex items-center justify-center rounded-4 bg-highlight w-64 h-24">
-                0
+                0.02
             </span>
         </div>
     </div>
@@ -52,7 +52,7 @@
 <!--- Javascript --->
 
 <script>
-
+    // Play with color scheme
     function changeScheme() {
 
         function changeLightness() {
@@ -100,6 +100,29 @@
         changeHue();
         changeChroma();
     }
-
     changeScheme();
+
+    // Toggle Design Pane
+    function togglePaneDesign() {
+        const pane = document.querySelector('[data-pane-design]');
+        function togglePane() {
+            const open = pane.getAttribute('data-pane-design');
+            if(open === 'false') {
+                document.querySelector('[data-pane-design]').style.visibility = 'visible';
+                document.querySelector('[data-pane-design]').style.opacity = '1';
+                pane.setAttribute('data-pane-design', 'true');
+            } else {
+                document.querySelector('[data-pane-design]').style.visibility = 'hidden';
+                document.querySelector('[data-pane-design]').style.opacity = '0';
+                pane.setAttribute('data-pane-design', 'false');
+            }
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.metaKey && event.key === 'd') {
+                event.preventDefault();
+                togglePane();
+            }
+        });
+    }
+    togglePaneDesign();
 </script>

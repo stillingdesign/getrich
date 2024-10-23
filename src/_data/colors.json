@@ -13,11 +13,11 @@
     },
     {
         "core": "chroma",
-        "value": "0"
+        "value": "0.02"
     },
     {
         "name": "primary",
-        "value": "calc(var(--lightness) - (var(--contrast) * 18)) 0.25 var(--hue)"
+        "value": "calc(var(--lightness) - (var(--contrast) * 18)) calc(var(--chroma) + 0.25) var(--hue)"
     },
     {
         "name": "black",
@@ -72,23 +72,23 @@
             },
             {
                 "name": "link",
-                "value": "calc(var(--lightness) - (var(--contrast) * 18)) 0.25 var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 18)) calc(var(--chroma) + 0.25) var(--hue)"
             },
             {
                 "name": "linkhover",
-                "value": "calc(var(--lightness) - (var(--contrast) * 20)) 0.25 var(--hue)"
+                "value": "calc(var(--lightness) - (var(--contrast) * 20)) calc(var(--chroma) + 0.25)  var(--hue)"
             },
             {
                 "name": "error",
-                "value": "59% 0.24 360"
+                "value": "59% calc(var(--chroma) + 0.24) 360"
             },
             {
                 "name": "caution",
-                "value": "69% 0.2 45"
+                "value": "69% calc(var(--chroma) + 0.2) 45"
             },
             {
                 "name": "accent",
-                "value": "58% 0.23 302"
+                "value": "58% 0.23 calc(var(--hue) + 40)"
             }
         ]
     },
@@ -97,63 +97,63 @@
         "colors": [
             {
                 "name": "theme",
-                "value": "0% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 4)  var(--chroma) var(--hue)"
             },
             {
                 "name": "inverse",
-                "value": "100% var(--chroma) var(--hue)"
+                "value": "calc(var(--lightness) + 10%) var(--chroma) var(--hue)"
             },
             {
                 "name": "shadow",
-                "value": "0% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 4) var(--chroma) var(--hue)"
             },
             {
                 "name": "background",
-                "value": "16% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 8) var(--chroma) var(--hue)"
             },
             {
                 "name": "middleground",
-                "value": "19% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 10) var(--chroma) var(--hue)"
             },
             {
                 "name": "foreground",
-                "value": "22% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 12) var(--chroma) var(--hue)"
             },
             {
                 "name": "highlight",
-                "value": "24% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 14) var(--chroma) var(--hue)"
             },
             {
                 "name": "detail",
-                "value": "94% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 36) var(--chroma) var(--hue)"
             },
             {
                 "name": "content",
-                "value": "86% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 43) var(--chroma) var(--hue)"
             },
             {
                 "name": "headline",
-                "value": "100% var(--chroma) var(--hue)"
+                "value": "calc((var(--lightness) - 90% + var(--contrast)) * 50) var(--chroma) var(--hue)"
             },
             {
                 "name": "link",
-                "value": "69% 0.17 var(--hue)"
+                "value": "69% calc(var(--chroma) + 0.17)  var(--hue)"
             },
             {
                 "name": "linkhover",
-                "value": "79% .11 var(--hue)"
+                "value": "79% calc(var(--chroma) + 0.11) var(--hue)"
             },
             {
                 "name": "error",
-                "value": "71% 0.21 360"
+                "value": "71% calc(var(--chroma) + 0.2) 360"
             },
             {
                 "name": "caution",
-                "value": "79% 0.17 69"
+                "value": "79% calc(var(--chroma) + 0.17) 69"
             },
             {
                 "name": "accent",
-                "value": "71% 0.17 302"
+                "value": "71% 0.17 calc(var(--hue) + 44)"
             }
         ]
     }
