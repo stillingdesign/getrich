@@ -35,6 +35,10 @@
     color: oklch(var(--color-content)/1);
 }
 
+.markdown > p {
+    text-wrap: pretty;
+}
+
 .markdown > p > code {
     font-size: 0.9375em;
     white-space: nowrap;

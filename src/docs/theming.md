@@ -77,7 +77,7 @@ At a foundational level, most SaaS marketing sites are differentiated by very fe
 
 ## Color palette
 
-Getrich uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) set within `src/_data_/colors.json` to define color across the site. Mainly, the colors used are part of a grayscale. By default the grayscale is monochromatic and untinted.
+Getrich uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) set within `src/_data_/colors.json` to define color across the site. Mainly, the colors used are part of a grayscale. By default the grayscale is monochromatic.
 
 When looking at `colors.json`, you'll notice that there are a seperate set of [OKLCH color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) for light and dark mode, along with some colors that are the same in both. At the top, there are "core" values, these determine foundational hue and chroma of the site.
 
@@ -319,9 +319,9 @@ By default, Getrich supplies a few additional colors for things like branding, a
 
 ### Customize color
 
-To customize colors in Getrich replace the OKLCH values in `src/_data_/colors.json`. Since these will be used as utility classes using Tailwind, the alpha can be set flexibly [later on](https://tailwindcss.com/docs/background-color#changing-the-opacity).
+To customize colors in Getrich replace the OKLCH values in `src/_data_/colors.json`. Since these will be used as utility classes with Tailwind, the alpha can be set flexibly [later on](https://tailwindcss.com/docs/background-color#changing-the-opacity).
 
-`colors.json` is fed into `eleventy.config.js` and `tailwind.config.js` so that colors can be define in one place.
+`colors.json` is fed into `eleventy.config.js` and `tailwind.config.js` so that colors can be defined in one place.
 
 <md-code>
     colors.json
@@ -540,7 +540,7 @@ Just like buttons, links can be easily styled with utility classes.
 
 ### Link variants
 
-By default, the `.link` utility class will be displayed in the style above. This styling can be modified by by adding one of the `.variant-{name}` styles below to the element, too.
+By default, the `.link` utility class will be displayed in the style above. This styling can be modified by adding one of the `.variant-{name}` styles below to the element, too.
 
 <md-code>
     Link variants
