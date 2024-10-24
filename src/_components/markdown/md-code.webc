@@ -14,8 +14,13 @@
     const copyCode = document.querySelectorAll('[data-copy-code]');
     copyCode.forEach((button) => {
         button.addEventListener('click', () => {
-            const parent = button.parentElement;
-            const code = parent.nextElementSibling.querySelector('code');
+            let sibling = button.parentElement.nextElementSibling;
+            let code = null;
+            while (sibling) {
+                code = sibling.querySelector('code');
+                if (code) { break; }
+                sibling = sibling.nextElementSibling;
+            }
             if (code && code.tagName.toLowerCase() === 'code') {
                 navigator.clipboard.writeText(code.textContent);
                 button.querySelector('span').textContent = 'Copied!';
@@ -23,7 +28,7 @@
                     button.querySelector('span').textContent = 'Copy';
                 }, 2000);
             } else {
-                console.error('No next <code> element found');
+                console.error('No <code> element found in the next siblings');
             }
         });
     });
