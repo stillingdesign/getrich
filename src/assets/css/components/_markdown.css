@@ -33,6 +33,7 @@
     font-size: 1.125rem;
     line-height: 170%;
     color: oklch(var(--color-content)/1);
+    text-wrap: balance;
 }
 
 .markdown > p {
